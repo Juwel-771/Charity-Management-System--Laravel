@@ -26,18 +26,7 @@ class BlogController extends Controller
      */
     public function create(Request $request)
     {
-        $blog = new BlogForm();
-
-        $blog->file=$request->file;
-        $blog->date=$request->date;
-        $blog->heading=$request->heading;
-        $blog->paragraph=$request->paragraph;
-        $blog->category=$request->category;
-        $blog->comment=$request->comment;
-
-        $blog->save();
-
-        return redirect()->back()->with('message','Blog Posted');
+       
     }
 
     /**
@@ -48,7 +37,40 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $blog = new BlogForm();
+
+        $this->validate($request, [
+            'date'=>'required',
+            'heading'=>'required',
+            'file'=>'image|mimes:jpg,png,jpeg'
+        ]);
+
+        // File name With Extension
+        $fileNameWithExt = $request->file('file')->getClientOriginalName();
+
+        // Just File Name
+        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        // Get With Extension
+        $extension = $request->file('file')->getClientOriginalExtension();
+
+        // Create a New File
+        $fileNameToStore = $filename.'_'.time().'_'.$extension;
+
+        // Upload Image
+        $path = $request->file('file')->storeAs('public/blog_images',$fileNameToStore);
+
+        
+        $blog->file=$fileNameToStore;
+        $blog->date=$request->date;
+        $blog->heading=$request->heading;
+        $blog->paragraph=$request->paragraph;
+        $blog->category=$request->category;
+        $blog->comment=$request->comment;
+
+        $blog->save();
+
+        return redirect()->back()->with('message','Blog Posted');
     }
 
     /**

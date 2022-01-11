@@ -64,7 +64,7 @@ Route::get('/blog',[BlogController::class,'index']);
 
 //Route for Admin Dashboard
 Route::view('/blogform', 'admin.blogform');
-Route::post('/blogform',[BlogController::class,'create']);
+Route::post('/blogform',[BlogController::class,'store']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

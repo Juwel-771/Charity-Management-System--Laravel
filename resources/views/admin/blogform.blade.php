@@ -93,7 +93,7 @@
                                         {{session('message')}}
                                 </div>
                             @endif
-                            <form action="" method="POST">
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row d-flex justify-content-center my-4">
                                     <div class="col-sm-10">

@@ -164,10 +164,10 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
+                        @foreach ($blogs as $item)
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="img/blog/single_blog_1.png" alt=""/>
-                                @foreach ($blogs as $item)
+                                <img src="/storage/blog_images/{{$item->file}}" class="card-img rounded-0" alt=""/>
                                 <a href="#" class="blog_item_date">
                                     <p>{{$item->date}}</p>
                                 </a>
@@ -182,9 +182,9 @@
                                     <li><a href="#"><i class="fa fa-user"></i> {{$item->category}}</a></li>
                                     <li><a href="#"><i class="fa fa-comments"></i>{{$item->comment}}</a></li>
                                 </ul>
-                                @endforeach
                             </div>
                         </article>
+                        @endforeach
 
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
