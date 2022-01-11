@@ -44,36 +44,41 @@
                     <span>Donors</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <!-- Nav Item - Post -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('blogform')}}">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo" href="#">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Post Blog</span>
+                    <span>Blog</span>
                 </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('blogform')}}">Post Blog</a>
+                        <a class="collapse-item" href="{{url('viewblog')}}">Edit Blog</a>
+                    </div>
+                </div>
             </li>
-
-            {{-- <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                  Blog
+        
+            <!-- Nav Item - News -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="true" aria-controls="collapseThree" href="#">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>News</span>
                 </a>
-              
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <li><button class="btn btn-primary"><a class="dropdown-item" href="#">Action</a></button></li>
-                  <li><button class="btn btn-info"><a class="dropdown-item" href="#">Another action</a></button></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div> --}}
+                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('postNews')}}">Post News</a>
+                        <a class="collapse-item" href="{{url('viewNews')}}">Edit News</a>
+                        <a class="collapse-item" href="{{url('editComment')}}">Edit Comment</a>
+                    </div>
+                </div>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Post News</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Contac Request</span></a>
+                    <span>Contact Request</span></a>
             </li>
 
             <li class="nav-item">

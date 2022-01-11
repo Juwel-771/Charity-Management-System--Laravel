@@ -8,6 +8,8 @@ use App\Http\Controllers\DonorController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\GoodsController;
 use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\NewsCommnetController;
+use App\Http\Controllers\PostNewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,9 +64,26 @@ Route::post('/goods',[GoodsController::class,'create']);
 //Route for Blog
 Route::get('/blog',[BlogController::class,'index']);
 
-//Route for Admin Dashboard
+// Route for Admin Dashboard
+// Route for Dashboard-Blog
 Route::view('/blogform', 'admin.blogform');
 Route::post('/blogform',[BlogController::class,'store']);
+Route::get('/viewblog',[BlogController::class,'detail']);
+Route::get('/editblog/{id}',[BlogController::class,'edit']);
+Route::put('/editblog/{id}',[BlogController::class,'update']);
+Route::get('/destroy/{id}',[BlogController::class,'destroy']);
+
+//Route for News Section
+Route::get('/news',[PostNewsController::class,'index']);
+Route::post('/news',[NewsCommnetController::class,'create']);
+Route::view('/postNews','admin.postNews');
+Route::post('/postNews',[PostNewsController::class,'store']);
+Route::get('/viewNews',[PostNewsController::class,'show']);
+Route::get('/editNews/{id}',[PostNewsController::class,'edit']);
+Route::put('/editNews/{id}',[PostNewsController::class,'update']);
+Route::view('/editComment','admin.editComment');
+
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

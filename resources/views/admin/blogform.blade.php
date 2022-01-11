@@ -38,15 +38,33 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link active" href="{{url('blogform')}}">
+                <a class="nav-link collapsed active" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo" href="#">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Post Blog</span></a>
+                    <span>Blog</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item active" href="{{url('blogform')}}">Post Blog</a>
+                        <a class="collapse-item" href="{{url('viewblog')}}">Edit Blog</a>
+                    </div>
+                </div>
             </li>
 
+            <!-- Nav Item - News -->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="true" aria-controls="collapseThree" href="#">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Post News</span></a>
+                    <span>News</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('postNews')}}">Post News</a>
+                        <a class="collapse-item" href="{{url('editNews')}}">Edit News</a>
+                        <a class="collapse-item" href="{{url('editComment')}}">Edit Comment</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">
