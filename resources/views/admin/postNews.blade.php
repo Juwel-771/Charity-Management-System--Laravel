@@ -22,6 +22,14 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Pages Collapse Menu -->
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-folder"></i>
@@ -36,21 +44,21 @@
                     <span>Donors</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <!-- Nav Item - Post -->
             <li class="nav-item">
-                <a class="nav-link collapsed active" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Blog</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="{{url('blogform')}}">Post Blog</a>
+                        <a class="collapse-item" href="{{url('blogform')}}">Post Blog</a>
                         <a class="collapse-item" href="{{url('viewblog')}}">Edit Blog</a>
                     </div>
                 </div>
             </li>
-
+        
             <!-- Nav Item - News -->
             <li class="nav-item">
                 <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseThree"
@@ -68,9 +76,9 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('subscription')}}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Contac Request</span></a>
+                    <span>Contact Request</span></a>
             </li>
 
             <li class="nav-item">
@@ -91,7 +99,7 @@
                     <span>News & Update</span></a>
             </li>
 
-
+            
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

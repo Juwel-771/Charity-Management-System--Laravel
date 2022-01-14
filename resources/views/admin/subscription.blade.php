@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div id="wrapper" class="bg-info">
+    <div id="wrapper">
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -76,7 +76,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{url('subscription')}}">
+                <a class="nav-link active" href="{{url('subscription')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Contact Request</span></a>
             </li>
@@ -106,10 +106,43 @@
             <!-- Sidebar Toggler (Sidebar) -->
         </ul>
         <!-- End of Sidebar -->
+        <div class="col-md-10">
+            <table class="table table-light table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>E-mail</th>
+                        <th>Subscription Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($subs as $sub)
+                    <tr>
+                        <td class="border-bottom-primary">{{$sub->subFirst}}</td>
+                        <td class="border-bottom-primary">{{$sub->subLast}}</td>
+                        <td class="border-bottom-primary">{{$sub->subEmail}}</td>
+                        <td class="border-bottom-primary">{{$sub->created_at}}</td>
+                        <td class="border-bottom-primary">
+                            <a href="#" class="btn btn-info btn-sm">Sent Mail</a>
+                            <a href="{{url('/destroy', $sub->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            @if (session()->has('mge'))
+            <div class="alert alert-danger">
+                {{session('mge')}}
+            </div>                    
+        @endif
+        </div>
 
         <!-- Content Wrapper -->
 
-    <div id="content-wrapper" class="d-flex flex-column">
-
+        <div id="content-wrapper" class="d-flex flex-column ml-5">
+            
+    </div>
     </div>
 </x-app-layout>

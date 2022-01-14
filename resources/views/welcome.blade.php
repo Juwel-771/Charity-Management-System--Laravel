@@ -667,31 +667,26 @@
                 <div class="vl bg-success"></div>
                 <h2 class="fw-bold fs-1 mx-5 my-5">Sign Up to Hear from us</h2>
                 <p class="fw-bold fs-6 my-4">Sign up here to receive our quarterly newsletter via email.</p>
-
                 <div class="row">
                     <div class="col-sm-2">
-                        <form action="">
+                        <form action="" method="POST">
+                            @csrf
                             <div class="mb-3">
-                                <input type="text" placeholder="First Name" class="form-control" id="first_name">
+                                <input type="text" name="subFirst" placeholder="First Name" class="form-control" id="first_name">
                                 <label for="first_name" class="form-label">First Name: </label>
                             </div>
-                        </form>
                     </div>
                     <div class="col-sm-2">
-                        <form action="">
                             <div class="mb-3">
-                                <input type="text" placeholder="Last Name" class="form-control" id="first_name">
+                                <input type="text" name="subLast" placeholder="Last Name" class="form-control" id="first_name">
                                 <label for="first_name" class="form-label">Last Name: </label>
                             </div>
-                        </form>
                     </div>
                     <div class="col-sm-3">
-                        <form action="">
                             <div class="mb-3">
-                                <input type="email" placeholder="example@mail.com" class="form-control" id="first_name">
+                                <input type="email" name="subEmail" placeholder="example@mail.com" class="form-control" id="first_name">
                                 <label for="first_name" class="form-label">E-mail: </label>
                             </div>
-                        </form>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -699,6 +694,12 @@
                                 in</button>
                         </div>
                     </div>
+                </form>
+                @if (session()->has('message'))
+                    <div class="alert alert-success mt-4">
+                        {{session('message')}}
+                    </div>
+                @endif
                 </div>
             </div>
         </div>

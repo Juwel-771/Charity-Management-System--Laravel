@@ -10,6 +10,7 @@ use App\Http\Controllers\GoodsController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\NewsCommnetController;
 use App\Http\Controllers\PostNewsController;
+use App\Http\Controllers\SubscripController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,6 +84,11 @@ Route::get('/editNews/{id}',[PostNewsController::class,'edit']);
 Route::put('/editNews/{id}',[PostNewsController::class,'update']);
 Route::view('/editComment','admin.editComment');
 
+// Route for Subscription
+Route::view('/subscription', 'admin.subscription');
+Route::get('/subscription',[SubscripController::class,'index']);
+Route::post('/',[SubscripController::class,'create']);
+Route::get('/destroy/{id}',[SubscripController::class,'destroy']);
 
 
 // Route::get('/dashboard', function () {
