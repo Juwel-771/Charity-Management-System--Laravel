@@ -11,6 +11,7 @@ use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\NewsCommnetController;
 use App\Http\Controllers\PostNewsController;
 use App\Http\Controllers\SubscripController;
+use App\Http\Controllers\VolunteerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -93,6 +94,9 @@ Route::view('/subscription', 'admin.subscription');
 Route::get('/subscription',[SubscripController::class,'index']);
 Route::post('/',[SubscripController::class,'create']);
 Route::get('/destroy/{id}',[SubscripController::class,'destroy']);
+
+// Route for Volunteer 
+Route::post('/volunForm',[VolunteerController::class,'store']);
 
 
 // Route::get('/dashboard', function () {
