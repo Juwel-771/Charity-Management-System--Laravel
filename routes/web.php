@@ -28,7 +28,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route for Volunteer
 Route::view('volunteer', 'volunteer');
+Route::view('volunForm', 'admin.volunForm');
 
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');

@@ -161,34 +161,137 @@
         </div>
     </div>
 
-    {{--  Start of Meet Our Volunteer Page --}}
-    <div class="container mx-auto mt-4">
-        <div class="row">
-            <h1 class="text-center py-3">Meet Our Volunteer</h1>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/volenteer/1.png" class="card-img-top rounded-circle" alt="Volenteer">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-center text-muted">Card subtitle</h6>
-                        <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Visit Site</a>
-                        <a href="#" class="btn "><i class="fab fa-github"></i> Github</a>
-                    </div>
+    <div class="container">
+        <div class="row" >
+            <h1 class="text-center my-5">Volunteer Form</h1>
+            <div class="col-md-10">
+                <div class="row d-flex justify-content-center mt-3">
+                    @if (session()->has('message'))
+                        <div class="alert alert-success my-3">
+                                {{session('message')}}
+                        </div>
+                    @endif
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
+                                <label for="file">Upload Image: </label>
+                                <input type="file" class="form-control" name="file">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center my-4">
+                            <div class="col-sm-5">
+                                <label for="firsName" class="form-label">First Name: </label>
+                                <input type="text" name="firstName" class="form-control">
+                            </div>
+                            <div class="col-sm-5">
+                                <label for="lastName" class="form-label">Last Name: </label>
+                                <input type="text" name="lastName" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
+                                <label for="email" class="form-label">E-mail: </label>
+                                <input type="email" name="heading" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
+                                <label for="phone" class="form-label">Phone: </label>
+                                <input type="text" name="phone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-5">
+                                <span>Address</span><br>
+                                <label for="address_one" class="form-label">Street Line 1 </label>
+                                <input type="text" name="address_one" class="form-control">
+                            </div>
+                            <div class="col-sm-5">
+                                <br>
+                                <label for="address_two" class="form-label">Street Line 2: </label>
+                                <input type="text" name="address_two" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
+                                <label for="city" class="form-label">City </label>
+                                <input name="city" type="text" class="form-control"></input>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-5">
+                                <label for="state" class="form-label">State: </label>
+                                <input type="text" name="state" class="form-control">
+                            </div>
+                            <div class="col-sm-5">
+                                <label for="postalCode" class="form-label">Postal Code: </label>
+                                <input type="text" name="postalCode" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
+                                <h5>Which days of the week do you want to work?</h5>    
+                                <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="category[]" value="Saturday">
+                                    <label class="form-check-label">Saturday</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="category[]" value="Sunday">
+                                    <label class="form-check-label">Sunday</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="category[]" value="Monday">
+                                    <label class="form-check-label">Monday</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="category[]" value="Tuesday">
+                                    <label class="form-check-label">Tuesday</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="category[]" value="Wednesday">
+                                    <label class="form-check-label">Wednesday</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="category[]" value="Thursday">
+                                    <label class="form-check-label">Thursday</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="category[]" value="Friday">
+                                    <label class="form-check-label">Friday</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
+                            <h5>Which days of the week do you want to work?</h5>
+                            <label for="hour" class="form-label mr-1">8 Hours to</label>
+                            <input type="range" class="form-range" min="8" max="40" name="hour" id="customRange3">
+                            <label for="hour" class="form-label ml-">40 Hours</label>
+                          </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col p-2 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-info btn-lg">Submit</button>
+                            </div>
+                            <div class="col p-2 d-flex justify-content-center">
+                                <a href="{{url('volunteer')}}" class="btn btn-info btn-lg">Back</a>
+                            </div>
+                        </div>           
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    {{--  End of  Meet Our Volunteer Page --}}
-
-<div class="bg-light my-4 d-flex justify-content-center">
-    <a href="{{url('volunForm')}}" class="btn btn-primary">Join Our Volunteer Team</a>
-</div>
-
-
-
-
-
-
+ 
 
     <footer class="footer bg-green-300">
         <div class="footer_top">
