@@ -180,7 +180,9 @@
     </div>
     {{--  End of  Meet Our Volunteer Page --}}
 
-
+<div class="bg-light my-4 d-flex justify-content-center">
+    <a href="" class="btn btn-primary">Join Our Volunteer Team</a>
+</div>
 
 
 
