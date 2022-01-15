@@ -28,6 +28,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('volunteer', 'volunteer');
+
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/donor',[DonorController::class,'index'])->name('donor');
