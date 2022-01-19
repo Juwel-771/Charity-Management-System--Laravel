@@ -32,6 +32,7 @@ Route::get('/', function () {
 // Route for Volunteer
 Route::get('volunteer', [VolunteerController::class,'index']);
 Route::post('volunForm',[VolunteerController::class,'store']);
+Route::get('profile/{id}',[VolunteerController::class,'profile']);
 
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');

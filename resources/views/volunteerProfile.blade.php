@@ -161,32 +161,13 @@
         </div>
     </div>
 
-    {{--  Start of Meet Our Volunteer Page --}}
-    <div class="container mx-auto mt-4">
-        <div class="row">
-            <h1 class="text-center py-3 mt-3">Meet Our Volunteer</h1>
-            @foreach ($volunte as $volunteer)
-            <div class="col-md-3">
-                <div class="card" style="width: 15rem;">
-                    <img src="/storage/volunteer_images/{{$volunteer->file}}" class="card-img-top rounded-circle"
-                        alt="Volenteer">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">{{$volunteer->firstName}}</h5>
-                        <h6 class="card-subtitle mb-2 text-center text-muted">{{$volunteer->address_one}}</h6>
-                        <a href="/profile/{{$volunteer->id}}" class="btn ">Viwe Profile</a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
+    {{--  Start of Volunteer Profile Page --}}
+    
+    @foreach ($profile as $pro)
+        <h2>{{$pro->firstName}}</h2>
+    @endforeach
 
-
-    {{--  End of  Meet Our Volunteer Page --}}
-    <div class="bg-light my-4 d-flex justify-content-center">
-        <a href="{{url('volunForm')}}" class="btn btn-primary">Join Our Volunteer Team</a>
-    </div>
-
+    {{--  End of  Volunteer Profiler Page --}}
 
     {{-- Start of footer Section --}}
     <footer class="footer bg-green-300">
@@ -319,9 +300,6 @@
         </div>
     </footer>
     <!-- footer_end  -->
-
-
-
 
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>

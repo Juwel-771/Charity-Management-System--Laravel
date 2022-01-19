@@ -111,6 +111,12 @@ class VolunteerController extends Controller
         //
     }
 
+    public function profile($id)
+    {
+        $volunteer = Volunteer::find($id);
+
+        return view('volunteerProfile',['profile'=>$volunteer]);
+    }
     /**
      * Remove the specified resource from storage.
      *
