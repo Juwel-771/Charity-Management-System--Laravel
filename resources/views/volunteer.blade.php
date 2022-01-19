@@ -164,18 +164,19 @@
     {{--  Start of Meet Our Volunteer Page --}}
     <div class="container mx-auto mt-4">
         <div class="row">
-            <h1 class="text-center py-3">Meet Our Volunteer</h1>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/volenteer/1.png" class="card-img-top rounded-circle" alt="Volenteer">
+            <h1 class="text-center py-3 mt-3">Meet Our Volunteer</h1>
+            @foreach ($volunte as $volunteer)
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <img src="/storage/volunteer_images/{{$volunteer->file}}" class="card-img-top rounded-circle" alt="Volenteer">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-center text-muted">Card subtitle</h6>
-                        <a href="#" class="btn mr-2"><i class="fas fa-link"></i> Visit Site</a>
-                        <a href="#" class="btn "><i class="fab fa-github"></i> Github</a>
+                        <h5 class="card-title text-center">{{$volunteer->firstName}}</h5>
+                        <h6 class="card-subtitle mb-2 text-center text-muted">{{$volunteer->address_one}}</h6>
+                        <a href="#" class="btn "><i class="fab fa-github"></i> Viwe Profile</a>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
     {{--  End of  Meet Our Volunteer Page --}}
@@ -185,11 +186,7 @@
 </div>
 
 
-
-
-
-
-
+{{-- Start of footer Section --}}
     <footer class="footer bg-green-300">
         <div class="footer_top">
             <div class="container">

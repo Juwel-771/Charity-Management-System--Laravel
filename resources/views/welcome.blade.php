@@ -822,11 +822,11 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <p class="text-center ">
-                                Copyright &copy;
+                                Copyright &copy; 
                                 <script>
                                     document.write(new Date().getFullYear());
-
                                 </script>
+                                    Md Juwel
                             </p>
                         </p>
                     </div>

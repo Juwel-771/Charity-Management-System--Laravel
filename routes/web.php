@@ -30,8 +30,8 @@ Route::get('/', function () {
 });
 
 // Route for Volunteer
-Route::view('volunteer', 'volunteer');
-Route::view('volunForm', 'admin.volunForm');
+Route::get('volunteer', [VolunteerController::class,'index']);
+Route::post('volunForm',[VolunteerController::class,'store']);
 
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
@@ -71,6 +71,8 @@ Route::post('/goods',[GoodsController::class,'create']);
 Route::get('/blog',[BlogController::class,'index']);
 
 // Route for Admin Dashboard
+// Route for Volunteer
+Route::view('volunForm', 'admin.volunForm');
 // Route for Dashboard-Blog
 Route::view('/blogform', 'admin.blogform');
 Route::post('/blogform',[BlogController::class,'store']);

@@ -193,7 +193,7 @@
                         <div class="row d-flex justify-content-center my-4">
                             <div class="col-sm-10">
                                 <label for="email" class="form-label">E-mail: </label>
-                                <input type="email" name="heading" class="form-control">
+                                <input type="email" name="email" class="form-control">
                             </div>
                         </div>
 
@@ -239,31 +239,31 @@
                             <div class="col-sm-10">
                                 <h5>Which days of the week do you want to work?</h5>    
                                 <div class="form-check-inline">
-                                    <input type="checkbox" class="form-check-input" name="category[]" value="Saturday">
+                                    <input type="checkbox" class="form-check-input" name="category" value="Saturday">
                                     <label class="form-check-label">Saturday</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="checkbox" class="form-check-input" name="category[]" value="Sunday">
+                                    <input type="checkbox" class="form-check-input" name="category" value="Sunday">
                                     <label class="form-check-label">Sunday</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="checkbox" class="form-check-input" name="category[]" value="Monday">
+                                    <input type="checkbox" class="form-check-input" name="category" value="Monday">
                                     <label class="form-check-label">Monday</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="checkbox" class="form-check-input" name="category[]" value="Tuesday">
+                                    <input type="checkbox" class="form-check-input" name="category" value="Tuesday">
                                     <label class="form-check-label">Tuesday</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="checkbox" class="form-check-input" name="category[]" value="Wednesday">
+                                    <input type="checkbox" class="form-check-input" name="category" value="Wednesday">
                                     <label class="form-check-label">Wednesday</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="checkbox" class="form-check-input" name="category[]" value="Thursday">
+                                    <input type="checkbox" class="form-check-input" name="category" value="Thursday">
                                     <label class="form-check-label">Thursday</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="checkbox" class="form-check-input" name="category[]" value="Friday">
+                                    <input type="checkbox" class="form-check-input" name="category" value="Friday">
                                     <label class="form-check-label">Friday</label>
                                 </div>
                             </div>
@@ -271,10 +271,9 @@
 
                         <div class="d-flex justify-content-center my-4">
                             <div class="col-sm-10">
-                            <h5>Which days of the week do you want to work?</h5>
-                            <label for="hour" class="form-label mr-1">8 Hours to</label>
-                            <input type="range" class="form-range" min="8" max="40" name="hour" id="customRange3">
-                            <label for="hour" class="form-label ml-">40 Hours</label>
+                            <h5>How many hours do you want to work?</h5>
+                            <label for="hour" class="form-label mr-1">Select: 8 Hours to 40 Hours</label>
+                            <input type="text" name="workTime" class="form-control">
                           </div>
                         </div>
                        
