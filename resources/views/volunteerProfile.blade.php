@@ -163,9 +163,6 @@
 
     {{--  Start of Volunteer Profile Page --}}
     
-    @foreach ($profile as $pro)
-        <h2>{{$pro->firstName}}</h2>
-    @endforeach
 
     {{--  End of  Volunteer Profiler Page --}}
 

@@ -199,6 +199,20 @@
 
                         <div class="row d-flex justify-content-center my-4">
                             <div class="col-sm-10">
+                                <label for="education" class="form-label">Education: </label>
+                                <input type="text" name="education" class="form-control py-4">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
+                                <label for="description" class="form-label">Description: </label>
+                                <textarea name="description" class="form-control" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
                                 <label for="phone" class="form-label">Phone: </label>
                                 <input type="text" name="phone" class="form-control">
                             </div>
@@ -207,16 +221,22 @@
                         <div class="row d-flex justify-content-center my-4">
                             <div class="col-sm-5">
                                 <span>Address</span><br>
-                                <label for="address_one" class="form-label">Street Line 1 </label>
+                                <label for="address_one" class="form-label">Address Line 1 </label>
                                 <input type="text" name="address_one" class="form-control">
                             </div>
                             <div class="col-sm-5">
                                 <br>
-                                <label for="address_two" class="form-label">Street Line 2: </label>
+                                <label for="address_two" class="form-label">Address Line 2: </label>
                                 <input type="text" name="address_two" class="form-control">
                             </div>
                         </div>
 
+                        <div class="row d-flex justify-content-center my-4">
+                            <div class="col-sm-10">
+                                <label for="country" class="form-label">Country: </label>
+                                <input name="country" type="text" class="form-control"></input>
+                            </div>
+                        </div>
                         <div class="row d-flex justify-content-center my-4">
                             <div class="col-sm-10">
                                 <label for="city" class="form-label">City </label>
@@ -225,13 +245,17 @@
                         </div>
 
                         <div class="row d-flex justify-content-center my-4">
-                            <div class="col-sm-5">
+                            <div class="col-sm-3">
                                 <label for="state" class="form-label">State: </label>
                                 <input type="text" name="state" class="form-control">
                             </div>
-                            <div class="col-sm-5">
+                            <div class="col-sm-3">
                                 <label for="postalCode" class="form-label">Postal Code: </label>
                                 <input type="text" name="postalCode" class="form-control">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="postalOffice" class="form-label">Post Office: </label>
+                                <input type="text" name="postalOffice" class="form-control">
                             </div>
                         </div>
 

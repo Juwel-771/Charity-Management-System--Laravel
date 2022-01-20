@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div id="wrapper">
+    <div id="wrapper" class="bg-info">
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -99,6 +99,12 @@
                     <span>News & Update</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Volunteer</span></a>
+            </li>
+
             
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -109,36 +115,32 @@
 
         <!-- Content Wrapper -->
 
-
-        {{-- Blog Heading --}}
-
-        <div class="col-md-10">
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div class="col-md-12">
             <table class="table table-light table-hover text-center">
                 <thead class="table-dark">
                     <tr>
                         {{-- <th>Image</th> --}}
-                        <th>Blog Headline</th>
-                        <th>Category</th>
-                        <th>Date</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($blogs as $item)
+                    @foreach ($show as $item)
                     <tr>
-                        
                         {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
-                        <td class="border-bottom-primary">{{$item->heading}}</td>
-                        <td class="border-bottom-primary">{{$item->category}}</td>
-                        <td class="border-bottom-primary">{{$item->date}}</td>
+                        <td class="border-bottom-primary">{{$item->firstName}}</td>
+                        <td class="border-bottom-primary">{{$item->lastName}}</td>
+                        <td class="border-bottom-primary">{{$item->email}}</td>
+                        <td class="border-bottom-primary">{{$item->phone}}</td>
                         <td class="border-bottom-primary">
-                            <a href="{{url('/editblog',$item->id)}}" class="btn btn-info btn-sm">Edit</a>
-                            <a href="{{url('/destroy', $item->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="{{url('/edit',$item->id)}}" class="btn btn-info btn-sm">View</a>
                         </td>
-                    </tr>
-
-                    @endforeach
-                    
+                    </tr>    
+                    @endforeach         
                 </tbody>
             </table>
 
@@ -148,7 +150,5 @@
                         </div>
                     @endif
         </div>
-        {{-- EDTI-Button --}}
-        {{-- Delete-button --}}
     </div>
 </x-app-layout>

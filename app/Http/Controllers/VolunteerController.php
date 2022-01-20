@@ -71,6 +71,10 @@ class VolunteerController extends Controller
         $volunteer->postalCode=$request->postalCode;
         $volunteer->category=$request->category;
         $volunteer->workTime=$request->workTime;
+        $volunteer->education=$request->education;
+        $volunteer->description=$request->description;
+        $volunteer->country=$request->country;
+        $volunteer->postalOffice=$request->postalOffice;
         
         $volunteer->save();
 
@@ -88,6 +92,13 @@ class VolunteerController extends Controller
         //
     }
 
+    public function viewVolun()
+    {
+        $view = Volunteer::all();
+
+        return view('admin.volunShow',['show'=>$view]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -96,7 +107,9 @@ class VolunteerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $view = Volunteer::find($id);
+
+        return view('admin.editVolun',['show'=>$view]);
     }
 
     /**
@@ -108,7 +121,26 @@ class VolunteerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $volunteer = Volunteer::find($id);
+
+        $volunteer->firstName=$request->firstName;
+        $volunteer->lastName=$request->lastName;
+        $volunteer->email=$request->email;
+        $volunteer->phone=$request->phone;
+        $volunteer->address_one=$request->address_one;
+        $volunteer->address_two=$request->address_two;
+        $volunteer->city=$request->city;
+        $volunteer->state=$request->state;
+        $volunteer->postalCode=$request->postalCode;
+        $volunteer->category=$request->category;
+        $volunteer->workTime=$request->workTime;
+        $volunteer->education=$request->education;
+        $volunteer->description=$request->description;
+        $volunteer->country=$request->country;
+        $volunteer->postalOffice=$request->postalOffice;
+        
+        $volunteer->save();
+        return view('volunteer',['volunte'=>$volunteer]);
     }
 
     public function profile($id)
@@ -116,6 +148,7 @@ class VolunteerController extends Controller
         $volunteer = Volunteer::find($id);
 
         return view('volunteerProfile',['profile'=>$volunteer]);
+        
     }
     /**
      * Remove the specified resource from storage.

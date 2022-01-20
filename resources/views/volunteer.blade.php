@@ -168,12 +168,12 @@
             @foreach ($volunte as $volunteer)
             <div class="col-md-3">
                 <div class="card" style="width: 15rem;">
-                    <img src="/storage/volunteer_images/{{$volunteer->file}}" class="card-img-top rounded-circle"
+                    <img src="/storage/volunteer_images/{{$volunteer->file}}" 
                         alt="Volenteer">
                     <div class="card-body">
                         <h5 class="card-title text-center">{{$volunteer->firstName}}</h5>
                         <h6 class="card-subtitle mb-2 text-center text-muted">{{$volunteer->address_one}}</h6>
-                        <a href="/profile/{{$volunteer->id}}" class="btn ">Viwe Profile</a>
+                        <a href="#" class="btn ">Viwe Profile</a>
                     </div>
                 </div>
             </div>

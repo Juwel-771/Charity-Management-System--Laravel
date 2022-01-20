@@ -27,6 +27,10 @@ class CreateVolunteersTable extends Migration
             $table->string('postalCode');
             $table->string('category');
             $table->string('workTime');
+            $table->string('education');
+            $table->text('description');
+            $table->string('country');
+            $table->string('postalOffice');
             $table->timestamps();
         });
     }
