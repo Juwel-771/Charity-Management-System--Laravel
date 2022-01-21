@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApprovVolunteer;
 use App\Models\Volunteer;
 use Illuminate\Http\Request;
 
@@ -14,18 +15,43 @@ class VolunteerController extends Controller
      */
     public function index()
     {
-        $volunteer = Volunteer::all();
+        $volunteer = ApprovVolunteer::all();
         return view('volunteer',['volunte'=>$volunteer]);
     }
 
+    // public function imgShow()
+    // {
+    //     $img = Volunteer::all();
+    //     return view('volunteer',['imgShow'=>$img]);
+    // }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $volunteer = new ApprovVolunteer();
+
+        $volunteer->firstName=$request->firstName;
+        $volunteer->lastName=$request->lastName;
+        $volunteer->email=$request->email;
+        $volunteer->phone=$request->phone;
+        $volunteer->address_one=$request->address_one;
+        $volunteer->address_two=$request->address_two;
+        $volunteer->city=$request->city;
+        $volunteer->state=$request->state;
+        $volunteer->postalCode=$request->postalCode;
+        $volunteer->category=$request->category;
+        $volunteer->workTime=$request->workTime;
+        $volunteer->education=$request->education;
+        $volunteer->description=$request->description;
+        $volunteer->country=$request->country;
+        $volunteer->postalOffice=$request->postalOffice;
+        
+        $volunteer->save();
+
+        return redirect()->back()->with('message','Volunteer Approved');
     }
 
     /**
@@ -78,7 +104,7 @@ class VolunteerController extends Controller
         
         $volunteer->save();
 
-        return redirect()->back()->with('message','Your Form Submitted. We let you know through email');
+        return redirect()->back()->with('message','Your Form Submitted. We will let you know through email');
     }
 
     /**
@@ -121,26 +147,26 @@ class VolunteerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $volunteer = Volunteer::find($id);
+        // $volunteer = Volunteer::find($id);
 
-        $volunteer->firstName=$request->firstName;
-        $volunteer->lastName=$request->lastName;
-        $volunteer->email=$request->email;
-        $volunteer->phone=$request->phone;
-        $volunteer->address_one=$request->address_one;
-        $volunteer->address_two=$request->address_two;
-        $volunteer->city=$request->city;
-        $volunteer->state=$request->state;
-        $volunteer->postalCode=$request->postalCode;
-        $volunteer->category=$request->category;
-        $volunteer->workTime=$request->workTime;
-        $volunteer->education=$request->education;
-        $volunteer->description=$request->description;
-        $volunteer->country=$request->country;
-        $volunteer->postalOffice=$request->postalOffice;
+        // $volunteer->firstName=$request->firstName;
+        // $volunteer->lastName=$request->lastName;
+        // $volunteer->email=$request->email;
+        // $volunteer->phone=$request->phone;
+        // $volunteer->address_one=$request->address_one;
+        // $volunteer->address_two=$request->address_two;
+        // $volunteer->city=$request->city;
+        // $volunteer->state=$request->state;
+        // $volunteer->postalCode=$request->postalCode;
+        // $volunteer->category=$request->category;
+        // $volunteer->workTime=$request->workTime;
+        // $volunteer->education=$request->education;
+        // $volunteer->description=$request->description;
+        // $volunteer->country=$request->country;
+        // $volunteer->postalOffice=$request->postalOffice;
         
-        $volunteer->save();
-        return view('volunteer',['volunte'=>$volunteer]);
+        // $volunteer->save();
+        // return view('volunteer',['volunte'=>$volunteer]);
     }
 
     public function profile($id)

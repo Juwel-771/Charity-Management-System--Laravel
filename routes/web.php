@@ -31,13 +31,13 @@ Route::get('/', function () {
 
 // Route for Volunteer
 Route::get('volunteer', [VolunteerController::class,'index']);
+// Route::get('volunteer', [VolunteerController::class,'imgShow']);
 // Route::view('volunteer','volunteer');
 Route::post('volunForm',[VolunteerController::class,'store']);
 Route::get('profile/{id}',[VolunteerController::class,'profile']);
 Route::get('/volunShow',[VolunteerController::class,'viewVolun']);
 Route::get('/edit/{id}',[VolunteerController::class,'edit']);
-Route::put('/update/{id}',[VolunteerController::class,'update']);
-
+Route::post('/editVolun',[VolunteerController::class,'create']);
 
 
 Route::group(['middleware'=>['auth']],function(){
