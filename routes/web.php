@@ -38,6 +38,8 @@ Route::get('profile/{id}',[VolunteerController::class,'profile']);
 Route::get('/volunShow',[VolunteerController::class,'viewVolun']);
 Route::get('/edit/{id}',[VolunteerController::class,'edit']);
 Route::post('/editVolun',[VolunteerController::class,'create']);
+Route::view('volunForm', 'volunForm');
+
 
 
 Route::group(['middleware'=>['auth']],function(){
@@ -77,9 +79,7 @@ Route::post('/goods',[GoodsController::class,'create']);
 //Route for Blog
 Route::get('/blog',[BlogController::class,'index']);
 
-// Route for Admin Dashboard
-// Route for Volunteer
-Route::view('volunForm', 'admin.volunForm');
+// ---------------------------Start of Admin Dashboard Routes----------------------------
 // Route for Dashboard-Blog
 Route::view('/blogform', 'admin.blogform');
 Route::post('/blogform',[BlogController::class,'store']);
@@ -104,6 +104,8 @@ Route::get('/subscription',[SubscripController::class,'index']);
 Route::post('/',[SubscripController::class,'create']);
 Route::get('/destroy/{id}',[SubscripController::class,'destroy']);
 
+
+// ---------------------------Start of Admin Dashboard Routes----------------------------
 // Route for Volunteer 
 Route::post('/volunForm',[VolunteerController::class,'store']);
 

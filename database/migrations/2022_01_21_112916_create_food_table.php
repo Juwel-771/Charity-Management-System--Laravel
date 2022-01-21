@@ -14,12 +14,11 @@ class CreateFoodTable extends Migration
     public function up()
     {
         Schema::create('food', function (Blueprint $table) {
-            
-			$table->id();
+            $table->id();
             $table->string('category');
             $table->string('firstName');
             $table->string('lastName');
-            $table->integer('mobilePhone');
+            $table->string('mobilePhone');
             $table->string('email');
             $table->string('town');
             $table->string('state');
@@ -27,8 +26,6 @@ class CreateFoodTable extends Migration
             $table->string('heading');
             $table->longText('description');
             $table->string('selectMethod');
-            // $table->unsignedBigInteger('donor_id');
-            // $table->foreign('donor_id')->references('id')->on('donors')->nullable();
             $table->timestamps();
         });
     }

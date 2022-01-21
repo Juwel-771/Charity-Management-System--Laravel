@@ -239,7 +239,7 @@
 
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-6">
-                                <input name="postCode" class="form-control" id="email">
+                                <input type="text" name="postCode" class="form-control">
                                 <label class="form-label">Post Code: </label>
                         </div>
                     </div>

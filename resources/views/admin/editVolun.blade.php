@@ -95,14 +95,19 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="mt-5 text-center">
                                     <button class="btn btn-primary text-dark" type="submit">Approve</button>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="mt-5 text-center">
                                     <a href="#" class="btn btn-danger text-dark" type="submit">Reject</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mt-5 text-center">
+                                    <a href="{{url('volunShow')}}" class="btn btn-warning text-dark" type="submit">Back</a>
                                 </div>
                             </div>
                         </div>

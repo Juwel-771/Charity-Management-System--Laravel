@@ -33,6 +33,22 @@ class VolunteerController extends Controller
     {
         $volunteer = new ApprovVolunteer();
 
+        // $fileNameWithExt = $request->file('file')->getClientOriginalName();
+
+        // // Just File Name
+        // $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        // // Get With Extension
+        // $extension = $request->file('file')->getClientOriginalExtension();
+
+        // // Create a New File
+        // $fileNameToStore = $filename.'_'.time().'_'.$extension;
+
+        // // Upload Image
+        // $path = $request->file('file')->storeAs('public/volunteer_images',$fileNameToStore);
+
+        // $volunteer->file=$fileNameToStore;
+
         $volunteer->firstName=$request->firstName;
         $volunteer->lastName=$request->lastName;
         $volunteer->email=$request->email;
@@ -51,7 +67,7 @@ class VolunteerController extends Controller
         
         $volunteer->save();
 
-        return redirect()->back()->with('message','Volunteer Approved');
+        return redirect('/volunShow')->with('message','Volunteer Approved');
     }
 
     /**
