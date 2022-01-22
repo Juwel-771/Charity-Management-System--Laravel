@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonorController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\GoodsController;
+use App\Http\Controllers\MakeDonation;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\NewsCommnetController;
 use App\Http\Controllers\PostNewsController;
@@ -28,6 +29,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route for Make Donation
+Route::get('makeDonation',[MakeDonation::class,'index']);
+
 
 // Route for Volunteer
 Route::get('volunteer', [VolunteerController::class,'index']);

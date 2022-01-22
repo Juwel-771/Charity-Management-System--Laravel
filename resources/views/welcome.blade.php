@@ -58,8 +58,8 @@
                         <div class="col-xl-6 col-md-12 col-lg-8">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> +1 (454) 556-5656</a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i>Yourmail@gmail.com</a></li>
+                                    <li><a href="#"> <i class="fa fa-user"></i> Md Juwel</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>juwel@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                             </nav>
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a data-scroll-nav='1' href="#">Make a Donate</a>
+                                    <a data-scroll-nav='1' href="{{url('makeDonation')}}">Make a Donate</a>
                                 </div>
                             </div>
                         </div>
@@ -488,7 +488,7 @@
                             enim minim veniam, quis nostrud exercitation. tempor
                             incididunt ut labore dolore magna aliqua. enim minim
                             veniam, quis nostrud exercitation.</p>
-                        <a href="#" data-scroll-nav='1' class="boxed-btn4">Donate Now</a>
+                        <a href="{{url('makeDonation')}}" class="boxed-btn4">Donate Now</a>
                     </div>
                 </div>
             </div>
