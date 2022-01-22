@@ -50,7 +50,7 @@
     </div>
     @endif
 
-    {{-- Start of Header --}}
+    {{-- START OF HEADER --}}
     <header>
         <div class="header-area ">
             <div class="header-top_area">
@@ -143,9 +143,9 @@
         </div>
         </div>
     </header>
-{{-- END OF HEADER --}}
+    {{-- END OF HEADER SECTION --}}
 
-{{-- Start Of Image Slider --}}
+    {{-- START OF IMAGE SLIDER SECTION --}}
     <div class="slider_area">
         <div class="single_slider  d-flex align-items-center slider_make_1">
             <div class="container">
@@ -163,76 +163,53 @@
             </div>
         </div>
     </div>
-    {{-- END OF IMAGE SLIDER --}}
+    {{-- END OF IMAGE SLIDER   --}}
 
-    <div class="container">
+    {{-- start of food section --}}
+    <div class="container my-4">
         <div class="row">
-            <div class="col-sm-12 d-flex justify-content-center bg-info py-3 my-2 text-white">
-                <h2 class=" ">Donate</h2>
+            <div class="col-md-12">
+                <h2>Food Donation</h2>
             </div>
         </div>
     </div>
-{{-- START OF DONATE SECTION --}}
-    <div class="container-fluid mt-5 mb-5 bg-indigo-100">
-        <div class="row mx-5">
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/food.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="{{url('foodDonate')}}" class="card-text btn btn-outline-primary">Food Donate</a>
-                    </div>
+    <div class="container my-5>
+    <div class=" row">
+        <div class="col-md-8">
+            @foreach ($foods as $food)
+            <div class="card my-4">
+                <h5 class="card-header">{{$food->lastNmae}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{$food->heading}}</h5>
+                    <p class="card-text">{{$food->description}}</p>
+                    <button type="button" href="#" class="btn btn-outline-primary"  data-toggle="modal" data-target="#exampleModal">Contact</button>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/blood.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-danger">Blood Donate</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/cloth.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-info">Cloth Donate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row my-5 mx-5">
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/financial.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-dark">Financial Donate</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/goods.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-success">Donate Goods</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/medicine.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-warning">Medicine Donate</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-{{-- END OF DONATE SECTION --}}
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    {{-- end of food section --}}
 
     <footer class="footer bg-green-300">
         <div class="footer_top">
@@ -351,11 +328,12 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <p class="text-center ">
-                                Copyright &copy; 
+                                Copyright &copy;
                                 <script>
                                     document.write(new Date().getFullYear());
+
                                 </script>
-                                    Md Juwel
+                                Md Juwel
                             </p>
                         </p>
                     </div>
@@ -364,3 +342,30 @@
         </div>
     </footer>
     {{-- End of footer --}}
+    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>
+    <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/ajax-form.js')}}"></script>
+    <script src="{{asset('js/waypoints.min.js')}}"></script>
+    <script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/scrollIt.js')}}"></script>
+    <script src="{{asset('js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{asset('js/wow.min.js')}}"></script>
+    <script src="{{asset('js/nice-select.min.js')}}"></script>
+    <script src="{{asset('js/jquery.slicknav.min.js')}}"></script>
+    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('js/plugins.js')}}"></script>
+    <script src="{{asset('js/gijgo.min.js')}}"></script>
+    <!--contact js-->
+    <script src="{{asset('js/contact.js')}}"></script>
+    <script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{asset('js/jquery.form.js')}}"></script>
+    <script src="{{asset('js/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('js/mail-script.js')}}"></script>
+
+    <script src="{{asset('js/main.js')}}"></script>

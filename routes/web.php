@@ -32,6 +32,7 @@ Route::get('/', function () {
 
 // Route for Make Donation
 Route::get('makeDonation',[MakeDonation::class,'index']);
+Route::get('foodDonate',[MakeDonation::class,'food']);
 
 
 // Route for Volunteer

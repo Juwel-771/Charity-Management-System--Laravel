@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Approve_food;
 use Illuminate\Http\Request;
 
 class MakeDonation extends Controller
@@ -14,6 +15,12 @@ class MakeDonation extends Controller
     public function index()
     {
         return view('makeDonation');
+    }
+
+    public function food()
+    {
+        $food = Approve_food::all();
+        return view('donors.foodDonate',['foods'=>$food]);
     }
 
     /**
