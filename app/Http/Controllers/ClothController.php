@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Approve_cloth;
 use App\Models\Cloth;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,13 @@ class ClothController extends Controller
     public function index()
     {
         return view('donors.clothing');
+    }
+
+    public function clothShow()
+    {
+        $cloth = Cloth::all();
+
+        return view('admin.clothShow',['cloths'=>$cloth]);
     }
 
     /**
@@ -46,6 +54,29 @@ class ClothController extends Controller
 
     }
 
+    public function approve(Request $request)
+    {
+        $cloth = new Approve_cloth();
+        $cloth->firstName = $request->firstName;
+        $cloth->lastName = $request->lastName;
+        $cloth->mobilePhone = $request->mobilePhone;
+        $cloth->email = $request->email;
+        $cloth->town = $request->town;
+        $cloth->state = $request->state;
+        $cloth->postCode = $request->postCode;
+        $cloth->checkBox = $request->checkBox;
+        $cloth->size = $request->size;
+        $cloth->quantity = $request->quantity;
+        $cloth->location = $request->location;
+        $cloth->colthName = $request->colthName;
+        $cloth->status = $request->status;
+        $cloth->comment = $request->comment;
+       
+        $cloth->save();
+
+        return redirect('/clothShow')->with('message','Donation Approved');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -74,9 +105,11 @@ class ClothController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit_cloth($id)
     {
-        //
+        $cloth = Cloth::find($id);
+
+        return view('admin.clothEdit',['cloth'=>$cloth]);
     }
 
     /**

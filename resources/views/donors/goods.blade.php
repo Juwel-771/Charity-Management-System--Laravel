@@ -256,8 +256,7 @@
                             </div>
                             <div class="row">
                                 <div class="col p-2 d-flex justify-content-center">
-                                    <button type="submit"
-                                        class="btn btn-success btn-lg btn-block">Donate</button>
+                                    <button type="submit" class="btn btn-success btn-sm">Donate</button>
                                 </div>
                             </div>
                             </form>

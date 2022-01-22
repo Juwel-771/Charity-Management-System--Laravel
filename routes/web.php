@@ -115,11 +115,15 @@ Route::get('/bloodShow',[BloodController::class,'bloodShow']);
 Route::get('/edit_blood/{id}',[BloodController::class,'edit_blood']);
 Route::post('/bloodEdit',[BloodController::class,'approve']);
 
-//Route for Medicine-Dashboard
+// Route for Medicine-Dashboard
 Route::get('/medicineShow',[MedicineController::class,'medicineShow']);
 Route::get('/edit_medi/{id}',[MedicineController::class,'edit_medi']);
 Route::post('/medicineEdit',[MedicineController::class,'approve']);
 
+// Route for Cloth-Dashboard
+Route::get('/clothShow',[ClothController::class,'clothShow']);
+Route::get('/edit_cloth/{id}',[ClothController::class,'edit_cloth']);
+Route::post('/clothEdit',[ClothController::class,'approve']);
 
 
 // ---------------------------Start of Admin Dashboard Routes----------------------------
