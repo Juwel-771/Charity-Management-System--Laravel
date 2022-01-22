@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Approve_food;
 use App\Models\Food;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,12 @@ class FoodController extends Controller
     public function index()
     {
         return view('donors.food'); 
+    }
+
+    public function foodShow()
+    {
+        $food = Food::all();
+        return view('admin.foodShow',['food'=>$food]);
     }
 
     /**
@@ -70,11 +77,32 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit_food($id)
     {
-        //
+        $food = Food::find($id);
+
+        return view('admin.foodEdit',['foods'=>$food]);
     }
 
+    public function approve(Request $request)
+    {
+        $food = new Approve_food();
+
+        $food->firstName = $request->firstName;
+        $food->lastName = $request->lastName;
+        $food->mobilePhone = $request->mobilePhone;
+        $food->email = $request->email;
+        $food->town = $request->town;
+        $food->state = $request->state;
+        $food->postCode = $request->postCode;
+        $food->heading = $request->heading;
+        $food->description = $request->description;
+        $food->selectMethod = $request->selectMethod;
+
+        $food->save();
+
+        return redirect('/foodShow')->with('message','Donation Approved');
+    }
     /**
      * Update the specified resource in storage.
      *

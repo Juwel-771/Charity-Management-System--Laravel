@@ -107,9 +107,9 @@
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Food Donation</a>
-                        <a class="collapse-item" href="#">Blood Donation</a>
-                        <a class="collapse-item" href="#">Medicine Donation</a>
+                        <a class="collapse-item" href="{{url('foodShow')}}">Food Donation</a>
+                        <a class="collapse-item" href="{{url('bloodShow')}}">Blood Donation</a>
+                        <a class="collapse-item" href="{{url('medicineShow')}}">Medicine Donation</a>
                         <a class="collapse-item" href="#">Clothe Donation</a>
                         <a class="collapse-item" href="#">Donating Goods</a>
                     </div>
@@ -133,6 +133,39 @@
         <!-- Content Wrapper -->
 
     <div id="content-wrapper" class="d-flex flex-column">
-        
+        <div class="col-md-12">
+            <table class="table table-light table-hover text-center">
+                <thead class="table-primary">
+                    <tr>
+                        {{-- <th>Image</th> --}}
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($food as $foods)
+                    <tr>
+                        {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+                        <td class="border-bottom-primary">{{$foods->firstName}}</td>
+                        <td class="border-bottom-primary">{{$foods->lastName}}</td>
+                        <td class="border-bottom-primary">{{$foods->mobilePhone}}</td>
+                        <td class="border-bottom-primary">{{$foods->email}}</td>
+                        <td class="border-bottom-primary">
+                            <a href="{{url('/edit_food',$foods->id)}}" class="btn btn-primary btn-sm">View</a>
+                        </td>
+                    </tr>     
+                    @endforeach
+                </tbody>
+            </table>
+
+            @if (session()->has('message'))
+                        <div class="alert alert-primary">
+                            {{session('message')}}
+                        </div>
+                    @endif
+        </div> 
     </div>
 </x-app-layout>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Approve_medicine;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,14 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        return('donors.medicine');
+        return view('donors.medicine');
+    }
+
+    public function medicineShow()
+    {
+        $medicine = Medicine::all();
+        
+        return view('admin.medicineShow',['medi'=> $medicine]);
     }
 
     /**
@@ -47,6 +55,31 @@ class MedicineController extends Controller
         return redirect()->back();
     }
 
+    public function approve(Request $request)
+    {
+        $medicine = new Approve_medicine();
+        $medicine->firstName = $request->firstName;
+        $medicine->lastName = $request->lastName;
+        $medicine->mobilePhone = $request->mobilePhone;
+        $medicine->email = $request->email;
+        $medicine->town = $request->town;
+        $medicine->state = $request->state;
+        $medicine->postCode = $request->postCode;
+        $medicine->selectTime = $request->selectTime;
+        $medicine->selectDate = $request->selectDate;
+        $medicine->drugName = $request->drugName;
+        $medicine->lotNumber = $request->lotNumber;
+        $medicine->expireTime = $request->expireTime;
+        $medicine->source = $request->source;
+        $medicine->quantity = $request->quantity;
+        $medicine->ndc = $request->ndc;
+        $medicine->drugStrength = $request->drugStrength;
+
+        $medicine->save();
+
+        return redirect('/medicineShow')->with('message','Donation Approved');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -75,9 +108,11 @@ class MedicineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit_medi($id)
     {
-        //
+        $medicine = Medicine::find($id);
+        
+        return view('admin.medicineEdit',['medicine'=>$medicine]);
     }
 
     /**

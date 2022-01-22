@@ -135,7 +135,7 @@
     <div id="content-wrapper" class="d-flex flex-column">
         <div class="col-md-12">
             <table class="table table-light table-hover text-center">
-                <thead class="table-danger">
+                <thead class="table-warning">
                     <tr>
                         {{-- <th>Image</th> --}}
                         <th>First Name</th>
@@ -146,15 +146,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($blood as $bloods)
+                    @foreach ($medi as $medicine)
                     <tr>
                         {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
-                        <td class="border-bottom-danger">{{$bloods->firstName}}</td>
-                        <td class="border-bottom-danger">{{$bloods->lastName}}</td>
-                        <td class="border-bottom-danger">{{$bloods->mobilePhone}}</td>
-                        <td class="border-bottom-danger">{{$bloods->email}}</td>
-                        <td class="border-bottom-danger">
-                            <a href="{{url('/edit_blood',$bloods->id)}}" class="btn btn-danger btn-sm">View</a>
+                        <td class="border-bottom-warning">{{$medicine->firstName}}</td>
+                        <td class="border-bottom-warning">{{$medicine->lastName}}</td>
+                        <td class="border-bottom-warning">{{$medicine->mobilePhone}}</td>
+                        <td class="border-bottom-warning">{{$medicine->email}}</td>
+                        <td class="border-bottom-warning">
+                            <a href="{{url('/edit_medi',$medicine->id)}}" class="btn btn-warning btn-sm">View</a>
                         </td>
                     </tr>     
                     @endforeach
@@ -162,7 +162,7 @@
             </table>
 
             @if (session()->has('message'))
-                        <div class="alert alert-danger">
+                        <div class="alert alert-warning">
                             {{session('message')}}
                         </div>
                     @endif

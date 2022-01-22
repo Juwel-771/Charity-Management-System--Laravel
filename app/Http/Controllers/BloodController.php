@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Approve_blood;
 use App\Models\Blood;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,12 @@ class BloodController extends Controller
         return view('donors.blood');
     }
 
+    public function bloodShow()
+    {
+        $blood = Blood::all();
+
+        return view('admin.bloodShow',['blood'=>$blood]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -32,6 +39,7 @@ class BloodController extends Controller
         $blood->town = $request->town;
         $blood->state = $request->state;
         $blood->postCode = $request->postCode;
+        $blood->clinic = $request->clinic;
         $blood->selectTime = $request->selectTime;
         $blood->selectDate = $request->selectDate;
         $blood->description = $request->description;
@@ -40,6 +48,28 @@ class BloodController extends Controller
         $blood->save();
 
         return redirect()->back();
+    }
+
+    public function approve(Request $request)
+    {
+        $blood = new Approve_blood();
+
+        $blood->firstName = $request->firstName;
+        $blood->lastName = $request->lastName;
+        $blood->mobilePhone = $request->mobilePhone;
+        $blood->email = $request->email;
+        $blood->town = $request->town;
+        $blood->state = $request->state;
+        $blood->postCode = $request->postCode;
+        $blood->clinic = $request->clinic;
+        $blood->selectTime = $request->selectTime;
+        $blood->selectDate = $request->selectDate;
+        $blood->description = $request->description;
+        $blood->bloodGroup = $request->bloodGroup;
+
+        $blood->save();
+
+        return redirect('/bloodShow')->with('message','Donation Approved');
     }
 
     /**
@@ -70,9 +100,11 @@ class BloodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit_blood($id)
     {
-        //
+        $blood = Blood::find($id);
+
+        return view('admin.bloodEdit',['blood'=>$blood]);
     }
 
     /**

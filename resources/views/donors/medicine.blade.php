@@ -151,9 +151,9 @@
     <div class="container-fluid mb-5">
         <div class="row">
             <div class="col-md-12">
-                <div class="card bg-dark text-white">
-                    <img class="card-img img_opacity" src="{{ asset('img/medicine_form.jpg')}}" alt="Card image">
-                    <div class="card-img-overlay">
+                <div class="card text-white">
+                    {{-- <img class="card-img img_opacity" src="{{ asset('img/medicine_form.jpg')}}" alt="Card image"> --}}
+                    <div class="">
                         <div class="row d-flex justify-content-center my-3">
                             <div class="col-sm-3 fw-light fs-5 bg-success border border-success py-3">
                                 <h2>Donor Information: </h2>
@@ -164,104 +164,104 @@
                                 @csrf
                                 <div class="d-flex justify-content-center">
                                     <div class="col-sm-3">
-                                        <input type="text" name="firstName" class="form-control" id="firstName">
                                         <label for="firstName" class="form-label">First Name: </label>
+                                        <input type="text" name="firstName" class="form-control">
                                 </div>
     
                                 <div class="col-sm-3">
-                                        <input type="text" name="lastName" class="form-control" id="lastName">
-                                        <label for="lastName" class="form-label">Last Name: </label>
+                                    <label for="lastName" class="form-label">Last Name: </label>
+                                        <input type="text" name="lastName" class="form-control">
                                 </div>
                                 </div>
                         
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                        <input type="text" name="mobilePhone" class="form-control" id="mobilePhone">
-                                        <label for="mobilePhone" class="form-label">Mobile Phone: </label>
+                                    <label for="mobilePhone" class="form-label">Mobile Phone: </label>
+                                        <input type="text" name="mobilePhone" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                        <input type="email" name="email" class="form-control" id="email">
-                                        <label for="email" class="form-label">E-mail: </label>
+                                    <label for="email" class="form-label">E-mail: </label>
+                                        <input type="email" name="email" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                        <input type="text" name="town" class="form-control" id="email">
-                                        <label for="town" class="form-label">Town: </label>
+                                    <label for="town" class="form-label">Town: </label>
+                                        <input type="text" name="town" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-3">
-                                        <input type="text" name="state" class="form-control" id="email">
-                                        <label for="state" class="form-label">State: </label>
+                                    <label for="state" class="form-label">State: </label>
+                                        <input type="text" name="state" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                        <input type="text" name="postCode" class="form-control" id="email">
-                                        <label for="postCode" class="form-label">Post Code: </label>
+                                    <label for="postCode" class="form-label">Post Code: </label>
+                                        <input type="text" name="postCode" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-3">
-                                        <input type="time" name="selectTime" class="form-control" id="email">
-                                        <label for="postCode" class="form-label">Select Your Time: </label>
+                                    <label for="postCode" class="form-label">Select Your Time: </label>
+                                        <input type="time" name="selectTime" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                        <input type="date" name="selectDate" class="form-control" id="email">
-                                        <label for="postCode" class="form-label">Select Your Date: </label>
+                                    <label for="postCode" class="form-label">Select Your Date: </label>
+                                        <input type="date" name="selectDate" class="form-control">
                                 </div>
                             </div>
 
                             <br>
                             <div class="row d-flex justify-content-center my-3">
-                                <div class="col-sm-3 fw-light fs-5 bg-success border border-success py-3">
-                                    <h2>Medication Information: </h2>
+                                <div class="col-sm-3 fw-light text-center fs-5 bg-success border border-success border-radius-rounded py-3">
+                                    <h2 class="">Medicine  Info: </h2>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                        <input type="text" name="drugName" class="form-control" id="email">
-                                        <label for="town" class="form-label">Drug Name: </label>
+                                    <label for="town" class="form-label">Drug Name: </label>
+                                        <input type="text" name="drugName" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-3">
-                                        <input type="text" name="lotNumber" class="form-control" id="email">
-                                        <label for="town" class="form-label">Lot Number(if avaiable): </label>
+                                    <label for="town" class="form-label">Lot Number(if avaiable): </label>
+                                        <input type="text" name="lotNumber" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                        <input type="text" name="expireTime" class="form-control" id="email">
-                                        <label for="town" class="form-label">Expiration: </label>
+                                    <label for="town" class="form-label">Expiration: </label>
+                                        <input type="text" name="expireTime" class="form-control">
                                 </div>
-                                
+                        
                             </div>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-3">
-                                        <input type="text" name="source" class="form-control" id="email">
-                                        <label for="town" class="form-label">Source: </label>
+                                    <label for="town" class="form-label">Source: </label>
+                                        <input type="text" name="source" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                        <input type="text" name="quantity" class="form-control" id="email">
-                                        <label for="town" class="form-label">Quantity Remaining: </label>
+                                    <label for="town" class="form-label">Quantity Remaining: </label>
+                                        <input type="text" name="quantity" class="form-control">
                                 </div>
                                 
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-3">
-                                        <input type="text" name="ndc" class="form-control" id="email">
-                                        <label for="town" class="form-label text-dark">NDC#: </label>
+                                    <label for="town" class="form-label text-dark">NDC#: </label>
+                                        <input type="text" name="ndc" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                        <input type="text" name="drugStrength" class="form-control" id="email">
-                                        <label for="town" class="form-label text-dark">Drug Strength: </label>
+                                    <label for="town" class="form-label text-dark">Drug Strength: </label>
+                                        <input type="text" name="drugStrength" class="form-control">
                                 </div>
                                 
                             </div>

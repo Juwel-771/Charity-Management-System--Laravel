@@ -104,6 +104,23 @@ Route::get('/subscription',[SubscripController::class,'index']);
 Route::post('/',[SubscripController::class,'create']);
 Route::get('/destroy/{id}',[SubscripController::class,'destroy']);
 
+// Route for Food-Dashboard 
+// Route::view('foodShow','admin.foodShow');
+Route::get('/foodShow',[FoodController::class,'foodShow']);
+Route::get('/edit_food/{id}',[FoodController::class,'edit_food']);
+Route::post('/foodEdit',[FoodController::class,'approve']);
+
+// Route for Blood-Dashboard
+Route::get('/bloodShow',[BloodController::class,'bloodShow']);
+Route::get('/edit_blood/{id}',[BloodController::class,'edit_blood']);
+Route::post('/bloodEdit',[BloodController::class,'approve']);
+
+//Route for Medicine-Dashboard
+Route::get('/medicineShow',[MedicineController::class,'medicineShow']);
+Route::get('/edit_medi/{id}',[MedicineController::class,'edit_medi']);
+Route::post('/medicineEdit',[MedicineController::class,'approve']);
+
+
 
 // ---------------------------Start of Admin Dashboard Routes----------------------------
 // Route for Volunteer 

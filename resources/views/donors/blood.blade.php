@@ -176,70 +176,70 @@
                                 @csrf
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-sm-3">
-                                        <input type="text" name="firstName" class="form-control">
                                         <label for="firstName" class="form-label">First Name: </label>
+                                        <input type="text" name="firstName" class="form-control">
                                 </div>
     
                                 <div class="col-sm-3">
+                                    <label for="lastName" class="form-label">Last Name: </label>
                                         <input type="text" name="lastName" class="form-control">
-                                        <label for="lastName" class="form-label">Last Name: </label>
                                 </div>
                                 </div>
                             
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
+                                    <label for="mobilePhone" class="form-label">Mobile Phone: </label>
                                         <input type="text" name="mobilePhone" class="form-control">
-                                        <label for="mobilePhone" class="form-label">Mobile Phone: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
+                                    <label for="email" class="form-label">E-mail: </label>
                                         <input type="email" name="email" class="form-control">
-                                        <label for="email" class="form-label">E-mail: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
+                                    <label for="town" class="form-label">Town: </label>
                                         <input type="text" name="town" class="form-control">
-                                        <label for="town" class="form-label">Town: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-3">
+                                    <label for="state" class="form-label">State: </label>
                                         <input type="text" name="state" class="form-control">
-                                        <label for="state" class="form-label">State: </label>
                                 </div>
                                 <div class="col-sm-3">
+                                    <label for="postCode" class="form-label">Post Code: </label>
                                         <input type="text" name="postCode" class="form-control">
-                                        <label for="postCode" class="form-label">Post Code: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
+                                    <label for="clinic" class="form-label">Name Your Clinic: </label>
                                         <input type="text" name="clinic" class="form-control">
-                                        <label for="postCode" class="form-label">Name Your Clinic: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-3">
+                                    <label for="selectTime" class="form-label">Select Your Time: </label>
                                         <input type="time" name="selectTime" class="form-control" id="email">
-                                        <label for="selectTime" class="form-label">Select Your Time: </label>
                                 </div>
                                 <div class="col-sm-3">
+                                    <label for="postCode" class="form-label">Select Your Date: </label>
                                         <input type="date" name="selectDate" class="form-control" id="email">
-                                        <label for="postCode" class="form-label">Select Your Date: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                        <textarea name="description" class="form-control" id="description" cols="78" rows="3"></textarea>
-                                        <label for="postCode" class="form-label">Any Messages?  </label>
+                                    <label for="postCode" class="form-label">Any Messages?  </label>
+                                        <textarea name="description" class="form-control" id="description" cols="78" rows="3"></textarea><br>
                                 </div>
                             </div>
 
