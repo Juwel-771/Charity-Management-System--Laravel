@@ -125,6 +125,11 @@ Route::get('/clothShow',[ClothController::class,'clothShow']);
 Route::get('/edit_cloth/{id}',[ClothController::class,'edit_cloth']);
 Route::post('/clothEdit',[ClothController::class,'approve']);
 
+// Route for Goods-Dashboard
+Route::get('/goodsShow',[GoodsController::class,'goodsShow']);
+Route::get('/edit_goods/{id}',[GoodsController::class,'edit_goods']);
+Route::post('/goodEdit',[GoodsController::class,'approve']);
+
 
 // ---------------------------Start of Admin Dashboard Routes----------------------------
 // Route for Volunteer 

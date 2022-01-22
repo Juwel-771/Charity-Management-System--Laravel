@@ -162,56 +162,56 @@
                             <form action="" method="POST">
                                 @csrf
                                 <div class="d-flex justify-content-center">
-                                    <div class="col-sm-3">
-                                        <input type="text" name="firstName" class="form-control" id="firstName">
+                                    <div class="col-sm-6">
+                                        <input type="text" name="firstName" class="form-control">
                                         <label for="firstName" class="form-label">First Name: </label>
                                 </div>
-                                <div class="col-sm-3">
-                                        <input type="text" name="lastName" class="form-control" id="lastName">
+                                <div class="col-sm-6">
+                                        <input type="text" name="lastName" class="form-control">
                                         <label for="lastName" class="form-label">Last Name: </label>
                                 </div>
                                 </div>
                         
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6">
-                                        <input type="text" name="mobilePhone" class="form-control" id="mobilePhone">
+                                <div class="col-sm-12">
+                                        <input type="text" name="mobilePhone" class="form-control">
                                         <label for="mobilePhone" class="form-label">Mobile Phone: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6">
-                                        <input type="email" name="email" class="form-control" id="email">
+                                <div class="col-sm-12">
+                                        <input type="email" name="email" class="form-control">
                                         <label for="email" class="form-label">E-mail: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6">
-                                        <input type="text" name="town" class="form-control" id="email">
+                                <div class="col-sm-12">
+                                        <input type="text" name="town" class="form-control">
                                         <label for="town" class="form-label">Town: </label>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-3">
-                                        <input type="text" name="state" class="form-control" id="email">
+                                <div class="col-sm-6">
+                                        <input type="text" name="state" class="form-control">
                                         <label for="state" class="form-label">State: </label>
                                 </div>
-                                <div class="col-sm-3">
-                                        <input type="text" name="postCode" class="form-control" id="email">
+                                <div class="col-sm-6">
+                                        <input type="text" name="postCode" class="form-control">
                                         <label for="postCode" class="form-label">Post Code: </label>
                                 </div>
                             </div>
                             <br>
                             <div class="row d-flex justify-content-center my-3">
-                                <div class="col-sm-3 fw-light fs-5 bg-success border border-success py-3">
+                                <div class="col-sm-6 fw-light fs-5 bg-success border border-success py-3">
                                     <h2>Goods Information: </h2>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6 mb-4">
+                                <div class="col-sm-12 mb-4">
                                     <select class="custom-select form-control" name="item">
                                         <option selected>Select Your Goods Category: </option>
                                         <option value="Convenience Products">Convenience Products</option>
@@ -225,23 +225,23 @@
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-3">
-                                        <input type="text" name="goodsName" class="form-control" id="email">
+                                <div class="col-sm-6">
+                                        <input type="text" name="goodsName" class="form-control">
                                         <label for="town" class="form-label">Goods Name:  </label>
                                 </div>
-                                <div class="col-sm-3">                    
-                                        <input type="text" name="quantity" class="form-control" id="email">
+                                <div class="col-sm-6">                    
+                                        <input type="text" name="quantity" class="form-control">
                                         <label for="town" class="form-label">Quantity: </label>                    
                                 </div>
 
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-3">
-                                        <input type="text" name="conditions" class="form-control" id="email">
+                                <div class="col-sm-6">
+                                        <input type="text" name="conditions" class="form-control">
                                         <label for="town" class="form-label">Conditions: </label>                           
                                 </div>
-                                <div class="col-sm-3">          
-                                        <input type="text" name="pickPoin" class="form-control" id="email">
+                                <div class="col-sm-6">          
+                                        <input type="text" name="pickPoin" class="form-control">
                                         <label for="town" class="form-label">Pick-up Point: </label>
 
                                 </div>
@@ -249,7 +249,7 @@
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                         <textarea name="description" class="form-control" id="description" cols="78" rows="3"></textarea>
                                         <label for="postCode" class="form-label">Any Messages?:  </label>
                                 </div>

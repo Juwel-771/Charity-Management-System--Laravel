@@ -169,7 +169,7 @@
                     {{-- <img class="card-img img_opacity" src="{{ asset('img/cloth_form.jpg')}}" alt="Card image"> --}}
                     <div class="card-img-overlay">
                         <div class="row d-flex justify-content-center my-3">
-                            <div class="col-sm-3 fw-light fs-5 bg-info border border-info py-3">
+                            <div class="col-sm-6 fw-light fs-5 bg-info border border-info py-3">
                                 <h2>Donor Information: </h2>
                             </div>
                         </div>
@@ -177,18 +177,18 @@
                             <form action="" method="POST">
                                 @csrf
                                 <div class="d-flex justify-content-center">
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-6">
                                         <label for="firstName" class="form-label">First Name: </label>
                                         <input type="text" name="firstName" class="form-control">
                                     </div>
     
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                     <label for="lastName" class="form-label">Last Name: </label>
                                         <input type="text" name="lastName" class="form-control" id="lastName">
                                 </div>
                                 </div>                 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
 
                                     <label for="mobilePhone" class="form-label">Mobile Phone: </label>
                                         <input type="text" name="mobilePhone" class="form-control" id="mobilePhone">
@@ -196,25 +196,25 @@
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <label for="email" class="form-label">E-mail: </label>
                                         <input type="email" name="email" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
 
                                     <label for="town" class="form-label">Town: </label>
                                         <input type="text" name="town" class="form-control">
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                     <label for="state" class="form-label">State: </label>
                                         <input type="text" name="state" class="form-control">
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                     <label for="postCode" class="form-label">Post Code: </label>
                                         <input type="text" name="postCode" class="form-control">
                                 </div>
@@ -223,13 +223,13 @@
 
                             <br>
                             <div class="row d-flex justify-content-center my-3">
-                                <div class="col-sm-3 fw-light fs-5 bg-info border border-info py-3">
+                                <div class="col-sm-12 fw-light fs-5 bg-info border border-info py-3">
                                     <h2>Cloth Information: </h2>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                         <h2 class="fw-bold fs-4 mb-2">Please Select Your Cloth Types: </h2>
                                         <div class="form-check-inline">
                                             <label class="form-check-label" for="exampleCheck1">Male</label>
@@ -250,31 +250,31 @@
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                         <input type="text" name="size" class="form-control" id="email">
                                         <label for="town" class="form-label">Size: </label>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                         <input type="text" name="quantity" class="form-control" id="email">
                                         <label for="town" class="form-label">Quantity: </label>
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                         <input type="text" name="location" class="form-control" id="email">
                                         <label for="town" class="form-label">Location: </label>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                         <input type="text" name="colthName" class="form-control" id="email">
                                         <label for="town" class="form-label">Cloth Name: </label>
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                         <input type="text" name="status" class="form-control" id="email">
                                         <label for="town" class="form-label">Status: </label>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                         <input type="text" name="comment" class="form-control" id="email">
                                         <label for="town" class="form-label">Comment: </label>
                                 </div>

@@ -199,60 +199,60 @@
                     </div>
 
                 <div class="row my-4 d-flex justify-content-center">
-                    <div class="col-sm-3">
+                    <div class="col-sm-6">
                             <input type="text" name="firstName" class="form-control">
                             <label class="form-label">First Name: </label>
                     </div>
-
-                    <div class="col-sm-3">
+                
+                    <div class="col-sm-6">
                             <input type="text" name="lastName" class="form-control">
                             <label class="form-label">Last Name: </label>
                     </div>
-
+                </div>
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                                 <input type="text" name="mobilePhone" class="form-control" ">
                                 <label class="form-label">Mobile Phone: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                                 <input type="email" name="email" class="form-control">
                                 <label class="form-label">E-mail: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                                 <input type="text" name="town" class="form-control">
                                 <label class="form-label">Town: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                                 <input type="text" name="state" class="form-control">
                                 <label class="form-label">State: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                                 <input type="text" name="postCode" class="form-control">
                                 <label class="form-label">Post Code: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                                 <input type="text" name="heading" class="form-control">
                                 <label class="form-label">Headline:  </label>
                         </div>
                     </div>                    
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                                 <textarea name="description" class="form-control"  cols="78" rows="10"></textarea>
                                 <br>
                                 <label class="form-label">Description:  </label>
@@ -260,7 +260,7 @@
                     </div>
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <select class="custom-select form-control" name="selectMethod">
                                 <option selected>Select Method</option>
                                 <option value="Home">Home</option>
