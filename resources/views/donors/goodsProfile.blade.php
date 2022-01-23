@@ -50,7 +50,7 @@
     </div>
     @endif
 
-    {{-- Start of Header --}}
+    {{-- START OF HEADER --}}
     <header>
         <div class="header-area ">
             <div class="header-top_area">
@@ -81,7 +81,7 @@
                             in</a>
 
                         @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="text-sm ml-3 mt-4 btn btn-info btn-sm">Register</a>
+                        <a href="{{ route('register') }}" class="text-sm ml-3 mt-4 btn btn-success btn-sm">Register</a>
                         @endif
                         @endauth
                     </div>
@@ -124,7 +124,7 @@
                                     <li><a href="#">Charities</a></li>
                                     <li><a href="#">Auction</a></li>
                                     {{-- <li><a href="#">Donate</a></li> --}}
-                                    <li><a href="#">Project</a></li>
+                                    <li><a href="#">project</a></li>
                                     <li><a href="#">About</a></li>
                                 </ul>
                             </nav>
@@ -143,9 +143,9 @@
         </div>
         </div>
     </header>
-{{-- END OF HEADER --}}
+    {{-- END OF HEADER SECTION --}}
 
-{{-- Start Of Image Slider --}}
+    {{-- START OF IMAGE SLIDER SECTION --}}
     <div class="slider_area">
         <div class="single_slider  d-flex align-items-center slider_make_1">
             <div class="container">
@@ -163,77 +163,77 @@
             </div>
         </div>
     </div>
-    {{-- END OF IMAGE SLIDER --}}
+    {{-- END OF IMAGE SLIDER   --}}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 d-flex justify-content-center bg-info py-3 my-2 text-white">
-                <h2 class=" ">Donate</h2>
+    {{-- start of food section --}}
+   <div class="container">
+       <div class="row">
+           <div class="col-md-12">
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-success btn btn-success py-2 rounded-pill">
+                    <button class="font-weight-light">Description: </button>
+                </div>
             </div>
-        </div>
-    </div>
-{{-- START OF DONATE SECTION --}}
-    <div class="container-fluid mt-5 mb-5 bg-indigo-100">
-        <div class="row mx-5">
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/food.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="{{url('foodDonate')}}" class="card-text btn btn-outline-primary">Food Donate</a>
-                    </div>
+            <p class="font-weight-light" style="font-size: 2rem;color:black">{{$pro4->goodsName}}</p><br><br>
+            <div class="row">
+                <div class="col-sm-9">
+                    <p>{{$pro4->description}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9 my-2">
+                    <p>Conditions:{{$pro4->conditions}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Quantity: {{$pro4->quantity}}</h3>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Item Name: {{$pro4->item}}</h3>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-success btn btn-success py-2 rounded-pill">
+                    <button class="font-weight-light">Address: </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">Town: {{$pro4->town}}</li>
+                        <li class="list-group-item">State: {{$pro4->state}}</li>
+                        <li class="list-group-item">Post Code: {{$pro4->postCode}}</li>
+                        <li class="list-group-item">Post Code: {{$pro4->pickPoin}}</li>
+                      </ul>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/blood.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="{{url('bloodDonate')}}" class="card-text btn btn-outline-danger">Blood Donate</a>
-                    </div>
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-success btn btn-success py-2 rounded-pill">
+                    <button class="font-weight-light">Contact information: </button>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/cloth.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="{{url('clothDonate')}}" class="card-text btn btn-outline-info">Cloth Donate</a>
-                    </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">Name: {{$pro4->firstName}} {{$pro4->lastName}}</li>
+                        <li class="list-group-item">E-mail: {{$pro4->email}}</li>
+                        <li class="list-group-item">Phone: {{$pro4->mobilePhone}}</li>
+                      </ul>
                 </div>
             </div>
-        </div>
-
-        <div class="row my-5 mx-5">
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/financial.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-dark">Financial Donate</a>
-                    </div>
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-success btn btn-success py-2 rounded-pill">
+                    <a href="{{url('goodsDonate')}}" class="font-weight-light text-white" >Back </a>
                 </div>
             </div>
+           </div>
+       </div>
+   </div>
+    {{-- end of food section --}}
 
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/goods.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="{{url('goodsDonate')}}" class="card-text btn btn-outline-success">Donate Goods</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/donate/medicine.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-warning">Medicine Donate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-{{-- END OF DONATE SECTION --}}
-
+    
     <footer class="footer bg-green-300">
         <div class="footer_top">
             <div class="container">
@@ -297,7 +297,7 @@
                             </h3>
                             <div class="contacts">
                                 <p>+2(305) 587-3407 <br>
-                                    info@loveuscharity.com <br>
+                                    success@loveuscharity.com <br>
                                     Flat 20, Reynolds Neck, North
                                     Helenaville, FV77 8WS
                                 </p>
@@ -316,7 +316,7 @@
                                             <img src="img/news/news_1.png" alt="">
                                         </a>
                                     </div>
-                                    <div class="info">
+                                    <div class="success">
                                         <a href="#">
                                             <h4>School for African
                                                 Childrens</h4>
@@ -330,7 +330,7 @@
                                             <img src="img/news/news_2.png" alt="">
                                         </a>
                                     </div>
-                                    <div class="info">
+                                    <div class="success">
                                         <a href="#">
                                             <h4>School for African
                                                 Childrens</h4>
@@ -351,11 +351,12 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <p class="text-center ">
-                                Copyright &copy; 
+                                Copyright &copy;
                                 <script>
                                     document.write(new Date().getFullYear());
+
                                 </script>
-                                    Md Juwel
+                                Md Juwel
                             </p>
                         </p>
                     </div>
@@ -364,3 +365,30 @@
         </div>
     </footer>
     {{-- End of footer --}}
+    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>
+    <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/ajax-form.js')}}"></script>
+    <script src="{{asset('js/waypoints.min.js')}}"></script>
+    <script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/scrollIt.js')}}"></script>
+    <script src="{{asset('js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{asset('js/wow.min.js')}}"></script>
+    <script src="{{asset('js/nice-select.min.js')}}"></script>
+    <script src="{{asset('js/jquery.slicknav.min.js')}}"></script>
+    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('js/plugins.js')}}"></script>
+    <script src="{{asset('js/gijgo.min.js')}}"></script>
+    <!--contact js-->
+    <script src="{{asset('js/contact.js')}}"></script>
+    <script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{asset('js/jquery.form.js')}}"></script>
+    <script src="{{asset('js/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('js/mail-script.js')}}"></script>
+
+    <script src="{{asset('js/main.js')}}"></script>
