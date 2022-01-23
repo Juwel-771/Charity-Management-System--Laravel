@@ -197,7 +197,7 @@
                 <div class="card" style="width: 25rem;">
                     <img src="img/donate/cloth.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-info">Cloth Donate</a>
+                        <a href="{{url('clothDonate')}}" class="card-text btn btn-outline-info">Cloth Donate</a>
                     </div>
                 </div>
             </div>

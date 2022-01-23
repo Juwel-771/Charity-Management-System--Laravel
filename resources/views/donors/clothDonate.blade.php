@@ -169,7 +169,7 @@
     <div class="container my-4">
         <div class="row">
             <div class="col-md-10">
-                <h2>Blood Donation</h2>
+                <h2>Cloth Donation</h2>
             </div>
 
             <div class="col-md-2">
@@ -180,20 +180,20 @@
     <div class="container my-5>
     <div class=" row">
         <div class="col-md-8">
-            @foreach ($bloods as $blood)
+            @foreach ($cloths as $cloth)
             <div class="card my-4">
-                <h5 class="card-header">Blood Donation</h5>
+                <h5 class="card-header">Cloth Donation</h5>
                 <div class="card-body">
-                    <h5 class="card-title">{{$blood->heading}}</h5>
-                    <p class="card-text">{{$blood->description}}</p>
-                    <a type="button" href="{{url('bloodProfile',$blood->id)}}" class="btn btn-outline-danger">Contact</a>
+                    <h5 class="card-title">{{$cloth->colthName}}</h5>
+                    <p class="card-text">{{$cloth->status}}</p>
+                    <a type="button" href="{{url('clothProfile',$cloth->id)}}" class="btn btn-outline-danger">Contact</a>
                 </div>
             </div>
             @endforeach
         </div>
         <div class="row">
             <div class="col-sm-6 my-3">
-                {{$bloods->links()}}
+                {{$cloths->links()}}
             </div>
         </div>
     </div>

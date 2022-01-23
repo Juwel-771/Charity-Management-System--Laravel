@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Approve_blood;
+use App\Models\Approve_cloth;
 use App\Models\Approve_food;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,7 @@ class MakeDonation extends Controller
         return view('makeDonation');
     }
 
+    // ALL DONATION PROFILE FUNCTION
     public function food()
     {
         $food = Approve_food::paginate(3);
@@ -28,6 +30,11 @@ class MakeDonation extends Controller
     {
         $blood = Approve_blood::paginate(3);
         return view('donors.bloodDonate',['bloods'=>$blood]);
+    }
+    public function cloth()
+    {
+        $cloth = Approve_cloth::paginate(3);
+        return view('donors.clothDonate',['cloths'=>$cloth]);
     }
 
 
@@ -46,6 +53,12 @@ class MakeDonation extends Controller
         return view('donors.bloodProfile',['pro2'=>$profile2]);
     }
     
+    public function cloth_profile($id)
+    {
+        $profile3 = Approve_cloth::find($id);
+
+        return view('donors.clothProfile',['pro3'=>$profile3]);
+    }
    
 
     

@@ -181,7 +181,7 @@
         <div class="col-md-8">
             @foreach ($foods as $food)
             <div class="card my-4">
-                <h5 class="card-header">{{$food->lastNmae}}</h5>
+                <h5 class="card-header">Food Donation</h5>
                 <div class="card-body">
                     <h5 class="card-title">{{$food->heading}}</h5>
                     <p class="card-text">{{$food->description}}</p>

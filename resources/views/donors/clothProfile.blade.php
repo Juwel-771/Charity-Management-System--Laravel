@@ -124,7 +124,7 @@
                                     <li><a href="#">Charities</a></li>
                                     <li><a href="#">Auction</a></li>
                                     {{-- <li><a href="#">Donate</a></li> --}}
-                                    <li><a href="#">Project</a></li>
+                                    <li><a href="#">pro2ject</a></li>
                                     <li><a href="#">About</a></li>
                                 </ul>
                             </nav>
@@ -166,41 +166,71 @@
     {{-- END OF IMAGE SLIDER   --}}
 
     {{-- start of food section --}}
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-md-10">
-                <h2>Blood Donation</h2>
-            </div>
-
-            <div class="col-md-2">
-                <a href="{{url('makeDonation')}}" class="btn btn-danger">Back</a>
-            </div>
-        </div>
-    </div>
-    <div class="container my-5>
-    <div class=" row">
-        <div class="col-md-8">
-            @foreach ($bloods as $blood)
-            <div class="card my-4">
-                <h5 class="card-header">Blood Donation</h5>
-                <div class="card-body">
-                    <h5 class="card-title">{{$blood->heading}}</h5>
-                    <p class="card-text">{{$blood->description}}</p>
-                    <a type="button" href="{{url('bloodProfile',$blood->id)}}" class="btn btn-outline-danger">Contact</a>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-10">
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-danger btn btn-danger py-2 rounded-pill">
+                    <button class="font-weight-light">Description: </button>
                 </div>
             </div>
-            @endforeach
-        </div>
-        <div class="row">
-            <div class="col-sm-6 my-3">
-                {{$bloods->links()}}
+            <p class="font-weight-light" style="font-size: 4rem;color:black">Blood Group: {{$pro2->bloodGroup}}</p><br><br>
+            <div class="row">
+                <div class="col-sm-9 my-5">
+                    <p>{{$pro2->description}}</p>
+                </div>
             </div>
-        </div>
-    </div>
-    
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3>Date: {{$pro2->selectDate}}</h3>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Time: {{$pro2->selectTime}}</h3>
+                </div>
+                <div class="col-sm-6">
+                    <h3>Clinic: {{$pro2->clinic}}</h3>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-danger btn btn-danger py-2 rounded-pill">
+                    <button class="font-weight-light">Address: </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">Town: {{$pro2->town}}</li>
+                        <li class="list-group-item">State: {{$pro2->state}}</li>
+                        <li class="list-group-item">Post Code: {{$pro2->postCode}}</li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-danger btn btn-danger py-2 rounded-pill">
+                    <button class="font-weight-light">Contact Information: </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">Name: {{$pro2->firstName}} {{$pro2->lastName}}</li>
+                        <li class="list-group-item">E-mail: {{$pro2->email}}</li>
+                        <li class="list-group-item">Phone: {{$pro2->mobilePhone}}</li>
+                      </ul>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-danger btn btn-danger py-2 rounded-pill">
+                    <a href="{{url('bloodDonate')}}" class="font-weight-light text-white" >Back </a>
+                </div>
+            </div>
+           </div>
+       </div>
+   </div>
     {{-- end of food section --}}
 
-
+    
     <footer class="footer bg-green-300">
         <div class="footer_top">
             <div class="container">
