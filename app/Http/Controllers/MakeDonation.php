@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Approve_blood;
 use App\Models\Approve_food;
 use Illuminate\Http\Request;
 
@@ -19,9 +20,18 @@ class MakeDonation extends Controller
 
     public function food()
     {
-        $food = Approve_food::all();
+        $food = Approve_food::paginate(3);
         return view('donors.foodDonate',['foods'=>$food]);
     }
+
+    public function blood()
+    {
+        $blood = Approve_blood::paginate(3);
+        return view('donors.bloodDonate',['bloods'=>$blood]);
+    }
+
+
+
 
     public function profile($id)
     {
@@ -29,68 +39,16 @@ class MakeDonation extends Controller
 
         return view('donors.foodProfile',['pro'=>$profile]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function blood_profile($id)
     {
-        //
-    }
+        $profile2 = Approve_blood::find($id);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('donors.bloodProfile',['pro2'=>$profile2]);
     }
+    
+   
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         //

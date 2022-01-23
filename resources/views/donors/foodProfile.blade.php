@@ -199,6 +199,26 @@
                       </ul>
                 </div>
             </div>
+
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-primary btn btn-primary py-2 rounded-pill">
+                    <button class="font-weight-light">Contact Information: </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">Name: {{$pro->firstName}} {{$pro->lastName}}</li>
+                        <li class="list-group-item">E-mail: {{$pro->email}}</li>
+                        <li class="list-group-item">Phone: {{$pro->mobilePhone}}</li>
+                      </ul>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-primary btn btn-primary py-2 rounded-pill">
+                    <a href="{{url('foodDonate')}}" class="font-weight-light text-white" >Back </a>
+                </div>
+            </div>
            </div>
        </div>
    </div>

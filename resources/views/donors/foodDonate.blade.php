@@ -168,8 +168,11 @@
     {{-- start of food section --}}
     <div class="container my-4">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <h2>Food Donation</h2>
+            </div>
+            <div class="col-md-2">
+                <a href="{{url('makeDonation')}}" class="btn btn-primary">Back</a>
             </div>
         </div>
     </div>
@@ -187,7 +190,13 @@
             </div>
             @endforeach
         </div>
+        <div class="row">
+            <div class="col-sm-6 my-3">
+                {{$foods->links()}}
+            </div>
+        </div>
     </div>
+    
     {{-- end of food section --}}
 
 
