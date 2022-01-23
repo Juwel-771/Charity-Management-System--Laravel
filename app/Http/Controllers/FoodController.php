@@ -121,8 +121,16 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyFood($id)
     {
-        //
+        $food = Food::destroy($id);
+
+        return redirect('/foodShow')->with('message','Donation Approval Rejected');
     }
+    // public function deleteFood($id)
+    // {
+    //     $food = Approve_food::destroy($id);
+
+    //     return redirect('/foodShow')->with('message','Donation Post Deleted');
+    // }
 }

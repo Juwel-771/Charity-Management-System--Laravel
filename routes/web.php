@@ -124,6 +124,8 @@ Route::get('/destroy/{id}',[SubscripController::class,'destroy']);
 Route::get('/foodShow',[FoodController::class,'foodShow']);
 Route::get('/edit_food/{id}',[FoodController::class,'edit_food']);
 Route::post('/foodEdit',[FoodController::class,'approve']);
+Route::get('/destroy_food/{id}',[FoodController::class,'destroyFood']);
+// Route::get('/delete_food/{id}',[FoodController::class,'deleteFood']);
 
 // Route for Blood-Dashboard
 Route::get('/bloodShow',[BloodController::class,'bloodShow']);

@@ -103,7 +103,7 @@
                         <div class="main-menu">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="#">Home</a></li>
+                                    <li><a href="{{url('/')}}">Home</a></li>
                                     <li><a href="{{url('blog')}}">Blog</a></li>
                                     <li><a href="#">Donations<i class="ti-angle-down"></i></a>
                                         <ul class="submenu">

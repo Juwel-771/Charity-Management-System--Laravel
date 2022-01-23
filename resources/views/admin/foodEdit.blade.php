@@ -105,12 +105,17 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="mt-5 text-center">
-                                        <a href="#" class="btn btn-primary text-white" type="submit">Reject</a>
+                                        <a href="{{url('/destroy_food',$foods->id)}}" class="btn btn-primary text-white" type="submit">Reject</a>
                                     </div>
                                 </div>
+                                {{-- <div class="col-sm-4">
+                                    <div class="mt-5 text-center">
+                                        <a href="{{url('/delete_food',$foods->id)}}" class="btn btn-primary text-white" type="submit">Delete Donation</a>
+                                    </div>
+                                </div> --}}
                                 <div class="col-sm-4">
                                     <div class="mt-5 text-center">
-                                        <a href="#" class="btn btn-primary text-white" type="submit">Back</a>
+                                        <a href="{{url('foodShow')}}" class="btn btn-primary text-white" type="submit">Back</a>
                                     </div>
                             </div>
                         </div>
