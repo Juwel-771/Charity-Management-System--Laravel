@@ -23,6 +23,13 @@ class MakeDonation extends Controller
         return view('donors.foodDonate',['foods'=>$food]);
     }
 
+    public function profile($id)
+    {
+        $profile = Approve_food::find($id);
+
+        return view('donors.foodProfile',['pro'=>$profile]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
