@@ -81,7 +81,7 @@
                     <span>Contact Request</span></a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Reason For Helping</span></a>
@@ -97,7 +97,7 @@
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>News & Update</span></a>
-            </li>
+            </li> --}}
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseFour"

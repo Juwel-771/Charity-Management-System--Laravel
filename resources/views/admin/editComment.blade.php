@@ -81,7 +81,7 @@
                     <span>Contact Request</span></a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Reason For Helping</span></a>
@@ -97,6 +97,29 @@
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>News & Update</span></a>
+            </li> --}}
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+                aria-expanded="true" aria-controls="collapseFour" href="#">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Donation Request</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('foodShow')}}">Food Donation</a>
+                        <a class="collapse-item" href="{{url('bloodShow')}}">Blood Donation</a>
+                        <a class="collapse-item" href="{{url('medicineShow')}}">Medicine Donation</a>
+                        <a class="collapse-item" href="{{url('clothShow')}}">Clothe Donation</a>
+                        <a class="collapse-item" href="{{url('goodsShow')}}">Donating Goods</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('volunShow')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Volunteer</span></a>
             </li>
 
             
