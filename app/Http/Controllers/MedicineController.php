@@ -133,8 +133,10 @@ class MedicineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyMedi($id)
     {
-        //
+        $medicine = Medicine::destroy($id);
+
+        return redirect('/medicineShow')->with('message','Donation Request Declined');
     }
 }

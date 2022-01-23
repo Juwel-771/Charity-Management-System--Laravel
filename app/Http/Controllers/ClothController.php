@@ -130,8 +130,10 @@ class ClothController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy_cloth($id)
     {
-        //
+        $cloth = Cloth::destroy($id);
+
+        return redirect('/clothShow')->with('message','Donor Application Rejected');
     }
 }

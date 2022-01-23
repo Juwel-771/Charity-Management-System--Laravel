@@ -138,7 +138,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-6 text-center">
                             <div class="mt-5 text-center">
-                                <a href="#" class="btn btn-danger btn-lg btn-block text-white" type="submit">Back</a>
+                                <a href="{{url('/bloodShow')}}" class="btn btn-danger btn-lg btn-block text-white" type="submit">Back</a>
                             </div>
                     </div>
                     </div>

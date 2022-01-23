@@ -127,7 +127,7 @@ class BloodController extends Controller
      */
     public function destroyBlood($id)
     {
-        $blood = Approve_blood::destroy($id);
+        $blood = Blood::destroy($id);
 
         return redirect('/bloodShow')->with('message','Donation Approval Rejected');
     }

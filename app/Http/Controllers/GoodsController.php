@@ -126,8 +126,10 @@ class GoodsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy_good($id)
     {
-        //
+        $good = Good::destroy($id);
+
+        return redirect('/goodsShow')->with('message','Donation Application Rejected');
     }
 }

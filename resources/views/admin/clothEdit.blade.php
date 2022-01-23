@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="mt-5 text-center">
-                                        <a href="#" class="btn btn-info text-white" type="submit">Reject</a>
+                                        <a href="{{url('/destroy_cloth',$cloth->id)}}" class="btn btn-info text-white" type="submit">Reject</a>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">

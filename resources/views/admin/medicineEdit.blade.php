@@ -144,12 +144,12 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="mt-5 text-center">
-                                            <a href="#" class="btn btn-warning" type="submit">Reject</a>
+                                            <a href="{{url('/destroy_medi',$medicine->id)}}" class="btn btn-warning" type="submit">Reject</a>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="mt-5 text-center">
-                                            <a href="#" class="btn btn-warning" type="submit">Back</a>
+                                            <a href="{{url('/medicineShow')}}" class="btn btn-warning" type="submit">Back</a>
                                         </div>
                                 </div>
                             </div>

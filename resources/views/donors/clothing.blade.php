@@ -251,31 +251,31 @@
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                        <input type="text" name="size" class="form-control" id="email">
+                                        <input type="text" name="size" class="form-control">
                                         <label for="town" class="form-label">Size: </label>
                                 </div>
                                 <div class="col-sm-6">
-                                        <input type="text" name="quantity" class="form-control" id="email">
+                                        <input type="text" name="quantity" class="form-control">
                                         <label for="town" class="form-label">Quantity: </label>
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                        <input type="text" name="location" class="form-control" id="email">
+                                        <input type="text" name="location" class="form-control">
                                         <label for="town" class="form-label">Location: </label>
                                 </div>
                                 <div class="col-sm-6">
-                                        <input type="text" name="colthName" class="form-control" id="email">
+                                        <input type="text" name="colthName" class="form-control">
                                         <label for="town" class="form-label">Cloth Name: </label>
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                        <input type="text" name="status" class="form-control" id="email">
+                                        <input type="text" name="status" class="form-control">
                                         <label for="town" class="form-label">Status: </label>
                                 </div>
                                 <div class="col-sm-6">
-                                        <input type="text" name="comment" class="form-control" id="email">
+                                        <input type="text" name="comment" class="form-control">
                                         <label for="town" class="form-label">Comment: </label>
                                 </div>
                             </div>

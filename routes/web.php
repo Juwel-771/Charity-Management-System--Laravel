@@ -137,16 +137,19 @@ Route::get('/destroy_blood/{id}',[BloodController::class,'destroyBlood']);
 Route::get('/medicineShow',[MedicineController::class,'medicineShow']);
 Route::get('/edit_medi/{id}',[MedicineController::class,'edit_medi']);
 Route::post('/medicineEdit',[MedicineController::class,'approve']);
+Route::get('/destroy_medi/{id}',[MedicineController::class,'destroyMedi']);
 
 // Route for Cloth-Dashboard
 Route::get('/clothShow',[ClothController::class,'clothShow']);
 Route::get('/edit_cloth/{id}',[ClothController::class,'edit_cloth']);
 Route::post('/clothEdit',[ClothController::class,'approve']);
+Route::get('/destroy_cloth/{id}',[ClothController::class,'destroy_cloth']);
 
 // Route for Goods-Dashboard
 Route::get('/goodsShow',[GoodsController::class,'goodsShow']);
 Route::get('/edit_goods/{id}',[GoodsController::class,'edit_goods']);
 Route::post('/goodEdit',[GoodsController::class,'approve']);
+Route::get('/destroy_goods/{id}',[GoodsController::class,'destroy_good']);
 
 
 // ---------------------------Start of Admin Dashboard Routes----------------------------
