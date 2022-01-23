@@ -36,10 +36,12 @@ Route::get('foodDonate',[MakeDonation::class,'food']);
 Route::get('bloodDonate',[MakeDonation::class,'blood']);
 Route::get('clothDonate',[MakeDonation::class,'cloth']);
 Route::get('goodsDonate',[MakeDonation::class,'goods']);
+Route::get('mediDonate',[MakeDonation::class,'medicine']);
 Route::get('/foodProfile/{id}',[MakeDonation::class,'profile']);
 Route::get('/bloodProfile/{id}',[MakeDonation::class,'blood_profile']);
 Route::get('/clothProfile/{id}',[MakeDonation::class,'cloth_profile']);
 Route::get('/goodsProfile/{id}',[MakeDonation::class,'goods_profile']);
+Route::get('/medicineProfile/{id}',[MakeDonation::class,'medicine_profile']);
 
 
 // Route for Volunteer

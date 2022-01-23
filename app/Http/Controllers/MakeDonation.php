@@ -6,6 +6,7 @@ use App\Models\Approve_blood;
 use App\Models\Approve_cloth;
 use App\Models\Approve_food;
 use App\Models\Approve_good;
+use App\Models\Approve_medicine;
 use Illuminate\Http\Request;
 
 class MakeDonation extends Controller
@@ -42,6 +43,11 @@ class MakeDonation extends Controller
         $goods = Approve_good::paginate(3);
         return view('donors.goodsDonate',['good'=>$goods]);
     }
+    public function medicine()
+    {
+        $medicines = Approve_medicine::paginate(3);
+        return view('donors.medicineDonate',['medicine'=>$medicines]);
+    }
 
 
 
@@ -70,6 +76,12 @@ class MakeDonation extends Controller
         $profile4 = Approve_good::find($id);
 
         return view('donors.goodsProfile',['pro4'=>$profile4]);
+    }
+    public function medicine_profile($id)
+    {
+        $profile5 = Approve_medicine::find($id);
+
+        return view('donors.medicineProfile',['pro5'=>$profile5]);
     }
    
 
