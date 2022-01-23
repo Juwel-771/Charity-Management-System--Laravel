@@ -131,6 +131,7 @@ Route::get('/destroy_food/{id}',[FoodController::class,'destroyFood']);
 Route::get('/bloodShow',[BloodController::class,'bloodShow']);
 Route::get('/edit_blood/{id}',[BloodController::class,'edit_blood']);
 Route::post('/bloodEdit',[BloodController::class,'approve']);
+Route::get('/destroy_blood/{id}',[BloodController::class,'destroyBlood']);
 
 // Route for Medicine-Dashboard
 Route::get('/medicineShow',[MedicineController::class,'medicineShow']);

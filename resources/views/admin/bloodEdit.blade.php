@@ -131,7 +131,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="mt-5 text-center">
-                                    <a href="#" class="btn btn-danger text-white" type="submit">Reject</a>
+                                    <a href="{{url('/destroy_blood',$blood->id)}}" class="btn btn-danger text-white" type="submit">Reject</a>
                                 </div>
                             </div>
                     </div>
