@@ -173,7 +173,7 @@
             </div>
 
             <div class="col-md-2">
-                <a href="{{url('makeDonation')}}" class="btn btn-danger">Back</a>
+                <a href="{{url('makeDonation')}}" class="btn btn-info">Back</a>
             </div>
         </div>
     </div>
@@ -186,7 +186,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$cloth->colthName}}</h5>
                     <p class="card-text">{{$cloth->status}}</p>
-                    <a type="button" href="{{url('clothProfile',$cloth->id)}}" class="btn btn-outline-danger">Contact</a>
+                    <a type="button" href="{{url('clothProfile',$cloth->id)}}" class="btn btn-outline-info">Contact</a>
                 </div>
             </div>
             @endforeach
