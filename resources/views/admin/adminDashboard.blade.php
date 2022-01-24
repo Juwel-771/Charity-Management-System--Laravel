@@ -133,6 +133,12 @@
         <!-- Content Wrapper -->
 
     <div id="content-wrapper" class="d-flex flex-column">
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1>Cover Image: </h1>
+                </div>
+            </div>
+        </div>
     </div>
 </x-app-layout>
