@@ -6,6 +6,7 @@ use App\Http\Controllers\BloodController;
 use App\Http\Controllers\ClothController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonorController;
+use App\Http\Controllers\EventOrganizeController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\GoodsController;
 use App\Http\Controllers\MakeDonation;
@@ -177,5 +178,13 @@ Route::post('/volunForm',[VolunteerController::class,'store']);
 // Route::view('clothing', 'donors.clothing');
 Route::view('financial', 'donors.financial');
 Route::view('goods', 'donors.goods');
+
+
+
+// ---------------------------------- Routed For NGO Dashboard --------------------
+// Route For Event Organization
+// Route::view('event','ngo.event');
+Route::get('/event',[EventOrganizeController::class,'index']);
+Route::post('/event',[EventOrganizeController::class,'store']);
 
 require __DIR__.'/auth.php';

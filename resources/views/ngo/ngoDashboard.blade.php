@@ -38,7 +38,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('event')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Organize Auction</span></a>
             </li>
@@ -50,9 +50,17 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#eventsOne"
+                aria-expanded="true" aria-controls="eventsOne" href="#">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Organize Event</span></a>
+                    <span>Events</span>
+                </a>
+                <div id="eventsOne" class="collapse" aria-labelledby="eventsOne" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('event')}}">Organize Events</a>
+                        <a class="collapse-item" href="#">Events</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">

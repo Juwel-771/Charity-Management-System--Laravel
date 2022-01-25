@@ -225,7 +225,7 @@
         <div class="row mx-5">
             <div class="col-md-4">
                 <div class="card" style="width: 25rem;">
-                    <img src="img/volunteer.jpg" class="card-img-top" alt="...">
+                    <img src="img/volunteer.jpg" class="card-img-top" style="width: 25rem;" alt="...">
                     <div class="card-body">
                         <a href="{{url('volunteer')}}" class="card-text btn btn-outline-success">Volunteer</a>
                     </div>
@@ -234,7 +234,7 @@
 
             <div class="col-md-4">
                 <div class="card" style="width: 25rem;">
-                    <img src="img/volunteer.jpg" class="card-img-top" alt="...">
+                    <img src="img/event.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <a href="" class="card-text btn btn-outline-success">Events</a>
                     </div>
@@ -243,7 +243,7 @@
 
             <div class="col-md-4">
                 <div class="card" style="width: 25rem;">
-                    <img src="img/volunteer.jpg" class="card-img-top" alt="...">
+                    <img src="img/camp.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <a href="" class="card-text btn btn-outline-success">Campaigns</a>
                     </div>
@@ -254,7 +254,7 @@
         <div class="row my-5 mx-5">
             <div class="col-md-4">
                 <div class="card" style="width: 25rem;">
-                    <img src="img/volunteer.jpg" class="card-img-top" alt="...">
+                    <img src="img/sdg.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <a href="" class="card-text btn btn-outline-success">SDG's Goals</a>
                     </div>
@@ -263,7 +263,7 @@
 
             <div class="col-md-4">
                 <div class="card" style="width: 25rem;">
-                    <img src="img/volunteer.jpg" class="card-img-top" alt="...">
+                    <img src="img/auction.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <a href="" class="card-text btn btn-outline-success">Auction History</a>
                     </div>
@@ -272,7 +272,7 @@
 
             <div class="col-md-4">
                 <div class="card" style="width: 25rem;">
-                    <img src="img/volunteer.jpg" class="card-img-top" alt="...">
+                    <img src="img/ngo.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <a href="" class="card-text btn btn-outline-success">NGO's</a>
                     </div>
@@ -281,8 +281,8 @@
         </div>
     </div>
 
-    <div class="container my-5  ">
-        <div class="row">
+    <div class="container">
+        <div class="row mt-5">
             <div class="col-md-6">
                 <img src="{{ asset('img/support.png')}}" alt="">
             </div>
