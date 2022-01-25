@@ -186,5 +186,7 @@ Route::view('goods', 'donors.goods');
 // Route::view('event','ngo.event');
 Route::get('/event',[EventOrganizeController::class,'index']);
 Route::post('/event',[EventOrganizeController::class,'store']);
+Route::get('events',[EventOrganizeController::class,'eventPage']);
+Route::get('/eventProfile/{id}',[EventOrganizeController::class,'eventProfile']);
 
 require __DIR__.'/auth.php';

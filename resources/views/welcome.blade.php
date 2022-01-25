@@ -236,7 +236,7 @@
                 <div class="card" style="width: 25rem;">
                     <img src="img/event.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-success">Events</a>
+                        <a href="{{url('events')}}" class="card-text btn btn-outline-success">Events</a>
                     </div>
                 </div>
             </div>

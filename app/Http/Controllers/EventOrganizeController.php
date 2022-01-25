@@ -16,6 +16,16 @@ class EventOrganizeController extends Controller
     {
         return view('ngo.event');
     }
+    public function eventPage()
+    {
+        $events = OrganizeEvent::all();
+        return view('eventsPage',['event'=>$events]);
+    }
+    public function eventProfile($id)
+    {
+        $profile = OrganizeEvent::find($id);
+        return view('ngo.eventProfile',['pro_eve'=>$profile]);
+    }
 
     /**
      * Show the form for creating a new resource.
