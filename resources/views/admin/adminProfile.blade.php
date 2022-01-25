@@ -23,8 +23,8 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
 
-            <li class="nav-item">                  
-                <a class="nav-link" href="{{url('adminProfile')}}">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Dashboard</span>
                 </a>
@@ -133,27 +133,27 @@
         <!-- Content Wrapper -->
 
     <div id="content-wrapper" class="d-flex flex-column">
-        {{-- <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h4 class="text-center text-black">Admin Profile</h4><br>
                     <div class="row">
-                        @foreach ($admins as $item)
+                        {{-- @foreach ($admins as $item) --}}
                         <div class="col-md-4">
-                            <h1>{{$item->file}}</h1>
+                            {{-- <h1>{{$item->file}}</h1> --}}
                         </div>
                         <div class="col-md-8">
-                            <p>{{$item->name}}</p>
+                            {{-- <p>{{$item->name}}</p> --}}
                             <table>
                                 <td>
                                     <a href="{{url('/adminForm')}}" class="btn btn-primary">Edit</a>
                                 </td>
                             </table>
                         </div>
-                        @endforeach
+                        {{-- @endforeach --}}
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 </x-app-layout>

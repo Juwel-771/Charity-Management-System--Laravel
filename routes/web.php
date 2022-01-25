@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodController;
 use App\Http\Controllers\ClothController;
@@ -95,6 +96,14 @@ Route::post('/goods',[GoodsController::class,'create']);
 Route::get('/blog',[BlogController::class,'index']);
 
 // ---------------------------Start of Admin Dashboard Routes----------------------------
+
+// Admin Profile
+// Route::get('/adminProfile/{id}',[AdminController::class,'show']);
+Route::view('/adminProfile','admin.adminProfile');
+// Route::get('/adminProfile/{id}',[AdminController::class,'show']);
+Route::get('/adminForm',[AdminController::class,'index']);
+Route::post('/adminForm',[AdminController::class,'store']);
+
 // Route for Dashboard-Blog
 Route::view('/blogform', 'admin.blogform');
 Route::post('/blogform',[BlogController::class,'store']);

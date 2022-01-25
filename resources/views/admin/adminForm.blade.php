@@ -23,8 +23,8 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
 
-            <li class="nav-item">                  
-                <a class="nav-link" href="{{url('adminProfile')}}">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Dashboard</span>
                 </a>
@@ -133,27 +133,30 @@
         <!-- Content Wrapper -->
 
     <div id="content-wrapper" class="d-flex flex-column">
-        {{-- <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="text-center text-black">Admin Profile</h4><br>
-                    <div class="row">
-                        @foreach ($admins as $item)
-                        <div class="col-md-4">
-                            <h1>{{$item->file}}</h1>
+                    <form action="/adminForm" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="col-md-6">
+                            <label for="file">Upload Image: </label>
+                            <input type="file" class="form-control" name="file">
                         </div>
-                        <div class="col-md-8">
-                            <p>{{$item->name}}</p>
-                            <table>
-                                <td>
-                                    <a href="{{url('/adminForm')}}" class="btn btn-primary">Edit</a>
-                                </td>
-                            </table>
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Name: </label>
+                            <input type="name" name="name" class="form-control"><br><br>
+
                         </div>
-                        @endforeach
-                    </div>
+                        <div class="col-md-6">
+                            <label for="description">About: </label>
+                            <textarea name="about" class="form-control" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="col-md-6 my-3">
+                            <button type="submit" class="btn btn-info">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 </x-app-layout>

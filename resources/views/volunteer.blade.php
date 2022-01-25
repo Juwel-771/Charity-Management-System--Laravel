@@ -164,19 +164,23 @@
     {{--  Start of Meet Our Volunteer Page --}}
     <div class="container mx-auto mt-4">
         <div class="row">
-            <h1 class="text-center py-3 mt-3">Meet Our Volunteer</h1>
-            @foreach ($volunte as $volunteer)
-            <div class="col-md-3">
-                <div class="card" style="width: 15rem;">
-                        <img src="/storage/volunteer_images/{{$volunteer->file}}" alt="Volenteer">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">{{$volunteer->firstName}}</h5>
-                        <h6 class="card-subtitle mb-2 text-center text-muted">{{$volunteer->address_one}}</h6>
-                        <a href="#" class="btn ">Viwe Profile</a>
+            <div class="col-md-12">
+                <h1 class="text-center py-3 mt-3">Meet Our Volunteer</h1>
+                <div class="row">
+                    @foreach ($volunte as $volunteer)
+                <div class="col-md-3">
+                    <div class="card" style="width: 15rem;">
+                            <img src="/storage/volunteer_images/{{$volunteer->file}}" alt="Volenteer">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{$volunteer->firstName}}</h5>
+                            <h6 class="card-subtitle mb-2 text-center text-muted">{{$volunteer->address_one}}</h6>
+                            <a href="#" class="btn ">Viwe Profile</a>
+                        </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
+            </div>
         </div>
     </div>
 
