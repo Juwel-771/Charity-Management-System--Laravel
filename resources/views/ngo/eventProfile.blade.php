@@ -176,8 +176,34 @@
                                     <div class="card-header">
                                       <h3>{{$pro_eve->eventName}}</h3>
                                     </div>
-                                  <p class="card-text">{{$pro_eve->description}}</p>
+                                  <p class="card-text">{{$pro_eve->description}}</p><br>
+                                  <p class="card-text">{{$pro_eve->purpose}}</p>
+                                  <div class="row mt-3">
+                                    <div class="col-sm-6">
+                                        <h5> Event Type: {{$pro_eve->eventType}}</h5>
+                                        <h5> Locatin: {{$pro_eve->location}}</h5>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h5> Event Time: {{$pro_eve->time}}</h5>
+                                        <h5> Event Date: {{$pro_eve->date}}</h5>
+                                    </div>
+                                  </div>
+                                  <div class="row my-2">
+                                    <div class="col-sm-12">
+                                        <h3>Out Sponsor: {{$pro_eve->eventSponsor}}</h3>
+                                    </div>
+                                  </div>
                                 </div>
+                                <div class="row m-4">
+                                    <div class="col-sm-10">
+                                        <h3>This Event will promoted by: {{$pro_eve->promote}}</h3>
+                                    </div>
+                                  </div>
+                                  <div class="row my-2 d-flex justify-content-center ">
+                                    <div class="col-sm-5">
+                                        <a href="" class="btn btn-outline-primary">Join Event</a>
+                                    </div>
+                                  </div>
                               </div>
                             </div>
                           </div>
