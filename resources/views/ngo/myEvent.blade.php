@@ -80,7 +80,25 @@
         <!-- Content Wrapper -->
 
     <div id="content-wrapper" class="d-flex flex-column">
-
-
+        <table class="table table-light table-hover text-center">
+            <thead class="table-info">
+                <tr>
+                    {{-- <th>Image</th> --}}
+                    <th>Event Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($eveMy as $myEve)
+                <tr>
+                    {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+                    <td class="border-bottom-info">{{$myEve->eventName}}</td>
+                    <td class="border-bottom-info">
+                        <a href="{{url('/ngoProfile',$myEve->id)}}" class="btn btn-outline-info btn-sm">View</a>
+                    </td>
+                </tr>     
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </x-app-layout>

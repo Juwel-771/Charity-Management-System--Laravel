@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventMember;
 use App\Models\OrganizeEvent;
 use Illuminate\Http\Request;
 
@@ -24,9 +25,27 @@ class EventOrganizeController extends Controller
     public function eventProfile($id)
     {
         $profile = OrganizeEvent::find($id);
-        return view('ngo.eventProfile',['pro_eve'=>$profile]);
+        return view('eventProfile',['pro_eve'=>$profile]);
     }
 
+    public function joinEvent($id)
+    {
+        $evePro = OrganizeEvent::find($id);
+        return view('joinEvent',['proEve'=>$evePro]);
+    }
+
+    public function myEvent()
+    {
+        $myEv =  OrganizeEvent::all();
+        return view('ngo.myEvent',['eveMy'=>$myEv]);
+    }
+
+    public function eventProfileNog($id)
+    {
+        
+        $profilengo = OrganizeEvent::find($id);
+        return view('ngo.ngoProfile',['pro_eve'=>$profilengo]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -89,6 +108,20 @@ class EventOrganizeController extends Controller
         return redirect()->back()->with('message','Event Created');
     }
 
+    public function EventMember(Request $request)
+    {
+        $mem = new EventMember();
+        
+        $mem->even_name = $request->even_name;
+        $mem->parti_name = $request->parti_name;
+        $mem->phone_numb = $request->phone_numb;
+        $mem->email = $request->email;
+        $mem->msg = $request->msg;
+
+        $mem->save();
+
+        return redirect('events')->with('mess','You Joined to Events. Please attend on that time');
+    }
     /**
      * Display the specified resource.
      *

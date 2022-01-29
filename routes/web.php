@@ -187,6 +187,11 @@ Route::view('goods', 'donors.goods');
 Route::get('/event',[EventOrganizeController::class,'index']);
 Route::post('/event',[EventOrganizeController::class,'store']);
 Route::get('events',[EventOrganizeController::class,'eventPage']);
-Route::get('/eventProfile/{id}',[EventOrganizeController::class,'eventProfile']);
+Route::get('eventProfile/{id}',[EventOrganizeController::class,'eventProfile']);
+Route::get('/ngoProfile/{id}',[EventOrganizeController::class,'eventProfileNog']);
+Route::get('joinEvent/{id}',[EventOrganizeController::class,'joinEvent']);
+Route::post('joinEvent/{id}',[EventOrganizeController::class,'EventMember']);
+Route::get('/myEvent',[EventOrganizeController::class,'myEvent']);
+
 
 require __DIR__.'/auth.php';

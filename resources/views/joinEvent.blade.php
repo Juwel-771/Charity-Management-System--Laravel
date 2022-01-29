@@ -165,37 +165,50 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="alert alert-success">
-                    @if (session()->has('mess'))
-                        {{session('mess')}}
-                    @endif
-                </div>
-                @foreach ($event as $events)
-                <div class="row d-flex justify-content-center my-5">
-                    <div class="col-md-10">
-                        <div class="card border-success mb-3" style="max-width: 900px;">
-                            <div class="row no-gutters">
-                              <div class="col-md-4">
-                                <img src="/storage/events_images/{{$events->file}}" alt="event image">
-                              </div>
-                              <div class="col-md-8">
-                                <div class="card-body">
-                                  <h5 class="card-title">{{$events->orgName}}</h5>
-                                    <div class="card-header">
-                                      <h3>{{$events->eventName}}</h3>
-                                    </div>
-                                  <p class="card-text">{{$events->description}}</p>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <h4>{{$events->eventType}}</h4>
-                                    <a href="{{url('eventProfile',$events->id)}}" class="btn btn-info btn-sm">View</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-8">
+                        <img src="/storage/events_images/{{$proEve->file}}" alt="event image"> 
                     </div>
                 </div>
-                @endforeach                
+                <form action="joinEvent" method="POST">
+                    @csrf
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-8">
+                            <label class="form-label">Event Name: </label>
+                            <input type="text" name="even_name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-4">
+                            <label class="form-label">Name: </label>
+                            <input type="text" name="parti_name" class="form-control">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="form-label">Phone Number: </label>
+                            <input type="text" name="phone_numb" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-8">
+                            <label class="form-label">E-mail: </label>
+                            <input type="email" name="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-8">
+                            <label class="form-label">Message: </label>
+                            <textarea name="msg" cols="82" class="form-control" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-dark">Join</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="{{url('events')}}" class="btn btn-danger">Back</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

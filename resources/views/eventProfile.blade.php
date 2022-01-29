@@ -201,7 +201,7 @@
                                   </div>
                                   <div class="row my-2 d-flex justify-content-center ">
                                     <div class="col-sm-5">
-                                        <a href="" class="btn btn-outline-primary">Join Event</a>
+                                        <a href="{{url('joinEvent',$pro_eve->id)}}" class="btn btn-outline-primary">Join Event</a>
                                     </div>
                                   </div>
                               </div>
@@ -210,6 +210,7 @@
                           <a href="{{url('events')}}" class="btn btn-dark">Back</a>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

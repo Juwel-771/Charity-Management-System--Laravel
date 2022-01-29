@@ -58,7 +58,7 @@
                 <div id="eventsOne" class="collapse" aria-labelledby="eventsOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{url('event')}}">Organize Events</a>
-                        <a class="collapse-item" href="#">Events</a>
+                        <a class="collapse-item" href="#">My Events</a>
                     </div>
                 </div>
             </li>
@@ -82,7 +82,7 @@
     <div id="content-wrapper" class="d-flex flex-column">
         <div class="container">
             <div class="row" >
-                <h1 class="text-center my-5">Volunteer Form</h1>
+                <h1 class="text-center my-5">Events Form</h1>
                 <div class="col-md-10">
                     <div class="row d-flex justify-content-center mt-3">
                         <form action="/event" method="POST" enctype="multipart/form-data">
