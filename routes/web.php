@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointVolunteer;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodController;
 use App\Http\Controllers\ClothController;
@@ -198,5 +199,13 @@ Route::get('/myEvent',[EventOrganizeController::class,'myEvent']);
 Route::get('/orgProfile',[OrgProfileController::class,'viewProfile']);
 Route::get('/editProfile',[OrgProfileController::class,'editProfile']);
 Route::post('/editProfile',[OrgProfileController::class,'store']);
+
+// Route For Appointed Volunteer
+Route::get('/availableVolun',[AppointVolunteer::class,'index']);
+Route::get('/appoint_volun/{id}',[AppointVolunteer::class,'appoint']);
+Route::post('/recruitVolunteer',[AppointVolunteer::class,'create']);
+Route::get('/selectedVolunteer',[AppointVolunteer::class,'selected']);
+Route::get('/remove/{id}',[AppointVolunteer::class,'destroy'])->name('destroy');
+
 
 require __DIR__.'/auth.php';

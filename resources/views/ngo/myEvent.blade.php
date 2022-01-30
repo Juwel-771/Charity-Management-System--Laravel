@@ -31,9 +31,17 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Appoint Volunteer</span></a>
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#volunteer" aria-expanded="true"
+                    aria-controls="volunteer" href="#">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Appointed Volunteer</span>
+                </a>
+                <div id="volunteer" class="collapse" aria-labelledby="volunteer" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Available Volunteer</a>
+                        <a class="collapse-item" href="#">Recruited Volunteer</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Tables -->

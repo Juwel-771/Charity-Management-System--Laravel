@@ -98,28 +98,28 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h4>Available Volunteer</h4>
+                        <h4>Recruited Volunteer</h4>
                         <table class="table table-hover text-center">
                             <thead class="table-info">
                                 <tr>
                                     {{-- <th>Image</th> --}}
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                   
+                                    <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($recruit as $item)
+                                @foreach ($show as $item)
                                 <tr>
                                     {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
                                     <td class="border-bottom-info">{{$item->firstName}}</td>
-                                    <td class="border-bottom-info">{{$item->lastName}}</td>
                                     <td class="border-bottom-info">{{$item->email}}</td>
                                     <td class="border-bottom-info">{{$item->phone}}</td>
-                                    <td class="border-bottom-info">
-                                        <a href="{{url('/appoint_volun',$item->id)}}" class="btn btn-outline-info btn-sm">View</a>
+                                    <td class="border-bottom-info"> 
+                                        <a href="#" class="btn btn-info btn-sm">Send Mail</a>
+                                        <a href="{{url('/remove',$item->id)}}" class="btn btn-danger btn-sm">Remove</a>
                                     </td>
                                 </tr>    
                                 @endforeach        

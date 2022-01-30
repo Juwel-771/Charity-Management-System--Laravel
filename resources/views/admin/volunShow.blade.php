@@ -46,8 +46,8 @@
 
             <!-- Nav Item - Post -->
             <li class="nav-item">
-                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo" href="#">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                    aria-controls="collapseTwo" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Blog</span>
                 </a>
@@ -58,11 +58,11 @@
                     </div>
                 </div>
             </li>
-        
+
             <!-- Nav Item - News -->
             <li class="nav-item">
-                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseThree"
-                aria-expanded="true" aria-controls="collapseThree" href="#">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+                    aria-controls="collapseThree" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>News</span>
                 </a>
@@ -100,8 +100,8 @@
             </li> --}}
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseFour"
-                aria-expanded="true" aria-controls="collapseFour" href="#">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
+                    aria-controls="collapseFour" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Donation Request</span>
                 </a>
@@ -122,7 +122,7 @@
                     <span>Volunteer</span></a>
             </li>
 
-            
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -132,40 +132,41 @@
 
         <!-- Content Wrapper -->
 
-    <div id="content-wrapper" class="d-flex flex-column">
-        <div class="col-md-12">
-            <table class="table table-light table-hover text-center">
-                <thead class="table-dark">
-                    <tr>
-                        {{-- <th>Image</th> --}}
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($show as $item)
-                    <tr>
-                        {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
-                        <td class="border-bottom-primary">{{$item->firstName}}</td>
-                        <td class="border-bottom-primary">{{$item->lastName}}</td>
-                        <td class="border-bottom-primary">{{$item->email}}</td>
-                        <td class="border-bottom-primary">{{$item->phone}}</td>
-                        <td class="border-bottom-primary">
-                            <a href="{{url('/edit',$item->id)}}" class="btn btn-info btn-sm">View</a>
-                        </td>
-                    </tr>    
-                    @endforeach         
-                </tbody>
-            </table>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div class="col-md-12">
+                <table class="table table-light table-hover text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            {{-- <th>Image</th> --}}
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($show as $item)
+                        <tr>
+                            {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill"
+                            alt=""/></td> --}}
+                            <td class="border-bottom-primary">{{$item->firstName}}</td>
+                            <td class="border-bottom-primary">{{$item->lastName}}</td>
+                            <td class="border-bottom-primary">{{$item->email}}</td>
+                            <td class="border-bottom-primary">{{$item->phone}}</td>
+                            <td class="border-bottom-primary">
+                                <a href="{{url('/edit',$item->id)}}" class="btn btn-info btn-sm">View</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
 
-            @if (session()->has('message'))
-                        <div class="alert alert-success">
-                            {{session('message')}}
-                        </div>
-                    @endif
+                @if (session()->has('message'))
+                <div class="alert alert-success">
+                    {{session('message')}}
+                </div>
+                @endif
+            </div>
         </div>
-    </div>
 </x-app-layout>
