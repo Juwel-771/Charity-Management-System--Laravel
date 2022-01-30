@@ -12,6 +12,7 @@ use App\Http\Controllers\GoodsController;
 use App\Http\Controllers\MakeDonation;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\NewsCommnetController;
+use App\Http\Controllers\OrgProfileController;
 use App\Http\Controllers\PostNewsController;
 use App\Http\Controllers\SubscripController;
 use App\Http\Controllers\VolunteerController;
@@ -193,5 +194,9 @@ Route::get('joinEvent/{id}',[EventOrganizeController::class,'joinEvent']);
 Route::post('joinEvent/{id}',[EventOrganizeController::class,'EventMember']);
 Route::get('/myEvent',[EventOrganizeController::class,'myEvent']);
 
+// Route For Organization Profile.
+Route::get('/orgProfile',[OrgProfileController::class,'viewProfile']);
+Route::get('/editProfile',[OrgProfileController::class,'editProfile']);
+Route::post('/editProfile',[OrgProfileController::class,'store']);
 
 require __DIR__.'/auth.php';

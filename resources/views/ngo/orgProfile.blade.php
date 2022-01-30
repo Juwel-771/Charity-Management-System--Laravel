@@ -22,16 +22,9 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{url('orgProfile')}}">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Profile</span>
-                </a>
-            </li> --}}
-<!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" data-toggle="collapse" data-target="#profileOne"
-                aria-expanded="true" aria-controls="profileOne" href="#">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#profileOne" aria-expanded="true"
+                    aria-controls="profileOne" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Profile</span>
                 </a>
@@ -64,8 +57,8 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-toggle="collapse" data-target="#eventsOne"
-                aria-expanded="true" aria-controls="eventsOne" href="#">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#eventsOne" aria-expanded="true"
+                    aria-controls="eventsOne" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Events</span>
                 </a>
@@ -83,7 +76,7 @@
                     <span>Campaingns</span></a>
             </li>
 
-            
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -93,8 +86,31 @@
 
         <!-- Content Wrapper -->
 
-    <div id="content-wrapper" class="d-flex flex-column">
-
-
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card" style="width: 18rem;">
+                                    @foreach ($profile as $item)
+                                    <img src="/storage/ngo_images/{{$item->file}} " class="card-img-top" alt=" ">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>{{$item->org_Name}}</h4>
+                                <span>{{$item->moto}}</span>
+                                <p>{{$item->about}}</p>
+                            </div>
+                        </div>
+                        {{-- <div class="row my-5">
+                        <div class="col-md-4">
+                            <a href="{{url('editProfile')}}" class="btn btn-outline-info">Edit Profile</a>
+                    </div>
+                </div> --}}
+                @endforeach
+            </div>
+        </div>
+    </div>
     </div>
 </x-app-layout>

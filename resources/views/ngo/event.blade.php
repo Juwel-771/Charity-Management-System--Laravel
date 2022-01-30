@@ -23,10 +23,17 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-folder"></i>
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#profileOne"
+                aria-expanded="true" aria-controls="profileOne" href="#">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Profile</span>
                 </a>
+                <div id="profileOne" class="collapse" aria-labelledby="profileOne" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('orgProfile')}}">Profile</a>
+                        <a class="collapse-item" href="{{url('editProfile')}}">Edit Profile</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Charts -->
