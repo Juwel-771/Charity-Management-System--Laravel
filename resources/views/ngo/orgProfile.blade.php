@@ -53,7 +53,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('event')}}">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Organize Auction</span></a>
             </li>
@@ -78,11 +78,11 @@
                 </div>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Campaingns</span></a>
-            </li>
+            </li> --}}
 
 
             <!-- Divider -->
@@ -99,15 +99,17 @@
                 <div class="row">
                     <div class="col-md-10">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="card" style="width: 18rem;">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <div class="card" style="width: 50rem;">
                                     @foreach ($profile as $item)
                                     <img src="/storage/ngo_images/{{$item->file}} " class="card-img-top" alt=" ">
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <h4>{{$item->org_Name}}</h4>
-                                <span>{{$item->moto}}</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 style="font-size: 8rem; color: black">{{$item->org_Name}}</h4>
+                                <span style="font-size: 3rem">{{$item->moto}}</span>
                                 <p>{{$item->about}}</p>
                             </div>
                         </div>

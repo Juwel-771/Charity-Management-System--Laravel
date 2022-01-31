@@ -59,8 +59,8 @@
                         <div class="col-xl-6 col-md-12 col-lg-8">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-user"></i> Md Juwel</a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i>juwel@gmail.com</a></li>
+                                    <li><a href="#"> <i class="fa fa-users"></i>Md Juwe</a></li>
+                                <li><a href="#"> <i class="fa fa-envelope"></i>juwelmd416@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                     <li><a href="#">Charities</a></li>
                                     <li><a href="#">Auction</a></li>
                                     {{-- <li><a href="#">Donate</a></li> --}}
-                                    <li><a href="#">Project</a></li>
+                                    {{-- <li><a href="#">Project</a></li> --}}
                                     <li><a href="#">About</a></li>
                                 </ul>
                             </nav>

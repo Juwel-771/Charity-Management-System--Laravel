@@ -59,8 +59,9 @@
                         <div class="col-xl-6 col-md-12 col-lg-8">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-users"></i>Md Juwe; </a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i>juwel416@gmail.com</a></li>
+                                    
+                                    <li><a href="#"> <i class="fa fa-users"></i>Md Juwel</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>juwelmd416@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -124,7 +125,7 @@
                                     <li><a href="#">Charities</a></li>
                                     <li><a href="#">Auction</a></li>
                                     {{-- <li><a href="#">Donate</a></li> --}}
-                                    <li><a href="#">Project</a></li>
+                                    {{-- <li><a href="#">Project</a></li> --}}
                                     <li><a href="#">About</a></li>
                                 </ul>
                             </nav>
@@ -253,8 +254,6 @@
                                 <li><a href="#">Sponsor</a></li>
                                 <li><a href="#">Fundraise</a></li>
                                 <li><a href="#">Volunteer</a></li>
-                                <li><a href="#">Partner</a></li>
-                                <li><a href="#">Jobs</a></li>
                             </ul>
                         </div>
                     </div>
@@ -264,10 +263,10 @@
                                 Contacts
                             </h3>
                             <div class="contacts">
-                                <p>+2(305) 587-3407 <br>
-                                    info@loveuscharity.com <br>
-                                    Flat 20, Reynolds Neck, North
-                                    Helenaville, FV77 8WS
+                                <p>018xxxxxxx <br>
+                                    juwelmd416@gmail.com <br>
+                                    Flat 20, Paharikha Society,
+                                    Chittagong, Bangaldesh
                                 </p>
                             </div>
                         </div>

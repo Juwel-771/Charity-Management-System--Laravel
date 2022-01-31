@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            
+
         </h2>
     </x-slot>
 
@@ -30,10 +30,10 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-    
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('userProfile')}}">
+                <a class="nav-link" href="{{url('userProfile/id')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Profile</span>
                 </a>
@@ -77,9 +77,15 @@
                     <span>Auctions</span></a>
             </li>
 
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Search Charity</span></a>
+            </li> --}}
+
             <li class="nav-item">
                 <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-table"></i>  
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Feedback</span></a>
             </li>
 
@@ -105,10 +111,21 @@
 
         <!-- Content Wrapper -->
 
-    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div class="container">
+                <div class="row">
+                    <div class="cole">
+                        <div class="ror">
+                            <div class="col-md-8">
+                                @foreach ($user as $item)
+                                    <h2>{{$item->name}}</h2>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
+        </div>
     </div>
-    
-</div>
 </x-app-layout>

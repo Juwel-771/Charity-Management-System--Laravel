@@ -30,8 +30,8 @@
                         <div class="col-xl-6 col-md-12 col-lg-8">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> +1 (454) 556-5656</a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i>Yourmail@gmail.com</a></li>
+                                    <li><a href="#"> <i class="fa fa-user"></i> Md Juwel</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>juwelmd416@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                         <li><a href="#">Charities</a></li>
                                         <li><a href="#">Auction</a></li>
                                         {{-- <li><a href="#">Donate</a></li> --}}
-                                        <li><a href="#">Project</a></li>
+                                        {{-- <li><a href="#">Project</a></li> --}}
                                         <li><a href="#">About</a></li>
                                     </ul>
                                 </nav>
@@ -200,62 +200,62 @@
 
                 <div class="row my-4 d-flex justify-content-center">
                     <div class="col-sm-6">
+                        <label class="form-label">First Name: </label>
                             <input type="text" name="firstName" class="form-control">
-                            <label class="form-label">First Name: </label>
                     </div>
                 
                     <div class="col-sm-6">
+                        <label class="form-label">Last Name: </label>
                             <input type="text" name="lastName" class="form-control">
-                            <label class="form-label">Last Name: </label>
                     </div>
                 </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
+                            <label class="form-label">Mobile Phone: </label>
                                 <input type="text" name="mobilePhone" class="form-control" ">
-                                <label class="form-label">Mobile Phone: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
+                            <label class="form-label">E-mail: </label>
                                 <input type="email" name="email" class="form-control">
-                                <label class="form-label">E-mail: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
+                            <label class="form-label">Town: </label>
                                 <input type="text" name="town" class="form-control">
-                                <label class="form-label">Town: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
+                            <label class="form-label">State: </label>
                                 <input type="text" name="state" class="form-control">
-                                <label class="form-label">State: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
+                            <label class="form-label">Post Code: </label>
                                 <input type="text" name="postCode" class="form-control">
-                                <label class="form-label">Post Code: </label>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
+                            <label class="form-label">Headline:  </label>
                                 <input type="text" name="heading" class="form-control">
-                                <label class="form-label">Headline:  </label>
                         </div>
                     </div>                    
 
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
+                            <label class="form-label">Description:  </label>
                                 <textarea name="description" class="form-control"  cols="78" rows="10"></textarea>
                                 <br>
-                                <label class="form-label">Description:  </label>
                         </div>
                     </div>
 

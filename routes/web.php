@@ -16,6 +16,7 @@ use App\Http\Controllers\NewsCommnetController;
 use App\Http\Controllers\OrgProfileController;
 use App\Http\Controllers\PostNewsController;
 use App\Http\Controllers\SubscripController;
+use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\VolunteerController;
 use Illuminate\Support\Facades\Route;
 
@@ -207,5 +208,11 @@ Route::post('/recruitVolunteer',[AppointVolunteer::class,'create']);
 Route::get('/selectedVolunteer',[AppointVolunteer::class,'selected']);
 Route::get('/remove/{id}',[AppointVolunteer::class,'destroy'])->name('destroy');
 
+
+// ##################################### USER DASHBOARD ROUTES ############################################
+// Donor Profile
+Route::get('/userProfile',[UserProfileController::class,'index']);
+Route::get('/joinProfile',[UserProfileController::class,'showProfile']);
+Route::post('/joinProfile',[UserProfileController::class,'store']);
 
 require __DIR__.'/auth.php';

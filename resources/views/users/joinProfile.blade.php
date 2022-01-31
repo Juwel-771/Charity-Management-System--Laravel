@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            
+
         </h2>
     </x-slot>
 
@@ -30,10 +30,10 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-    
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('userProfile')}}">
+                <a class="nav-link" href="{{url('userProfile/id')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Profile</span>
                 </a>
@@ -77,9 +77,15 @@
                     <span>Auctions</span></a>
             </li>
 
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Search Charity</span></a>
+            </li> --}}
+
             <li class="nav-item">
                 <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-table"></i>  
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Feedback</span></a>
             </li>
 
@@ -95,7 +101,6 @@
                     <span>Join</span></a>
             </li>
 
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -105,10 +110,52 @@
 
         <!-- Content Wrapper -->
 
-    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Registration of Donor:</h3> <br>
+                        <form action="/joinProfile" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-8 my-2">
+                                    <label for="file" class="form-label">Upload Image: </label>
+                                    <input type="file" name="file" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 my-2">
+                                    <label for="name" class="form-label">Name: </label>
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 my-2">
+                                    <label for="email" class="form-label">E-mail: </label>
+                                    <input type="email" name="email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 my-2">
+                                    <label for="about" class="form-label">About: </label>
+                                    <textarea name="about" class="form-control" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 my-2 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="alert alert-primary">
+                        @if(sessioin()->has('message'))
+                            {{seesion('message')}}
+                        @endif
+                    </div>
+                </div>
+            </div>
 
-
+        </div>
     </div>
-    
-</div>
 </x-app-layout>

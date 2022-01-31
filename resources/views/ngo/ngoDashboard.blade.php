@@ -60,7 +60,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('event')}}">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Organize Auction</span></a>
             </li>
@@ -85,11 +85,11 @@
                 </div>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Campaingns</span></a>
-            </li>
+            </li> --}}
 
             
             <!-- Divider -->
