@@ -112,7 +112,7 @@
                         <a class="collapse-item" href="{{url('medicineShow')}}">Medicine Donation</a>
                         <a class="collapse-item" href="{{url('clothShow')}}">Clothe Donation</a>
                         <a class="collapse-item" href="{{url('goodsShow')}}">Donating Goods</a>
-                        <a class="collapse-item" href="{{url('financialShow')}}">Donating Goods</a>
+                        <a class="collapse-item" href="{{url('financialShow')}}">Financial Donation</a>
                     </div>
                 </div>
             </li>
@@ -147,15 +147,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($food as $foods)
+                    @foreach ($financials as $finan)
                     <tr>
                         {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
-                        <td class="border-bottom-primary">{{$foods->firstName}}</td>
-                        <td class="border-bottom-primary">{{$foods->lastName}}</td>
-                        <td class="border-bottom-primary">{{$foods->mobilePhone}}</td>
-                        <td class="border-bottom-primary">{{$foods->email}}</td>
-                        <td class="border-bottom-primary">
-                            <a href="{{url('/edit_food',$foods->id)}}" class="btn btn-primary btn-sm">View</a>
+                        <td class="border-bottom-dark">{{$finan->firstName}}</td>
+                        <td class="border-bottom-dark">{{$finan->lastName}}</td>
+                        <td class="border-bottom-dark">{{$finan->mobilePhone}}</td>
+                        <td class="border-bottom-dark">{{$finan->email}}</td>
+                        <td class="border-bottom-dark">
+                            <a href="{{url('/edit_financial',$finan->id)}}" class="btn btn-dark btn-sm">View</a>
                         </td>
                     </tr>     
                     @endforeach
@@ -168,5 +168,6 @@
                         </div>
                     @endif
         </div> 
+    </div>
     </div>
 </x-app-layout>

@@ -59,8 +59,8 @@
                         <div class="col-xl-6 col-md-12 col-lg-8">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-user"></i> Md Juwel</a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i>juwelmd416@gmail.com</a></li>
+                                    <li><a href="#"> <i class="fa fa-users"></i>Md Juwe</a></li>
+                                <li><a href="#"> <i class="fa fa-envelope"></i>juwelmd416@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -169,30 +169,31 @@
     <div class="container my-4">
         <div class="row">
             <div class="col-md-10">
-                <h2>Food Donation</h2>
+                <h2>Financial Donation</h2>
             </div>
+
             <div class="col-md-2">
-                <a href="{{url('makeDonation')}}" class="btn btn-primary">Back</a>
+                <a href="{{url('makeDonation')}}" class="btn btn-dark">Back</a>
             </div>
         </div>
     </div>
     <div class="container my-5>
     <div class=" row">
         <div class="col-md-8">
-            @foreach ($foods as $food)
+            @foreach ($financial as $financials)
             <div class="card my-4">
-                <h5 class="card-header">Food Donation</h5>
+                <h5 class="card-header">Financial Donation</h5>
                 <div class="card-body">
-                    <h5 class="card-title">{{$food->heading}}</h5>
-                    <p class="card-text">{{$food->description}}</p>
-                    <a type="button" href="{{url('foodProfile',$food->id)}}" class="btn btn-outline-primary">Contact</a>
+                    <h5 class="card-title">{{$financials->heading}}</h5>
+                    <p class="card-text">{{$financials->description}}</p>
+                    <a type="button" href="{{url('financialProfile',$financials->id)}}" class="btn btn-dark">Contact</a>
                 </div>
             </div>
             @endforeach
         </div>
         <div class="row">
             <div class="col-sm-6 my-3">
-                {{$foods->links()}}
+                {{$financial->links()}}
             </div>
         </div>
     </div>
@@ -251,6 +252,8 @@
                                 <li><a href="#">Sponsor</a></li>
                                 <li><a href="#">Fundraise</a></li>
                                 <li><a href="#">Volunteer</a></li>
+                                <li><a href="#">Partner</a></li>
+                                <li><a href="#">Jobs</a></li>
                             </ul>
                         </div>
                     </div>

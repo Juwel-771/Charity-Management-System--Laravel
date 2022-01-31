@@ -171,118 +171,89 @@
                         </div>
                         <div class="row d-flex justify-content-center">
                             <div class="col-sm-3">
-                                <form action="">
-                                    <input type="text" name="firstName" class="form-control" id="firstName">
+                                <form action="" method="POST">
+                                    @csrf
                                     <label for="firstName" class="form-label">First Name: </label>
-                                </form>
+                                    <input type="text" name="firstName" class="form-control">
                             </div>
-
                             <div class="col-sm-3">
-                                <form action="">
-                                    <input type="text" name="lastName" class="form-control" id="lastName">
                                     <label for="lastName" class="form-label">Last Name: </label>
-                                </form>
+                                    <input type="text" name="lastName" class="form-control">
                             </div>
-
+                        </div>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                    <form action="">
-                                        <input type="text" name="mobilePhone" class="form-control" id="mobilePhone">
-                                        <label for="mobilePhone" class="form-label">Mobile Phone: </label>
-                                    </form>
+                                    <label for="mobilePhone" class="form-label">Mobile Phone: </label>
+                                        <input type="number" name="mobilePhone" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                    <form action="">
-                                        <input type="email" name="email" class="form-control" id="email">
-                                        <label for="email" class="form-label">E-mail: </label>
-                                    </form>
+                                    <label for="email" class="form-label">E-mail: </label>
+                                    <input type="email" name="email" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-6">
-                                    <form action="">
-                                        <input type="text" name="town" class="form-control" id="email">
-                                        <label for="town" class="form-label">Town: </label>
-                                    </form>
+                                    <label for="town" class="form-label">Town: </label>
+                                    <input type="text" name="town" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-3">
-                                    <form action="">
-                                        <input type="text" name="state" class="form-control" id="email">
-                                        <label for="state" class="form-label">State: </label>
-                                    </form>
+                                    <label for="state" class="form-label">State: </label>
+                                    <input type="text" name="state" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                    <form action="">
-                                        <input type="text" name="postCode" class="form-control" id="email">
-                                        <label for="postCode" class="form-label">Post Code: </label>
-                                    </form>
+                                    <label for="postCode" class="form-label">Post Code: </label>
+                                    <input type="number" name="postCode" class="form-control">
                                 </div>
                             </div>
 
 
                             <br>
                             <div class="row d-flex justify-content-center my-3">
-                                <div class="col-sm-3 fw-light fs-5 bg-success border border-success py-3">
-                                    <h2>Medication Information: </h2>
+                                <div class="col-md-3 fw-light fs-5 bg-success border border-success py-3">
+                                    <h2>Financial Information: </h2>
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6 mb-4">
-                                    <form action="">
-                                            <select class="custom-select form-control">
+                                <div class="col-sm-6 mb-4">        
+                                            <select class="custom-select form-control" name="payment">
                                                 <option selected>Select Your Payment Types: </option>
-                                                <option value="1">Cash</option>
-                                                <option value="2">Mboile Banking</option>
-                                                <option value="3">Bank Cheque</option>
-                                                <option value="5">Master Card</option>
-                                                <option value="6">Paypal</option>
-                                                <option value="7">American Visa</option>
+                                                <option value="Cash">Cash</option>
+                                                <option value="Mboile Banking">Mboile Banking</option>
+                                                <option value="Bank Cheque">Bank Cheque</option>
                                             </select>
-                                    </form>
                                 </div>
                             </div>
-
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-3">
-                                    <form action="">
-                                        <input type="text" name="town" class="form-control" id="email">
-                                        <label for="town" class="form-label">Amount: </label>
-                                    </form>
+                                <div class="col-sm-6">                      
+                                    <label for="amount" class="form-label">Amount: </label>
+                                    <input type="text" name="amount" class="form-control">
                                 </div>
+                            </div>
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-sm-6">
-                                        <form action="">
-                                            <textarea name="description" class="form-control" id="description" cols="78" rows="3"></textarea>
-                                            <label for="postCode" class="form-label">Donor Notes:  </label>
-                                        </form>
+                                            <label for="description" class="form-label">Donor Notes:  </label>
+                                            <textarea name="description" class="form-control" cols="78" rows="3"></textarea>
                                     </div>
                                 </div>
                             </div>
-                            
-
                             <div class="row">
-                                <div class="col my-1 p-2 d-flex justify-content-center">
-                                    <button type="submit"
-                                        class="btn btn-outline-success btn-lg btn-block">Donate</button>
+                                <div class="col my-4 p-2 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-outline-success">Donate</button>
                                 </div>
                             </div>
-                        </div>
-
+                        </form>                 
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>
     <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>

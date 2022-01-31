@@ -83,17 +83,17 @@
                     <span>Search Charity</span></a>
             </li> --}}
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Feedback</span></a>
-            </li>
+            </li> --}}
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Make Donation</span></a>
-            </li>
+            </li> --}}
 
             <li class="nav-item">
                 <a class="nav-link" href="{{url('joinProfile')}}">

@@ -8,6 +8,7 @@ use App\Http\Controllers\ClothController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonorController;
 use App\Http\Controllers\EventOrganizeController;
+use App\Http\Controllers\FinancialController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\GoodsController;
 use App\Http\Controllers\MakeDonation;
@@ -42,11 +43,13 @@ Route::get('bloodDonate',[MakeDonation::class,'blood']);
 Route::get('clothDonate',[MakeDonation::class,'cloth']);
 Route::get('goodsDonate',[MakeDonation::class,'goods']);
 Route::get('mediDonate',[MakeDonation::class,'medicine']);
+Route::get('financialDonate',[MakeDonation::class,'financial']);
 Route::get('/foodProfile/{id}',[MakeDonation::class,'profile']);
 Route::get('/bloodProfile/{id}',[MakeDonation::class,'blood_profile']);
 Route::get('/clothProfile/{id}',[MakeDonation::class,'cloth_profile']);
 Route::get('/goodsProfile/{id}',[MakeDonation::class,'goods_profile']);
 Route::get('/medicineProfile/{id}',[MakeDonation::class,'medicine_profile']);
+Route::get('/financialProfile/{id}',[MakeDonation::class,'financial_profile']);
 
 
 // Route for Volunteer
@@ -87,6 +90,8 @@ Route::get('/clothing',[ClothController::class,'index']);
 Route::post('/clothing',[ClothController::class,'create']);
 
 //Route for Financial Donation
+Route::get('/financial',[FinancialController::class,'index']);
+Route::post('/financial',[FinancialController::class,'create']);
 // Route::get('/clothing',[ClothController::class,'index']);
 // Route::post('/clothing',[ClothController::class,'create']);
 
@@ -164,6 +169,11 @@ Route::get('/edit_goods/{id}',[GoodsController::class,'edit_goods']);
 Route::post('/goodEdit',[GoodsController::class,'approve']);
 Route::get('/destroy_goods/{id}',[GoodsController::class,'destroy_good']);
 
+// Route for Financial-Dashboard
+Route::get('/financialShow',[FinancialController::class,'financialShow']);
+Route::get('/edit_financial/{id}',[FinancialController::class,'edit_financial']);
+Route::post('/financialEdit',[FinancialController::class,'approve']);
+
 
 // ---------------------------Start of Admin Dashboard Routes----------------------------
 // Route for Volunteer 
@@ -179,8 +189,8 @@ Route::post('/volunForm',[VolunteerController::class,'store']);
 // Route::view('blood', 'donors.blood');
 // Route::view('medicine', 'donors.medicine');
 // Route::view('clothing', 'donors.clothing');
-Route::view('financial', 'donors.financial');
-Route::view('goods', 'donors.goods');
+// Route::view('financial', 'donors.financial');
+// Route::view('goods', 'donors.goods');
 
 
 

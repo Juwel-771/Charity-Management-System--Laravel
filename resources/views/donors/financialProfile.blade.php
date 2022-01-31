@@ -81,7 +81,7 @@
                             in</a>
 
                         @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="text-sm ml-3 mt-4 btn btn-info btn-sm">Register</a>
+                        <a href="{{ route('register') }}" class="text-sm ml-3 mt-4 btn btn-success btn-sm">Register</a>
                         @endif
                         @endauth
                     </div>
@@ -124,7 +124,7 @@
                                     <li><a href="#">Charities</a></li>
                                     <li><a href="#">Auction</a></li>
                                     {{-- <li><a href="#">Donate</a></li> --}}
-                                    {{-- <li><a href="#">Project</a></li> --}}
+                                    {{-- <li><a href="#">project</a></li> --}}
                                     <li><a href="#">About</a></li>
                                 </ul>
                             </nav>
@@ -166,40 +166,65 @@
     {{-- END OF IMAGE SLIDER   --}}
 
     {{-- start of food section --}}
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-md-10">
-                <h2>Food Donation</h2>
-            </div>
-            <div class="col-md-2">
-                <a href="{{url('makeDonation')}}" class="btn btn-primary">Back</a>
-            </div>
-        </div>
-    </div>
-    <div class="container my-5>
-    <div class=" row">
-        <div class="col-md-8">
-            @foreach ($foods as $food)
-            <div class="card my-4">
-                <h5 class="card-header">Food Donation</h5>
-                <div class="card-body">
-                    <h5 class="card-title">{{$food->heading}}</h5>
-                    <p class="card-text">{{$food->description}}</p>
-                    <a type="button" href="{{url('foodProfile',$food->id)}}" class="btn btn-outline-primary">Contact</a>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-12">
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-dark btn btn-dark py-2 rounded-pill">
+                    <button class="font-weight-light">Description: </button>
                 </div>
             </div>
-            @endforeach
-        </div>
-        <div class="row">
-            <div class="col-sm-6 my-3">
-                {{$foods->links()}}
+            <p class="font-weight-light" style="font-size: 2rem;color:black">Payment Method: {{$pro6->payment}}</p><br><br>
+            <div class="row">
+                <div class="col-sm-9">
+                    <p>Ammount: {{$pro6->amount}}</p>
+                </div>
             </div>
-        </div>
-    </div>
-    
+            <div class="row">
+                <div class="col-sm-9 my-2">
+                    <p>Conditions:{{$pro6->description}}</p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-dark btn btn-dark py-2 rounded-pill">
+                    <button class="font-weight-light">Address: </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">Town: {{$pro6->town}}</li>
+                        <li class="list-group-item">State: {{$pro6->state}}</li>
+                        <li class="list-group-item">Post Code: {{$pro6->postCode}}</li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-success btn btn-dark py-2 rounded-pill">
+                    <button class="font-weight-light">Contact information: </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul class="list-group">
+                        <li class="list-group-item">Name: {{$pro6->firstName}} {{$pro6->lastName}}</li>
+                        <li class="list-group-item">E-mail: {{$pro6->email}}</li>
+                        <li class="list-group-item">Phone: {{$pro6->mobilePhone}}</li>
+                      </ul>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center my-4 py-2">
+                <div class="col-sm-8  border border-dark btn btn-dark py-2 rounded-pill">
+                    <a href="{{url('financialDonate')}}" class="font-weight-light text-white" >Back </a>
+                </div>
+            </div>
+           </div>
+       </div>
+   </div>
     {{-- end of food section --}}
 
-
+    
     <footer class="footer bg-green-300">
         <div class="footer_top">
             <div class="container">
@@ -251,6 +276,8 @@
                                 <li><a href="#">Sponsor</a></li>
                                 <li><a href="#">Fundraise</a></li>
                                 <li><a href="#">Volunteer</a></li>
+                                <li><a href="#">Partner</a></li>
+                                <li><a href="#">Jobs</a></li>
                             </ul>
                         </div>
                     </div>
@@ -261,7 +288,7 @@
                             </h3>
                             <div class="contacts">
                                 <p>+2(305) 587-3407 <br>
-                                    info@loveuscharity.com <br>
+                                    success@loveuscharity.com <br>
                                     Flat 20, Reynolds Neck, North
                                     Helenaville, FV77 8WS
                                 </p>
@@ -280,7 +307,7 @@
                                             <img src="img/news/news_1.png" alt="">
                                         </a>
                                     </div>
-                                    <div class="info">
+                                    <div class="success">
                                         <a href="#">
                                             <h4>School for African
                                                 Childrens</h4>
@@ -294,7 +321,7 @@
                                             <img src="img/news/news_2.png" alt="">
                                         </a>
                                     </div>
-                                    <div class="info">
+                                    <div class="success">
                                         <a href="#">
                                             <h4>School for African
                                                 Childrens</h4>

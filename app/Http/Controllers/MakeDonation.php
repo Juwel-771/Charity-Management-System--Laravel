@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Approve_blood;
 use App\Models\Approve_cloth;
+use App\Models\Approve_financila;
 use App\Models\Approve_food;
 use App\Models\Approve_good;
 use App\Models\Approve_medicine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class MakeDonation extends Controller
 {
@@ -49,6 +51,12 @@ class MakeDonation extends Controller
         return view('donors.medicineDonate',['medicine'=>$medicines]);
     }
 
+    public function financial()
+    {
+        $financial = Approve_financila::paginate(3);
+        return view('donors.financialDonate',['financial'=>$financial]);
+    }
+
 
 
 
@@ -85,6 +93,12 @@ class MakeDonation extends Controller
     }
    
 
+    public function financial_profile($id)
+    {
+        $profile6 = Approve_financila::find($id);
+
+        return view('donors.financialProfile',['pro6'=>$profile6]);
+    }
     
     public function destroy($id)
     {

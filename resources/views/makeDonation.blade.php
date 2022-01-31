@@ -208,7 +208,7 @@
                 <div class="card" style="width: 25rem;">
                     <img src="img/donate/financial.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-dark">Financial Donate</a>
+                        <a href="{{url('financialDonate')}}" class="card-text btn btn-outline-dark">Financial Donate</a>
                     </div>
                 </div>
             </div>
@@ -230,6 +230,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 {{-- END OF DONATE SECTION --}}

@@ -129,7 +129,7 @@
                             </nav>
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a data-scroll-nav='1' href="{{url('makeDonation')}}">Make a Donate</a>
+                                    <a href="{{url('makeDonation')}}">Make a Donate</a>
                                 </div>
                             </div>
                         </div>
