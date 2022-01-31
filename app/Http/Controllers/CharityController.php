@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DonorProfile;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserProfileController extends Controller
+class CharityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +13,60 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-
-        return view('users.userProfile',compact('user'));
+        return view('charities');
     }
 
+    public function educationIndex()
+    {
+        return view('charity.education');
+    }
+
+    public function healthIndex()
+    {
+        return view('charity.health');
+    }
+
+    public function environmentIndex()
+    {
+        return view('charity.environment');
+    }
+
+    public function humanIndex()
+    {
+        return view('charity.human');
+    }
+
+    public function animalIndex()
+    {
+        return view('charity.animal');
+    }
+
+    public function socialIndex()
+    {
+        return view('charity.social');
+    }
+
+    public function childIndex()
+    {
+        return view('charity.child');
+    }
+
+    public function refugeIndex()
+    {
+        return view('charity.refuge');
+    }
+
+    public function victimIndex()
+    {
+        return view('charity.victim');
+    }
+
+    // ADMIN DASHBOARD
+
+    public function animalView()
+    {
+        return view('admin.animalCharity');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -27,12 +74,7 @@ class UserProfileController extends Controller
      */
     public function create()
     {
-       
-    }
-
-    public function showProfile()
-    {
-        return view('users.joinProfile');
+        //
     }
 
     /**
@@ -43,37 +85,7 @@ class UserProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $userProfile = new DonorProfile();
-
-        $this->validate($request, [
-            'name'=>'required',
-            'email'=>'required',
-            'file'=>'image|mimes:jpg,png,jpeg'
-        ]);
-
-        // File name With Extension
-        $fileNameWithExt = $request->file('file')->getClientOriginalName();
-
-        // Just File Name
-        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-
-        // Get With Extension
-        $extension = $request->file('file')->getClientOriginalExtension();
-
-        // Create a New File
-        $fileNameToStore = $filename.'_'.time().'_'.$extension;
-
-        // Upload Image
-        $path = $request->file('file')->storeAs('public/donor_images',$fileNameToStore);
-
-        $userProfile->file=$fileNameToStore;
-        $userProfile->name=$request->name;
-        $userProfile->email=$request->email;
-        $userProfile->about=$request->about;
-        
-        $userProfile->save();
-
-        return redirect()->back()->with('message','Your Profile Submitted');
+        //
     }
 
     /**

@@ -93,7 +93,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
                         <div class="logo">
-                            <a href="#">
+                            <a href="{{url('/')}}">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
@@ -120,7 +120,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Charities</a></li>
+                                    <li><a href="{{url('charities')}}">Charities</a></li>
                                     <li><a href="#">Auction</a></li>
                                     {{-- <li><a href="#">Donate</a></li> --}}
                                     {{-- <li><a href="#">Project</a></li> --}}

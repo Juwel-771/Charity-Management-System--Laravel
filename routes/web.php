@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointVolunteer;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodController;
+use App\Http\Controllers\CharityController;
 use App\Http\Controllers\ClothController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonorController;
@@ -35,6 +36,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route For charities
+Route::get('charities',[CharityController::class,'index']);
+Route::get('education',[CharityController::class,'educationIndex']);
+Route::get('health',[CharityController::class,'healthIndex']);
+Route::get('environment',[CharityController::class,'environmentIndex']);
+Route::get('human',[CharityController::class,'humanIndex']);
+Route::get('animal',[CharityController::class,'animalIndex']);
+Route::get('social',[CharityController::class,'socialIndex']);
+Route::get('child',[CharityController::class,'childIndex']);
+Route::get('refuge',[CharityController::class,'refugeIndex']);
+Route::get('victim',[CharityController::class,'victimIndex']);
 
 // Route for Make Donation
 Route::get('makeDonation',[MakeDonation::class,'index']);
@@ -104,7 +117,8 @@ Route::post('/goods',[GoodsController::class,'create']);
 //Route for Blog
 Route::get('/blog',[BlogController::class,'index']);
 
-// ---------------------------Start of Admin Dashboard Routes----------------------------
+
+// #################################### Start of Admin Dashboard Routes ####################################
 
 // Admin Profile
 // Route::get('/adminProfile/{id}',[AdminController::class,'show']);
@@ -174,8 +188,10 @@ Route::get('/financialShow',[FinancialController::class,'financialShow']);
 Route::get('/edit_financial/{id}',[FinancialController::class,'edit_financial']);
 Route::post('/financialEdit',[FinancialController::class,'approve']);
 
+// Route for Charity-Dashboard
+Route::get('/animalCharity',[CharityController::class,'animalView']);
 
-// ---------------------------Start of Admin Dashboard Routes----------------------------
+// ########################## END of Admin Dashboard Routes ############################
 // Route for Volunteer 
 Route::post('/volunForm',[VolunteerController::class,'store']);
 

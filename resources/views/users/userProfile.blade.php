@@ -33,7 +33,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('userProfile/id')}}">
+                <a class="nav-link" href="{{url('userProfile')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Profile</span>
                 </a>
@@ -117,9 +117,7 @@
                     <div class="cole">
                         <div class="ror">
                             <div class="col-md-8">
-                                @foreach ($user as $item)
-                                    <h2>{{$item->name}}</h2>
-                                @endforeach
+                                {{-- <h2>{{$user->name}}</h2> --}}
                             </div>
                         </div>
                     </div>

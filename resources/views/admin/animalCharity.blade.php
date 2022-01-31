@@ -23,18 +23,32 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li class="nav-item">                  
+                <a class="nav-link" href="{{url('adminProfile')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-folder"></i>
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseNGO"
+                aria-expanded="true" aria-controls="collapseNGO" href="#">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>NGO's</span>
                 </a>
+                <div id="collapseNGO" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Animal Charity</a>
+                        <a class="collapse-item" href="#">Child Welfare Charity</a>
+                        <a class="collapse-item" href="#">Environment Charity</a>
+                        <a class="collapse-item" href="#">Education Charity</a>
+                        <a class="collapse-item" href="#">Health Charity</a>
+                        <a class="collapse-item" href="#">Human Service Charity</a>
+                        <a class="collapse-item" href="#">Refuge Charity</a>
+                        <a class="collapse-item" href="#">Social Service</a>
+                        <a class="collapse-item" href="#">Victim Welfare Charity</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Charts -->
@@ -112,6 +126,7 @@
                         <a class="collapse-item" href="{{url('medicineShow')}}">Medicine Donation</a>
                         <a class="collapse-item" href="{{url('clothShow')}}">Clothe Donation</a>
                         <a class="collapse-item" href="{{url('goodsShow')}}">Donating Goods</a>
+                        <a class="collapse-item" href="{{url('financialShow')}}">Financial Donation</a>
                     </div>
                 </div>
             </li>
@@ -132,41 +147,41 @@
 
         <!-- Content Wrapper -->
 
-    <div id="content-wrapper" class="d-flex flex-column">
-        <div class="col-md-12">
-            <table class="table table-light table-hover text-center">
-                <thead class="table-danger">
-                    <tr>
-                        {{-- <th>Image</th> --}}
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($blood as $bloods)
-                    <tr>
-                        {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
-                        <td class="border-bottom-danger">{{$bloods->firstName}}</td>
-                        <td class="border-bottom-danger">{{$bloods->lastName}}</td>
-                        <td class="border-bottom-danger">{{$bloods->mobilePhone}}</td>
-                        <td class="border-bottom-danger">{{$bloods->email}}</td>
-                        <td class="border-bottom-danger">
-                            <a href="{{url('/edit_blood',$bloods->id)}}" class="btn btn-danger btn-sm">View</a>
-                        </td>
-                    </tr>     
-                    @endforeach
-                </tbody>
-            </table>
-
-            @if (session()->has('message'))
-                        <div class="alert alert-danger">
-                            {{session('message')}}
-                        </div>
-                    @endif
-        </div> 
-    </div>
-    </div>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div class="col-md-12">
+                <table class="table table-hover text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            {{-- <th>Image</th> --}}
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{-- @foreach ($blood as $bloods) --}}
+                        <tr>
+                            {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+                            {{-- <td class="border-bottom-danger">{{$bloods->firstName}}</td>
+                            <td class="border-bottom-danger">{{$bloods->lastName}}</td>
+                            <td class="border-bottom-danger">{{$bloods->mobilePhone}}</td>
+                            <td class="border-bottom-danger">{{$bloods->email}}</td>
+                            <td class="border-bottom-danger">
+                                <a href="{{url('/edit_blood',$bloods->id)}}" class="btn btn-danger btn-sm">View</a>
+                            </td> --}}
+                        </tr>     
+                        {{-- @endforeach --}}
+                    </tbody>
+                </table>
+                <a href="#" class="btn btn-outline-dark">Add Charity</a>
+    
+                {{-- @if (session()->has('message'))
+                            <div class="alert alert-danger">
+                                {{session('message')}}
+                            </div>
+                        @endif --}}
+            </div> 
+        </div>
 </x-app-layout>
