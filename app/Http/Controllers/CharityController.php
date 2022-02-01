@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\AnimalCharity;
 use App\Models\AnimalFeedback;
+use App\Models\EducationalCharity;
+use App\Models\EducationFeedback;
 use Illuminate\Http\Request;
 
 class CharityController extends Controller
@@ -20,7 +22,8 @@ class CharityController extends Controller
 
     public function educationIndex()
     {
-        return view('charity.education');
+        $education = EducationalCharity::all();
+        return view('charity.education',['show'=>$education]);
     }
 
     public function healthIndex()
@@ -83,6 +86,46 @@ class CharityController extends Controller
         return view('admin.animalEdit',['anime'=>$animal]);
     }
 
+    public function store(Request $request)
+    {
+        $animal = new AnimalCharity();
+
+        $this->validate($request, [
+            'ngoName'=>'required',
+            'description'=>'required',
+            'description_two'=>'required',
+            'file'=>'image|mimes:jpg,png,jpeg'
+        ]);
+
+        // File name With Extension
+        $fileNameWithExt = $request->file('file')->getClientOriginalName();
+
+        // Just File Name
+        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        // Get With Extension
+        $extension = $request->file('file')->getClientOriginalExtension();
+
+        // Create a New File
+        $fileNameToStore = $filename.'_'.time().'_'.$extension;
+
+        // Upload Image
+        $path = $request->file('file')->storeAs('public/animal_images',$fileNameToStore);
+
+        $animal->file=$fileNameToStore;
+        $animal->ngoName=$request->ngoName;
+        $animal->email=$request->email;
+        $animal->ESTD=$request->ESTD;
+        $animal->website=$request->website;
+        $animal->description=$request->description;
+        $animal->description_two=$request->description_two;
+        $animal->description_three=$request->description_three;
+
+        $animal->save();
+
+        return redirect()->back()->with('message','Charity Added');
+    }
+
     public function animalUpdate(Request $request, $id)
     {
         $animal = AnimalCharity::find($id);
@@ -128,11 +171,107 @@ class CharityController extends Controller
         return redirect()->back();
     }
 
-    // public function showFeedback()
-    // {
-    //     $animalFeedback = AnimalFeedback::all();
-    //     return view('charity.showAnimal',['comment'=>$animalFeedback]);
-    // }
+    //Education Charity
+    public function educationView()
+    {
+        $education = EducationalCharity::all();
+        return view('admin.educationCharity',['edu'=>$education]);
+    }
+
+    public function addEducation()
+    {
+        return view('admin.addEducation');
+    }
+
+    public function EducationStore(Request $request)
+    {
+        $education = new EducationalCharity();
+
+        $this->validate($request, [
+            'ngoNamee'=>'required',
+            'descriptione'=>'required',
+            'description_twoe'=>'required',
+            'filee'=>'image|mimes:jpg,png,jpeg'
+        ]);
+
+        // File name With Extension
+        $fileNameWithExt = $request->file('filee')->getClientOriginalName();
+
+        // Just File Name
+        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        // Get With Extension
+        $extension = $request->file('filee')->getClientOriginalExtension();
+
+        // Create a New File
+        $fileNameToStore = $filename.'_'.time().'_'.$extension;
+
+        // Upload Image
+        $path = $request->file('filee')->storeAs('public/educational_images',$fileNameToStore);
+
+        $education->filee=$fileNameToStore;
+        $education->ngoNamee=$request->ngoNamee;
+        $education->emaile=$request->emaile;
+        $education->ESTDe=$request->ESTDe;
+        $education->websitee=$request->websitee;
+        $education->descriptione=$request->descriptione;
+        $education->description_twoe=$request->description_twoe;
+        $education->description_threee=$request->description_threee;
+
+        $education->save();
+
+        return redirect()->back()->with('message','Charity Added');
+    }
+
+    public function edit_education($id)
+    {
+        $education = EducationalCharity::find($id);
+        return view('admin.educationEdit',['edu'=>$education]);
+    }
+
+    public function educationUpdate(Request $request, $id)
+    {
+        $education = EducationalCharity::find($id);
+
+        $education->ngoNamee=$request->ngoNamee;
+        $education->emaile=$request->emaile;
+        $education->ESTDe=$request->ESTDe;
+        $education->websitee=$request->websitee;
+        $education->descriptione=$request->descriptione;
+        $education->description_twoe=$request->description_twoe;
+        $education->description_threee=$request->description_threee;
+        
+        $education->save();
+
+        return redirect('/educationCharity')->with('message','Charity Updated');
+
+    }
+    public function education_delete($id)
+    {
+        $education = EducationalCharity::destroy($id);
+
+        return redirect()->back()->with('message','Charity Removed');
+    }
+
+    public function showEducation($id)
+    {
+        $education = EducationalCharity::find($id);
+        $educationFeedback = EducationFeedback::all();
+        // return view('charity.showAnimal',['comment'=>$animalFeedback]);
+        return view('charity.showEducation',['profile'=>$education,'commentt'=>$educationFeedback]);
+    }
+
+    public function educationFeedback(Request $request)
+    {
+        $educationFeedback = new EducationFeedback();
+
+        $educationFeedback->namee = $request->namee;
+        $educationFeedback->commentt = $request->commentt;
+
+        $educationFeedback->save();
+
+        return redirect()->back();
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -152,45 +291,7 @@ class CharityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $animal = new AnimalCharity();
-
-        $this->validate($request, [
-            'ngoName'=>'required',
-            'description'=>'required',
-            'description_two'=>'required',
-            'file'=>'image|mimes:jpg,png,jpeg'
-        ]);
-
-        // File name With Extension
-        $fileNameWithExt = $request->file('file')->getClientOriginalName();
-
-        // Just File Name
-        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-
-        // Get With Extension
-        $extension = $request->file('file')->getClientOriginalExtension();
-
-        // Create a New File
-        $fileNameToStore = $filename.'_'.time().'_'.$extension;
-
-        // Upload Image
-        $path = $request->file('file')->storeAs('public/animal_images',$fileNameToStore);
-
-        $animal->file=$fileNameToStore;
-        $animal->ngoName=$request->ngoName;
-        $animal->email=$request->email;
-        $animal->ESTD=$request->ESTD;
-        $animal->website=$request->website;
-        $animal->description=$request->description;
-        $animal->description_two=$request->description_two;
-        $animal->description_three=$request->description_three;
-
-        $animal->save();
-
-        return redirect()->back()->with('message','Charity Added');
-    }
+    
 
     /**
      * Display the specified resource.

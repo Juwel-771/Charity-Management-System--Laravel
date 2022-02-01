@@ -201,6 +201,20 @@ Route::get('/showAnimal/{id}',[CharityController::class,'showAnimal']);
 // Route::get('/showAnimal',[CharityController::class,'showFeedback']);
 Route::post('/showAnimal',[CharityController::class,'animalFeedback']);
 
+// Route for Education Charity
+Route::get('/educationCharity',[CharityController::class,'educationView']);
+Route::get('/addEducation',[CharityController::class,'addEducation']);
+Route::post('/addEducation',[CharityController::class,'EducationStore']);
+Route::get('/edit_education/{id}',[CharityController::class,'edit_education']);
+Route::put('/edit_education/{id}',[CharityController::class,'educationUpdate']);
+Route::get('/education_delete/{id}',[CharityController::class,'education_delete']);
+Route::get('/showEducation/{id}',[CharityController::class,'showEducation']);
+Route::post('/showEducation',[CharityController::class,'educationFeedback']);
+
+
+
+
+
 // ########################## END of Admin Dashboard Routes ############################
 // Route for Volunteer 
 Route::post('/volunForm',[VolunteerController::class,'store']);

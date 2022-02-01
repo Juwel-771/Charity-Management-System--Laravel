@@ -164,35 +164,96 @@
         </div>
     </div>
     {{-- END OF IMAGE SLIDER   --}}
-
-    {{-- start of food section --}}
-    <div class="container my-4">
-       
-    </div>
     <div class="container my-5">
-    <div class= "row">
-        @foreach ($show as $item)
-        <div class="col-md-8">
-            {{-- @foreach ($bloods as $blood) --}}
-            <div class="card mb-3">
-                <img src="/storage/educational_images/{{$item->filee}}" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">{{$item->ngoNamee}}</h5>
-                  <p class="card-text">{{$item->descriptione}}"</p>
-                  <p class="card-text"><small class="text-muted">Charity Established: {{$item->ESTDe}}</small></p>
-                  <a href="{{url('showEducation',$item->id)}}" class="btn btn-dark">View</a>
-                </div>
-              </div>
-        </div>
-        @endforeach
         <div class="row">
-            <div class="col-sm-6 my-3">
-                {{-- {{$bloods->links()}} --}}
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/storage/educational_images/{{$profile->filee}}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 style="font-size: 5rem">{{$profile->ngoNamee}}</h3>
+                        <h3>We Came Here: {{$profile->ESTDe}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 my-2">
+                        <h5 style="font-size: 25px">Email: {{$profile->emaile}}</h5>
+                    </div>
+                    <div class="col-md-4 my-2">
+                        <a style="font-size: 25px" href="#">Website: {{$profile->websitee}}</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 my-2">
+                        <p style="font-size: 20px">{{$profile->descriptione}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 my-2">
+                        <p style="font-size: 20px">{{$profile->description_twoe}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 my-2">
+                        <p style="font-size: 20px">{{$profile->description_threee}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 my-4">
+                <h2>Feedback</h2>
+                <table class="table table-hover">
+                    <thead class="">
+                        <tr>
+                            {{-- <th>Image</th> --}}
+                            <th>Name</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                </table>
+                @foreach ($commentt as $feed)
+                <div class="row my-4">
+                    <div class="col-md-4">
+                        <h6>{{$feed->namee}}</h6>
+                    </div>     
+                        <div class="col-md-6">
+                            <p>{{$feed->commentt}}</p>
+                        </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/showEducation" method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Name: </label>
+                            <input type="text" name="namee" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="comment" class="form-label">Comment: </label>
+                            <textarea name="commentt" class="form-control" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="row">
             <div class="col-md-2">
-                <a href="{{url('charities')}}" class="btn btn-danger">Back</a>
+                <a href="{{url('education')}}" class="btn btn-danger">Back</a>
             </div>
         </div>
     </div>
