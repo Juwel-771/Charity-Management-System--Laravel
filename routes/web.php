@@ -189,7 +189,7 @@ Route::get('/edit_financial/{id}',[FinancialController::class,'edit_financial'])
 Route::post('/financialEdit',[FinancialController::class,'approve']);
 
 // Route for Charity-Dashboard
-// Route for Anima-charity
+// Route for Animal-charity
 Route::get('/animalCharity',[CharityController::class,'animalView']);
 Route::get('/addAnimal',[CharityController::class,'addAnimal']);
 Route::post('/addAnimal',[CharityController::class,'store']);
@@ -240,6 +240,46 @@ Route::put('/edit_human/{id}',[CharityController::class,'humanUpdate']);
 Route::get('/human_delete/{id}',[CharityController::class,'human_delete']);
 Route::get('/showHuman/{id}',[CharityController::class,'showHuman']);
 Route::post('/showHuman',[CharityController::class,'humanFeedback']);
+
+// Route For Health Charity
+Route::get('/healthCharity',[CharityController::class,'healthView']);
+Route::get('/addHealth',[CharityController::class,'addHealth']);
+Route::post('/addHealth',[CharityController::class,'HealthStore']);
+Route::get('/edit_health/{id}',[CharityController::class,'edit_health']);
+Route::put('/edit_health/{id}',[CharityController::class,'healthUpdate']);
+Route::get('/health_delete/{id}',[CharityController::class,'health_delete']);
+Route::get('/showHealth/{id}',[CharityController::class,'showHealth']);
+Route::post('/showHealth',[CharityController::class,'healthFeedback']);
+
+// Route For Social Charity
+Route::get('/socialCharity',[CharityController::class,'socialView']);
+Route::get('/addSocial',[CharityController::class,'addSocial']);
+Route::post('/addSocial',[CharityController::class,'SocialStore']);
+Route::get('/edit_social/{id}',[CharityController::class,'edit_social']);
+Route::put('/edit_social/{id}',[CharityController::class,'socialUpdate']);
+Route::get('/social_delete/{id}',[CharityController::class,'social_delete']);
+Route::get('/showSocial/{id}',[CharityController::class,'showSocial']);
+Route::post('/showSocial',[CharityController::class,'socialFeedback']);
+
+// Route For Refuge Charity
+Route::get('/refugeCharity',[CharityController::class,'refugeView']);
+Route::get('/addRefuge',[CharityController::class,'addRefuge']);
+Route::post('/addRefuge',[CharityController::class,'RefugeStore']);
+Route::get('/edit_refuge/{id}',[CharityController::class,'edit_refuge']);
+Route::put('/edit_refuge/{id}',[CharityController::class,'refugeUpdate']);
+Route::get('/refuge_delete/{id}',[CharityController::class,'refuge_delete']);
+Route::get('/showRefuge/{id}',[CharityController::class,'showRefuge']);
+Route::post('/showRefuge',[CharityController::class,'refugeFeedback']);
+
+// Route For Refuge Charity
+Route::get('/victimCharity',[CharityController::class,'victimView']);
+Route::get('/addVictim',[CharityController::class,'addVictim']);
+Route::post('/addVictim',[CharityController::class,'VictimStore']);
+Route::get('/edit_victim/{id}',[CharityController::class,'edit_victim']);
+Route::put('/edit_victim/{id}',[CharityController::class,'victimUpdate']);
+Route::get('/victim_delete/{id}',[CharityController::class,'victim_delete']);
+Route::get('/showVictim/{id}',[CharityController::class,'showVictim']);
+Route::post('/showVictim',[CharityController::class,'victimFeedback']);
 
 
 

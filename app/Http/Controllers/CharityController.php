@@ -10,8 +10,16 @@ use App\Models\EducationalCharity;
 use App\Models\EducationFeedback;
 use App\Models\EnvironmentCharity;
 use App\Models\EnvironmentFeedback;
+use App\Models\HealthCharity;
+use App\Models\HealthFeedback;
 use App\Models\HumanCharity;
 use App\Models\HumanFeedback;
+use App\Models\RefugeCharity;
+use App\Models\RefugeFeedback;
+use App\Models\SocialCharity;
+use App\Models\SocialFeedback;
+use App\Models\VictimCharity;
+use App\Models\VictimFeedback;
 use Illuminate\Http\Request;
 
 class CharityController extends Controller
@@ -34,7 +42,8 @@ class CharityController extends Controller
 
     public function healthIndex()
     {
-        return view('charity.health');
+        $health = HealthCharity::all();
+        return view('charity.health',['show'=>$health]);
     }
 
     public function environmentIndex()
@@ -57,7 +66,8 @@ class CharityController extends Controller
 
     public function socialIndex()
     {
-        return view('charity.social');
+        $social = SocialCharity::all();
+        return view('charity.social',['soci'=>$social]);
     }
 
     public function childIndex()
@@ -68,12 +78,14 @@ class CharityController extends Controller
 
     public function refugeIndex()
     {
-        return view('charity.refuge');
+        $refuge = RefugeCharity::all();
+        return view('charity.refuge',['ref'=>$refuge]);
     }
 
     public function victimIndex()
     {
-        return view('charity.victim');
+        $victim = VictimCharity::all();
+        return view('charity.victim',['vic'=>$victim]);
     }
 
     // ADMIN DASHBOARD
@@ -93,6 +105,30 @@ class CharityController extends Controller
         $human = HumanCharity::all();
         return view('admin.humanCharity',['hmn'=>$human]);
     }
+    public function healthView()
+    {
+        $health = HealthCharity::all();
+        return view('admin.healthCharity',['heal'=>$health]);
+    }
+    public function socialView()
+    {
+        $social = SocialCharity::all();
+        return view('admin.socialCharity',['item'=>$social]);
+    }
+
+    public function refugeView()
+    {
+        $refuge = RefugeCharity::all();
+        return view('admin.refugeCharity',['item'=>$refuge]);
+    }
+    public function victimView()
+    {
+        $victim = VictimCharity::all();
+        return view('admin.victimCharity',['item'=>$victim]);
+    }
+
+
+
 
     public function addAnimal()
     {
@@ -106,6 +142,22 @@ class CharityController extends Controller
     public function addHuman()
     {
         return view('admin.addHuman');
+    }
+    public function addHealth()
+    {
+        return view('admin.addHealth');
+    }
+    public function addSocial()
+    {
+        return view('admin.addSocial');
+    }
+    public function addRefuge()
+    {
+        return view('admin.addRefuge');
+    }
+    public function addVictim()
+    {
+        return view('admin.addVictim');
     }
 
 
@@ -124,6 +176,26 @@ class CharityController extends Controller
     {
         $human = HumanCharity::find($id);
         return view('admin.humanEdit',['hmn'=>$human]);
+    }
+    public function edit_health($id)
+    {
+        $hlth = HealthCharity::find($id);
+        return view('admin.healthEdit',['health'=>$hlth]);
+    }
+    public function edit_social($id)
+    {
+        $social = SocialCharity::find($id);
+        return view('admin.socialEdit',['social'=>$social]);
+    }
+    public function edit_refuge($id)
+    {
+        $refuge = RefugeCharity::find($id);
+        return view('admin.refugeEdit',['ref'=>$refuge]);
+    }
+    public function edit_victim($id)
+    {
+        $victim = VictimCharity::find($id);
+        return view('admin.victimEdit',['vic'=>$victim]);
     }
 
     public function store(Request $request)
@@ -166,6 +238,87 @@ class CharityController extends Controller
         return redirect()->back()->with('message','Charity Added');
     }
 
+    public function SocialStore(Request $request)
+    {
+        $social = new SocialCharity();
+
+        $this->validate($request, [
+            'ngoName'=>'required',
+            'description'=>'required',
+            'description_two'=>'required',
+            'file'=>'image|mimes:jpg,png,jpeg'
+        ]);
+
+        // File name With Extension
+        $fileNameWithExt = $request->file('file')->getClientOriginalName();
+
+        // Just File Name
+        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        // Get With Extension
+        $extension = $request->file('file')->getClientOriginalExtension();
+
+        // Create a New File
+        $fileNameToStore = $filename.'_'.time().'_'.$extension;
+
+        // Upload Image
+        $path = $request->file('file')->storeAs('public/social_images',$fileNameToStore);
+
+        $social->file=$fileNameToStore;
+        $social->ngoName=$request->ngoName;
+        $social->email=$request->email;
+        $social->ESTD=$request->ESTD;
+        $social->website=$request->website;
+        $social->description=$request->description;
+        $social->description_two=$request->description_two;
+        $social->description_three=$request->description_three;
+
+        $social->save();
+
+        return redirect()->back()->with('message','Charity Added');
+    }
+
+    public function HealthStore(Request $request)
+    {
+        $animal = new HealthCharity();
+
+        $this->validate($request, [
+            'ngoName'=>'required',
+            'description'=>'required',
+            'description_two'=>'required',
+            'file'=>'image|mimes:jpg,png,jpeg'
+        ]);
+
+        // File name With Extension
+        $fileNameWithExt = $request->file('file')->getClientOriginalName();
+
+        // Just File Name
+        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        // Get With Extension
+        $extension = $request->file('file')->getClientOriginalExtension();
+
+        // Create a New File
+        $fileNameToStore = $filename.'_'.time().'_'.$extension;
+
+        // Upload Image
+        $path = $request->file('file')->storeAs('public/health_images',$fileNameToStore);
+
+        $animal->file=$fileNameToStore;
+        $animal->ngoName=$request->ngoName;
+        $animal->email=$request->email;
+        $animal->ESTD=$request->ESTD;
+        $animal->website=$request->website;
+        $animal->description=$request->description;
+        $animal->description_two=$request->description_two;
+        $animal->description_three=$request->description_three;
+
+        $animal->save();
+
+        return redirect()->back()->with('message','Charity Added');
+    }
+
+
     public function EnviromentStore(Request $request)
     {
         $environment = new EnvironmentCharity();
@@ -202,6 +355,46 @@ class CharityController extends Controller
         $environment->description_three=$request->description_three;
 
         $environment->save();
+
+        return redirect()->back()->with('message','Charity Added');
+    }
+
+    public function RefugeStore(Request $request)
+    {
+        $refuge = new RefugeCharity();
+
+        $this->validate($request, [
+            'ngoName'=>'required',
+            'description'=>'required',
+            'description_two'=>'required',
+            'file'=>'image|mimes:jpg,png,jpeg'
+        ]);
+
+        // File name With Extension
+        $fileNameWithExt = $request->file('file')->getClientOriginalName();
+
+        // Just File Name
+        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        // Get With Extension
+        $extension = $request->file('file')->getClientOriginalExtension();
+
+        // Create a New File
+        $fileNameToStore = $filename.'_'.time().'_'.$extension;
+
+        // Upload Image
+        $path = $request->file('file')->storeAs('public/refuge_images',$fileNameToStore);
+
+        $refuge->file=$fileNameToStore;
+        $refuge->ngoName=$request->ngoName;
+        $refuge->email=$request->email;
+        $refuge->ESTD=$request->ESTD;
+        $refuge->website=$request->website;
+        $refuge->description=$request->description;
+        $refuge->description_two=$request->description_two;
+        $refuge->description_three=$request->description_three;
+
+        $refuge->save();
 
         return redirect()->back()->with('message','Charity Added');
     }
@@ -245,6 +438,45 @@ class CharityController extends Controller
 
         return redirect()->back()->with('message','Charity Added');
     }
+    public function VictimStore(Request $request)
+    {
+        $victim = new VictimCharity();
+
+        $this->validate($request, [
+            'ngoName'=>'required',
+            'description'=>'required',
+            'description_two'=>'required',
+            'file'=>'image|mimes:jpg,png,jpeg'
+        ]);
+
+        // File name With Extension
+        $fileNameWithExt = $request->file('file')->getClientOriginalName();
+
+        // Just File Name
+        $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        // Get With Extension
+        $extension = $request->file('file')->getClientOriginalExtension();
+
+        // Create a New File
+        $fileNameToStore = $filename.'_'.time().'_'.$extension;
+
+        // Upload Image
+        $path = $request->file('file')->storeAs('public/victim_images',$fileNameToStore);
+
+        $victim->file=$fileNameToStore;
+        $victim->ngoName=$request->ngoName;
+        $victim->email=$request->email;
+        $victim->ESTD=$request->ESTD;
+        $victim->website=$request->website;
+        $victim->description=$request->description;
+        $victim->description_two=$request->description_two;
+        $victim->description_three=$request->description_three;
+
+        $victim->save();
+
+        return redirect()->back()->with('message','Charity Added');
+    }
 
     public function animalUpdate(Request $request, $id)
     {
@@ -260,7 +492,41 @@ class CharityController extends Controller
 
         $animal->save();
 
-        return redirect('/animalCharity')->with('message','Charity Updated');
+        return redirect('/victimCharity')->with('message','Charity Updated');
+
+    }
+    public function refugeUpdate(Request $request, $id)
+    {
+        $animal = RefugeCharity::find($id);
+
+        $animal->ngoName=$request->ngoName;
+        $animal->email=$request->email;
+        $animal->ESTD=$request->ESTD;
+        $animal->website=$request->website;
+        $animal->description=$request->description;
+        $animal->description_two=$request->description_two;
+        $animal->description_three=$request->description_three;
+
+        $animal->save();
+
+        return redirect('/refugeCharity')->with('message','Charity Updated');
+
+    }
+    public function healthUpdate(Request $request, $id)
+    {
+        $animal = HealthCharity::find($id);
+
+        $animal->ngoName=$request->ngoName;
+        $animal->email=$request->email;
+        $animal->ESTD=$request->ESTD;
+        $animal->website=$request->website;
+        $animal->description=$request->description;
+        $animal->description_two=$request->description_two;
+        $animal->description_three=$request->description_three;
+
+        $animal->save();
+
+        return redirect('/healthCharity')->with('message','Charity Updated');
 
     }
 
@@ -279,6 +545,41 @@ class CharityController extends Controller
         $animal->save();
 
         return redirect('/humanCharity')->with('message','Charity Updated');
+
+    }
+
+    public function socialUpdate(Request $request, $id)
+    {
+        $animal = SocialCharity::find($id);
+
+        $animal->ngoName=$request->ngoName;
+        $animal->email=$request->email;
+        $animal->ESTD=$request->ESTD;
+        $animal->website=$request->website;
+        $animal->description=$request->description;
+        $animal->description_two=$request->description_two;
+        $animal->description_three=$request->description_three;
+
+        $animal->save();
+
+        return redirect('/socialCharity')->with('message','Charity Updated');
+
+    }
+    public function victimUpdate(Request $request, $id)
+    {
+        $animal = VictimCharity::find($id);
+
+        $animal->ngoName=$request->ngoName;
+        $animal->email=$request->email;
+        $animal->ESTD=$request->ESTD;
+        $animal->website=$request->website;
+        $animal->description=$request->description;
+        $animal->description_two=$request->description_two;
+        $animal->description_three=$request->description_three;
+
+        $animal->save();
+
+        return redirect('/victimCharity')->with('message','Charity Updated');
 
     }
     
@@ -306,9 +607,28 @@ class CharityController extends Controller
 
         return redirect()->back()->with('message','Charity Removed');
     }
+    public function refuge_delete($id)
+    {
+        $refuge = RefugeCharity::destroy($id);
+
+        return redirect()->back()->with('message','Charity Removed');
+    }
+
+    public function health_delete($id)
+    {
+        $health = HealthCharity::destroy($id);
+
+        return redirect()->back()->with('message','Charity Removed');
+    }
     public function human_delete($id)
     {
         $human = HumanCharity::destroy($id);
+
+        return redirect()->back()->with('message','Charity Removed');
+    }
+    public function social_delete($id)
+    {
+        $human = SocialCharity::destroy($id);
 
         return redirect()->back()->with('message','Charity Removed');
     }
@@ -316,6 +636,12 @@ class CharityController extends Controller
     public function enviro_delete($id)
     {
         $animal = EnvironmentCharity::destroy($id);
+
+        return redirect()->back()->with('message','Charity Removed');
+    }
+    public function victim_delete($id)
+    {
+        $animal = VictimCharity::destroy($id);
 
         return redirect()->back()->with('message','Charity Removed');
     }
@@ -334,6 +660,20 @@ class CharityController extends Controller
         // return view('charity.showAnimal',['comment'=>$animalFeedback]);
         return view('charity.showHuman',['profile'=>$human,'comment'=>$humanFeedback]);
     }
+    public function showHealth($id)
+    {
+        $health = HealthCharity::find($id);
+        $humanHealth = HealthFeedback::all();
+        // return view('charity.showAnimal',['comment'=>$animalFeedback]);
+        return view('charity.showHealth',['profile'=>$health,'comment'=>$humanHealth]);
+    }
+    public function showSocial($id)
+    {
+        $social = SocialCharity::find($id);
+        $socialFeedback = SocialFeedback::all();
+        // return view('charity.showAnimal',['comment'=>$animalFeedback]);
+        return view('charity.showSocial',['profile'=>$social,'comment'=>$socialFeedback]);
+    }
     public function showEnviroment($id)
     {
         $enviroment = EnvironmentCharity::find($id);
@@ -341,7 +681,23 @@ class CharityController extends Controller
         // return view('charity.showAnimal',['comment'=>$animalFeedback]);
         return view('charity.showEnviroment',['profile'=>$enviroment,'comment'=>$enviromentFeedback]);
     }
-    
+
+    public function showRefuge($id)
+    {
+        $refuge = RefugeCharity::find($id);
+        $RefugeFeedback = RefugeFeedback::all();
+        // return view('charity.showAnimal',['comment'=>$animalFeedback]);
+        return view('charity.showRefuge',['profile'=>$refuge,'comment'=>$RefugeFeedback]);
+    }
+
+    public function showVictim($id)
+    {
+        $victim = VictimCharity::find($id);
+        $VictimFeedback = VictimFeedback::all();
+        // return view('charity.showAnimal',['comment'=>$animalFeedback]);
+        return view('charity.showVictim',['profile'=>$victim,'comment'=>$VictimFeedback]);
+    }
+
     public function animalFeedback(Request $request)
     {
         $animalFeedback = new AnimalFeedback();
@@ -365,6 +721,28 @@ class CharityController extends Controller
 
         return redirect()->back();
     }
+    public function healthFeedback(Request $request)
+    {
+        $healthFeedback = new HealthFeedback();
+
+        $healthFeedback->name = $request->name;
+        $healthFeedback->comment = $request->comment;
+
+        $healthFeedback->save();
+
+        return redirect()->back();
+    }
+    public function socialFeedback(Request $request)
+    {
+        $socialFeedback = new SocialFeedback();
+
+        $socialFeedback->name = $request->name;
+        $socialFeedback->comment = $request->comment;
+
+        $socialFeedback->save();
+
+        return redirect()->back();
+    }
 
     public function environmentFeedback(Request $request)
     {
@@ -374,6 +752,28 @@ class CharityController extends Controller
         $enviromentFeedback->comment = $request->comment;
 
         $enviromentFeedback->save();
+
+        return redirect()->back();
+    }
+    public function refugeFeedback(Request $request)
+    {
+        $refugeFeedback = new RefugeFeedback();
+
+        $refugeFeedback->name = $request->name;
+        $refugeFeedback->comment = $request->comment;
+
+        $refugeFeedback->save();
+
+        return redirect()->back();
+    }
+    public function victimFeedback(Request $request)
+    {
+        $victimFeedback = new victimFeedback();
+
+        $victimFeedback->name = $request->name;
+        $victimFeedback->comment = $request->comment;
+
+        $victimFeedback->save();
 
         return redirect()->back();
     }

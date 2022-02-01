@@ -41,7 +41,7 @@
                         <a class="collapse-item" href="{{url('animalCharity')}}">Animal Charity</a>
                         <a class="collapse-item" href="#">Child Welfare Charity</a>
                         <a class="collapse-item" href="#">Environment Charity</a>
-                        <a class="collapse-item" href="{{url('educationCharity')}}">Education Charity</a>
+                        <a class="collapse-item" href="#">Education Charity</a>
                         <a class="collapse-item" href="#">Health Charity</a>
                         <a class="collapse-item" href="#">Human Service Charity</a>
                         <a class="collapse-item" href="#">Refuge Charity</a>
@@ -168,87 +168,40 @@
 
         <!-- Content Wrapper -->
 
-    <div id="content-wrapper" class="d-flex flex-column">
-        <div class="container">
-            <div class="row" >
-                <h1 class="text-center my-5 text-black">Add Health Charity Form</h1>
-                <div class="col-md-10">
-                    <div class="row d-flex justify-content-center mt-3">
-                        <form action="/addHealth" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="file">Upload Even Image: </label>
-                                    <input type="file" class="form-control" name="file">
-                                </div>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div class="col-md-12">
+                <h3>Refuge Charities</h3>
+                <table class="table table-hover text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            {{-- <th>Image</th> --}}
+                            <th>Ngo Name</th>
+                            <th>ESTD</th>
+                            <th>Email</th>
+                            <th>Websie</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($item as $refuge)
+                        <tr>
+                            <td class="border-bottom-dark">{{$refuge->ngoName}}</td>
+                            <td class="border-bottom-dark">{{$refuge->ESTD}}</td>
+                            <td class="border-bottom-dark">{{$refuge->email}}</td>
+                            <td class="border-bottom-dark">{{$refuge->website}}</td>
+                            <td class="border-bottom-dark">
+                                <a href="{{url('/edit_refuge',$refuge->id)}}" class="btn btn-dark btn-sm">View</a>
+                                <a href="{{url('/refuge_delete',$refuge->id)}}" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>     
+                        @endforeach
+                    </tbody>
+                </table>
+                @if (session()->has('message'))
+                            <div class="alert alert-success">
+                                {{session('message')}}
                             </div>
-                            <div class="d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="ngoName" class="form-label">Organization Name: </label>
-                                    <input type="text" name="ngoName" class="form-control">
-                                </div>
-                            </div>
-    
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="email" class="form-label">E-mail: </label>
-                                    <input type="email" name="email" class="form-control py-4">
-                                </div>
-                            </div>
-    
-    
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="ESTD" class="form-label">ESTD : </label>
-                                    <input type="date" name="ESTD" class="form-control">
-                                </div>
-                            </div>
-    
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="website" class="form-label">Web Site: </label>
-                                    <input type="text" name="website" class="form-control">
-                                </div>
-                            </div>
-                          
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-10">
-                                    <label for="description" class="form-label">About Us:  </label>
-                                        <textarea name="description" class="form-control"cols="78" rows="3"></textarea><br>
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-10">
-                                        <textarea name="description_two" class="form-control"cols="78" rows="3"></textarea><br>
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-10">
-                                        <textarea name="description_three" class="form-control"cols="78" rows="3"></textarea><br>
-                                </div>
-                            </div> 
-                           
-                            </div>
-                            <div class="row">
-                                <div class="col p-2 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-dark">Add Charity</button>
-                                </div>
-                                <div class="col p-2 d-flex justify-content-center">
-                                    <a href="#" class="btn btn-dark">Back</a>
-                                </div>
-                            </div>           
-                        </form>
-                        
-                    </div>
-                    @if (session()->has('message'))
-                    <div class="alert alert-success my-3">
-                            {{session('message')}}
-                    </div>
-                @endif
-                </div>
-            </div>
+                 @endif
+            </div> 
         </div>
-    </div>
 </x-app-layout>
