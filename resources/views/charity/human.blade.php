@@ -167,33 +167,32 @@
 
     {{-- start of food section --}}
     <div class="container my-4">
-        <div class="row">
-            <div class="col-md-10">
-                <h2>Blood Donation</h2>
-            </div>
-
-            <div class="col-md-2">
-                <a href="{{url('makeDonation')}}" class="btn btn-danger">Back</a>
-            </div>
-        </div>
+       
     </div>
     <div class="container my-5">
     <div class= "row">
+        @foreach ($show as $item)
         <div class="col-md-8">
             {{-- @foreach ($bloods as $blood) --}}
-            <div class="card my-4">
-                <h5 class="card-header">Blood Donation</h5>
+            <div class="card mb-3">
+                <img src="/storage/human_images/{{$item->file}}" class="card-img-top">
                 <div class="card-body">
-                    {{-- <h5 class="card-title">{{$blood->heading}}</h5> --}}
-                    {{-- <p class="card-text">{{$blood->description}}</p> --}}
-                    {{-- <a type="button" href="{{url('bloodProfile',$blood->id)}}" class="btn btn-outline-danger">Contact</a> --}}
+                  <h5 class="card-title">{{$item->ngoName}}</h5>
+                  <p class="card-text">{{$item->description}}"</p>
+                  <p class="card-text"><small class="text-muted">Charity Established: {{$item->ESTD}}</small></p>
+                  <a href="{{url('showHuman',$item->id)}}" class="btn btn-dark">View</a>
                 </div>
-            </div>
-            {{-- @endforeach --}}
+              </div>
         </div>
+        @endforeach
         <div class="row">
             <div class="col-sm-6 my-3">
                 {{-- {{$bloods->links()}} --}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a href="{{url('charities')}}" class="btn btn-danger">Back</a>
             </div>
         </div>
     </div>

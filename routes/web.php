@@ -211,6 +211,35 @@ Route::get('/education_delete/{id}',[CharityController::class,'education_delete'
 Route::get('/showEducation/{id}',[CharityController::class,'showEducation']);
 Route::post('/showEducation',[CharityController::class,'educationFeedback']);
 
+// Rote For Child Charity: 
+Route::get('/childCharity',[CharityController::class,'childView']);
+Route::get('/addChild',[CharityController::class,'addChild']);
+Route::post('/addChild',[CharityController::class,'ChildStore']);
+Route::get('/edit_child/{id}',[CharityController::class,'edit_child']);
+Route::put('/edit_child/{id}',[CharityController::class,'childUpdate']);
+Route::get('/child_delete/{id}',[CharityController::class,'child_delete']);
+Route::get('/showChild/{id}',[CharityController::class,'showChild']);
+Route::post('/showChild',[CharityController::class,'childFeedback']);
+
+// Rote For Enviroment Charity: 
+Route::get('/environmentCharity',[CharityController::class,'environmentView']);
+Route::get('/addEnvironment',[CharityController::class,'addEnvironment']);
+Route::post('/addEnviroment',[CharityController::class,'EnviromentStore']);
+Route::get('/edit_enviro/{id}',[CharityController::class,'edit_enviro']);
+Route::put('/edit_enviro/{id}',[CharityController::class,'envrioUpdate']);
+Route::get('/enviro_delete/{id}',[CharityController::class,'enviro_delete']);
+Route::get('/showEnviroment/{id}',[CharityController::class,'showEnviroment']);
+Route::post('/showEnviroment',[CharityController::class,'environmentFeedback']);
+
+// Rote For Human Charity: 
+Route::get('/humanCharity',[CharityController::class,'humanView']);
+Route::get('/addHuman',[CharityController::class,'addHuman']);
+Route::post('/addHuman',[CharityController::class,'HumanStore']);
+Route::get('/edit_human/{id}',[CharityController::class,'edit_human']);
+Route::put('/edit_human/{id}',[CharityController::class,'humanUpdate']);
+Route::get('/human_delete/{id}',[CharityController::class,'human_delete']);
+Route::get('/showHuman/{id}',[CharityController::class,'showHuman']);
+Route::post('/showHuman',[CharityController::class,'humanFeedback']);
 
 
 
