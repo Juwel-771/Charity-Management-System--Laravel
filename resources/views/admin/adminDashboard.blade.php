@@ -51,6 +51,27 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseNGOAdd"
+                aria-expanded="true" aria-controls="collapseNGOAdd" href="#">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Add NGO's</span>
+                </a>
+                <div id="collapseNGOAdd" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('addAnimal')}}">Animal Charity</a>
+                        <a class="collapse-item" href="#">Child Welfare Charity</a>
+                        <a class="collapse-item" href="#">Environment Charity</a>
+                        <a class="collapse-item" href="#">Education Charity</a>
+                        <a class="collapse-item" href="#">Health Charity</a>
+                        <a class="collapse-item" href="#">Human Service Charity</a>
+                        <a class="collapse-item" href="#">Refuge Charity</a>
+                        <a class="collapse-item" href="#">Social Service</a>
+                        <a class="collapse-item" href="#">Victim Welfare Charity</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="#">

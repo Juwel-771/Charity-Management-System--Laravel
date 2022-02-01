@@ -189,7 +189,17 @@ Route::get('/edit_financial/{id}',[FinancialController::class,'edit_financial'])
 Route::post('/financialEdit',[FinancialController::class,'approve']);
 
 // Route for Charity-Dashboard
+// Route for Anima-charity
 Route::get('/animalCharity',[CharityController::class,'animalView']);
+Route::get('/addAnimal',[CharityController::class,'addAnimal']);
+Route::post('/addAnimal',[CharityController::class,'store']);
+// Route::post('/addAnimal',[CharityController::class,'store']);
+Route::get('/edit_animal/{id}',[CharityController::class,'edit_animal']);
+Route::put('/edit_animal/{id}',[CharityController::class,'animalUpdate']);
+Route::get('/animal_delete/{id}',[CharityController::class,'animal_delete']);
+Route::get('/showAnimal/{id}',[CharityController::class,'showAnimal']);
+// Route::get('/showAnimal',[CharityController::class,'showFeedback']);
+Route::post('/showAnimal',[CharityController::class,'animalFeedback']);
 
 // ########################## END of Admin Dashboard Routes ############################
 // Route for Volunteer 
