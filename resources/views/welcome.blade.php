@@ -121,7 +121,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="{{url('charities')}}">Charities</a></li>
-                                    <li><a href="#">Auction</a></li>
+                                    <li><a href="{{url('auctions')}}">Auction</a></li>
                                     {{-- <li><a href="#">Donate</a></li> --}}
                                     {{-- <li><a href="#">Project</a></li> --}}
                                     <li><a href="#">About</a></li>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointVolunteer;
+use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodController;
 use App\Http\Controllers\CharityController;
@@ -326,6 +327,12 @@ Route::get('/appoint_volun/{id}',[AppointVolunteer::class,'appoint']);
 Route::post('/recruitVolunteer',[AppointVolunteer::class,'create']);
 Route::get('/selectedVolunteer',[AppointVolunteer::class,'selected']);
 Route::get('/remove/{id}',[AppointVolunteer::class,'destroy'])->name('destroy');
+
+// Route For Auction
+Route::get('/organize',[AuctionController::class,'index']);
+Route::post('/organize',[AuctionController::class,'store']);
+Route::get('auctions',[AuctionController::class,'showCraft']);
+// Route::view('auctions','auctions');
 
 
 // ##################################### USER DASHBOARD ROUTES ############################################
