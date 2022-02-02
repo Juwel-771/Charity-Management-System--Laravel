@@ -170,7 +170,7 @@
 
         <div id="content-wrapper" class="d-flex flex-column">
             <div class="col-md-12">
-                <h3>Animal Charities</h3>
+                <h3>Education Charities</h3>
                 <table class="table table-hover text-center">
                     <thead class="table-dark">
                         <tr>

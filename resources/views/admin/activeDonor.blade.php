@@ -168,28 +168,42 @@
 
         <!-- Content Wrapper -->
 
-    <div id="content-wrapper" class="d-flex flex-column">
-        {{-- <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4 class="text-center text-black">Admin Profile</h4><br>
-                    <div class="row">
-                        @foreach ($admins as $item)
-                        <div class="col-md-4">
-                            <h1>{{$item->file}}</h1>
+        <div class="col-md-10">
+            <table class="table table-light table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        {{-- <th>Image</th> --}}
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>About</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($donor as $item)
+                    <tr>
+                        
+                        {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+                        <td class="border-bottom-primary">{{$item->name}}</td>
+                        <td class="border-bottom-primary">{{$item->email}}</td>
+                        <td class="border-bottom-primary">{{$item->details}}</td>
+                        <td class="border-bottom-primary">
+                            <a href="{{url('/editblog',$item->id)}}" class="btn btn-info btn-sm">Edit</a>
+                            <a href="{{url('/destroy', $item->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+
+                    @endforeach
+                    
+                </tbody>
+            </table>
+
+            @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{session('message')}}
                         </div>
-                        <div class="col-md-8">
-                            <p>{{$item->name}}</p>
-                            <table>
-                                <td>
-                                    <a href="{{url('/adminForm')}}" class="btn btn-primary">Edit</a>
-                                </td>
-                            </table>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+                    @endif
+        </div>
+    
     </div>
 </x-app-layout>

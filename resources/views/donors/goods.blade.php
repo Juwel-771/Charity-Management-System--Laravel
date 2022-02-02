@@ -151,7 +151,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card bg-dark text-white">
-                    <img class="card-img img_opacity" src="{{ asset('img/goods_form.jpg')}}" alt="Card image">
+                    {{-- <img class="card-img img_opacity" src="{{ asset('img/goods_form.jpg')}}" alt="Card image"> --}}
                     <div class="card-img-overlay">
                         <div class="row d-flex justify-content-center my-3">
                             <div class="col-sm-3 fw-light fs-5 bg-success border border-success py-3">

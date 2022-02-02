@@ -15,7 +15,7 @@ class GoodsController extends Controller
      */
     public function index()
     {
-        return ('donors.goods');
+        return view('donors.goods');
     }
 
     public function goodsShow()

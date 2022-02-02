@@ -138,19 +138,19 @@
                 <div class="col-md-12">
                     <h4 class="text-center text-black">Admin Profile</h4><br>
                     <div class="row">
-                        {{-- @foreach ($admins as $item) --}}
+                        @foreach ($admins as $item)
                         <div class="col-md-4">
-                            {{-- <h1>{{$item->file}}</h1> --}}
+                            <img src="/storage/admin_images/{{$item->file}}" alt="Admin">
                         </div>
                         <div class="col-md-8">
-                            {{-- <p>{{$item->name}}</p> --}}
+                            <h2>{{$item->name}}</h2>
                             <table>
                                 <td>
                                     <a href="{{url('/adminForm')}}" class="btn btn-primary">Edit</a>
                                 </td>
                             </table>
                         </div>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </div>
                 </div>
             </div>

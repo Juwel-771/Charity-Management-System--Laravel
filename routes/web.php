@@ -55,7 +55,7 @@ Route::get('makeDonation',[MakeDonation::class,'index']);
 Route::get('foodDonate',[MakeDonation::class,'food']);
 Route::get('bloodDonate',[MakeDonation::class,'blood']);
 Route::get('clothDonate',[MakeDonation::class,'cloth']);
-Route::get('goodsDonate',[MakeDonation::class,'goods']);
+Route::get('nate',[MakeDonation::class,'goods']);
 Route::get('mediDonate',[MakeDonation::class,'medicine']);
 Route::get('financialDonate',[MakeDonation::class,'financial']);
 Route::get('/foodProfile/{id}',[MakeDonation::class,'profile']);
@@ -123,10 +123,12 @@ Route::get('/blog',[BlogController::class,'index']);
 
 // Admin Profile
 // Route::get('/adminProfile/{id}',[AdminController::class,'show']);
-Route::view('/adminProfile','admin.adminProfile');
+// Route::view('/adminProfile','admin.adminProfile');
 // Route::get('/adminProfile/{id}',[AdminController::class,'show']);
+Route::get('/adminProfile',[AdminController::class,'viewProfile']);
 Route::get('/adminForm',[AdminController::class,'index']);
 Route::post('/adminForm',[AdminController::class,'store']);
+Route::get('/activeDonors',[AdminController::class,'activeDonor']);
 
 // Route for Dashboard-Blog
 Route::view('/blogform', 'admin.blogform');

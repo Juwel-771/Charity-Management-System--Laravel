@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminProfile;
+use App\Models\Donor;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -14,7 +15,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.adminForm');
+        $admin = AdminProfile::all();
+        return view('admin.adminForm',['admins'=>$admin]);
     }
 
     /**
@@ -82,6 +84,12 @@ class AdminController extends Controller
     {
         $admin = AdminProfile::all();
         return view('admin.adminProfile',['admins'=>$admin]);
+    }
+
+    public function activeDonor()
+    {
+        $donor = Donor::all();
+        return view('admin.activeDonor',['donor'=>$donor]);
     }
 
     /**
