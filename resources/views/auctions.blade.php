@@ -34,56 +34,55 @@
 
 <body>
     @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+        @auth
+        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+        @else
+        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        @if (Route::has('register'))
+        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+        @endif
+        @endauth
+    </div>
+    @endif
 
     <!-- header-start -->
-<header>
-    <div class="header-area ">
-        <div class="header-top_area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-md-12 col-lg-8">
-                        <div class="short_contact_list">
-                            <ul>
-                                <li><a href="#"> <i class="fa fa-user"></i> Md Juwel</a></li>
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-lg-8">
+                            <div class="short_contact_list">
+                                <ul>
+                                    <li><a href="#"> <i class="fa fa-user"></i> Md Juwel</a></li>
                                     <li><a href="#"> <i class="fa fa-envelope"></i>juwelmd416@gmail.com</a></li>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                            {{-- <a href="#">
+                        {{-- <a href="#">
                             <i class="fa fa-facebook"></i>
                         </a>
                         <a href="#">
                             <i class="fa fa-pinterest-p"></i>
                         </a> --}}
-                            {{-- Login-to-dashboard --}}
-                            {{-- @if (Route::has('login'))
+                        {{-- Login-to-dashboard --}}
+                        {{-- @if (Route::has('login'))
                             <div class="hidden fixed top-0 right-0 sm:block">
                                 @auth
                                 <a href="{{ url('/dashboard') }}"
-                                    class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                                @else
-                                <a href="{{ route('login') }}" class="text-sm mt-4 btn bg-green-400 btn-sm">Log
-                                    in</a>
+                        class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                        @else
+                        <a href="{{ route('login') }}" class="text-sm mt-4 btn bg-green-400 btn-sm">Log
+                            in</a>
 
-                                @if (Route::has('register'))
-                                <a href="{{ route('register') }}"
-                                    class="text-sm ml-3 mt-4 btn btn-info btn-sm">Register</a>
-                                @endif
-                                @endauth
-                            </div>
-                            @endif --}}
+                        @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="text-sm ml-3 mt-4 btn btn-info btn-sm">Register</a>
+                        @endif
+                        @endauth
+                    </div>
+                    @endif --}}
                 </div>
             </div>
         </div>
@@ -139,8 +138,8 @@
                 </div>
             </div>
         </div>
-    </div>
-</header>
+        </div>
+    </header>
     <!-- header-end -->
 
     <!-- bradcam_area_start  -->
@@ -164,8 +163,125 @@
             <div class="row">
                 <div class="col-md-8 mb-5 mb-lg-0">
                     @foreach ($item as $craft)
-                    <img src="/storage/auction_images/{{$craft->file}}" alt="Volenteer">
-                    @endforeach
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-10">
+                                    <img src="/storage/auction_images/{{$craft->file}}" alt="Volenteer">
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center my-4">
+                                <div class="col-md-10">
+                                    <h2>{{$craft->heading}}</h2>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center my-4">
+                                <div class="col-md-10">
+                                    <h5>Craft Details: </h5>
+                                    <p>{{$craft->paragraph}}</p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center my-4">
+                                <div class="col-md-5">
+                                    <p>Message: {{$craft->comment}}</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <p>Category: {{$craft->category}}</p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center my-4">
+                                <div class="col-md-5">
+                                    <p>Start Time: {{$craft->time_one}}</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <p>End Time: {{$craft->time_two}}</p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center my-4">
+                                <div class="col-md-5">
+                                    <p>Post Date: {{$craft->date}}</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <p>Bid: {{$craft->bidstart}}Tk.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                   <div class="row">
+                        <div class="col-md-5">
+                            <h2>Name: {{$craft->fullName}}</h2>
+                        </div>
+                        <div class="col-md-5">
+                            <h2>Name: {{$craft->result}} Tk.</h2>
+                        </div>
+                   </div>
+                   <div class="row">
+                    
+               </div>
+                </div>
+            </div>
+            @endforeach
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form action="auctions" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label">Name: </label>
+                                        <input type="text" name="fullName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row d-flex">
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone: </label>
+                                        <input type="text" name="phone" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row d-flex">
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">email: </label>
+                                        <input type="email" name="email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row d-flex">
+                                    <div class="col-md-6">
+                                        <label for="bid" class="form-label">Enter Bid: </label>
+                                        <input type="text" name="bid" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row d-flex my-2">
+                                    <div class="col-md-4">
+                                        <button type="submit" class="btn btn-primary">Bid</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Bid</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($price as $bid)
+                                    <tr>
+                                        <td>{{$bid->fullName}}</td>
+                                        <td>{{$bid->bid}}Tk.</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -224,7 +340,7 @@
                                 <li><a href="#">Sponsor</a></li>
                                 <li><a href="#">Fundraise</a></li>
                                 <li><a href="#">Volunteer</a></li>
-                                
+
                             </ul>
                         </div>
                     </div>
@@ -345,9 +461,11 @@
                 rightIcon: '<span class="fa fa-clock-o"></span>'
             }
         });
-    $(document).ready(function() {
-    $('.js-example-basic-multiple').select2();
-});
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+
     </script>
 </body>
+
 </html>

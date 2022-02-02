@@ -113,82 +113,39 @@
     <div id="content-wrapper" class="d-flex flex-column">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <div class="row d-flex justify-content-center mt-3">
+                <h2>Publish Bid Result</h2>
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Heading</th>
+                                    <th scope="col">Start Time</th>
+                                    <th scope="col">End Time</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($result as $stu)
+                                    <tr>
+                                        <th>{{$stu->heading}}</th>
+                                        <td>{{$stu->time_one}}</td>
+                                        <td>{{$stu->time_two}}</td>
+                                        <td>
+                                            <a href="{{url('/editAuc',$stu->id)}}" class="btn btn-info btn-sm">Publish Result</a>
+                                            <a href="{{url('/destroyAuc',$stu->id)}}" class="btn btn-danger btn-sm">postponed</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                         @if (session()->has('message'))
                             <div class="alert alert-info my-3">
                                     {{session('message')}}
                             </div>
                         @endif
-                        <form action="/organize" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="file">Upload Image: </label>
-                                    <input type="file" class="form-control" name="file">
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="date" class="form-label">Date: </label>
-                                    <input type="date" name="date" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="d-flex justify-content-center my-4">
-                                <div class="col-sm-5">
-                                    <label for="date" class="form-label">Start Time: </label>
-                                    <input type="time" name="time_one" class="form-control">
-                                </div>
-                                <div class="col-sm-5">
-                                    <label for="date" class="form-label">End Time: </label>
-                                    <input type="time" name="time_two" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="heading" class="form-label">Heading: </label>
-                                    <input type="text" name="heading" class="form-control py-4">
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="paragraph" class="form-label">Craft Details: </label>
-                                    <textarea name="paragraph" class="form-control" cols="60" rows="10"></textarea><br>
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="category" class="form-label">Category: </label>
-                                    <input type="text" name="category" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="Commnets" class="form-label">Comments </label>
-                                    <input name="comment" type="text" class="form-control py-5"></input>
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-center my-4">
-                                <div class="col-sm-10">
-                                    <label for="bidstart" class="form-label">Bid Range: </label>
-                                    <input name="bidstart" type="number" class="form-control py-2"></input>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col p-2 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-info btn-lg">Post</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </x-app-layout>

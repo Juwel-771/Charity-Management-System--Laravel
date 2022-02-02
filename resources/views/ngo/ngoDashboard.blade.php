@@ -68,8 +68,8 @@
                 <div id="auction" class="collapse" aria-labelledby="auction" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{url('organize')}}">Organize Auction</a>
-                        <a class="collapse-item" href="#">Live Bid</a>
-                        <a class="collapse-item" href="#">Result</a>
+                        <a class="collapse-item" href="{{url('liveBid')}}">Live Bid</a>
+                        <a class="collapse-item" href="{{url('bidResult')}}">Result</a>
                     </div>
                 </div>
             </li>

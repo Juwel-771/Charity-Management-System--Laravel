@@ -15,7 +15,7 @@ class CreateAuctionsTable extends Migration
     {
         Schema::create('auctions', function (Blueprint $table) {
             $table->id();
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->string('date')->nullable();
             $table->string('time_one')->nullable();
             $table->string('time_two')->nullable();
@@ -27,7 +27,8 @@ class CreateAuctionsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('bid')->nullable();
-            $table->string('result')->nullable();
+            $table->string('bidstart')->nullable();
+            $table->integer('result')->nullable();
             $table->timestamps();
         });
     }

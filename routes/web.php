@@ -332,6 +332,14 @@ Route::get('/remove/{id}',[AppointVolunteer::class,'destroy'])->name('destroy');
 Route::get('/organize',[AuctionController::class,'index']);
 Route::post('/organize',[AuctionController::class,'store']);
 Route::get('auctions',[AuctionController::class,'showCraft']);
+Route::post('auctions',[AuctionController::class,'bidPost']);
+Route::get('liveBid',[AuctionController::class,'liveBid']);
+Route::get('/destroyBid/{id}',[AuctionController::class,'destroyBid']);
+Route::get('/destroyAuc/{id}',[AuctionController::class,'destroyAuc']);
+Route::get('/bidResult',[AuctionController::class,'bidResult']);
+Route::get('/editAuc/{id}',[AuctionController::class,'editAuc']);
+Route::put('/editAuc/{id}',[AuctionController::class,'aucUpdate']);
+
 // Route::view('auctions','auctions');
 
 

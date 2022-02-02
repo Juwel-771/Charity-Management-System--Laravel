@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Auction;
+use App\Models\BidProfile;
 use Illuminate\Http\Request;
 
 class AuctionController extends Controller
@@ -25,6 +26,29 @@ class AuctionController extends Controller
     public function create(Request $request)
     {
         
+    }
+
+    public function liveBid()
+    {
+        $bid = BidProfile::all();
+        return view('ngo.liveBid',['rate'=>$bid]);
+    }
+
+    public function destroyBid($id)
+    {
+        $bid = BidProfile::destroy($id);
+        return redirect()->back();
+    }
+    public function destroyAuc($id)
+    {
+        $bid = Auction::destroy($id);
+        return redirect()->back();
+    }
+
+    public function bidResult()
+    {
+        $bid = Auction::all();
+        return view('ngo.bidResult',['result'=>$bid]);
     }
 
     /**
@@ -71,11 +95,44 @@ class AuctionController extends Controller
         $auction->phone=$request->phone;
         $auction->email=$request->email;
         $auction->bid=$request->bid;
+        $auction->bidstart=$request->bidstart;
         
         
         $auction->save();
 
         return redirect()->back()->with('message','Your Craft are add to Auction Section');
+    }
+
+    public function bidPost(Request $request)
+    {
+        $bid = new BidProfile();
+        $bid->fullName=$request->fullName;
+        $bid->phone=$request->phone;
+        $bid->email=$request->email;
+        $bid->bid=$request->bid;
+
+        $bid->save();
+
+        return redirect()->back();
+    }
+
+    public function editAuc($id)
+    {
+        $bid = Auction::find($id);
+        return view('ngo.editAuc',['publish'=>$bid]);
+    }
+
+    public function aucUpdate(Request $request, $id)
+    {
+        $auc = Auction::find($id);
+
+        $auc->heading=$request->heading;
+        $auc->fullName=$request->fullName;
+        $auc->result=$request->result;
+
+        $auc->save();
+
+        return redirect('/bidResult')->with('message','Bid Result Published');
     }
 
     /**
@@ -87,7 +144,8 @@ class AuctionController extends Controller
     public function showCraft()
     {
         $craft = Auction::all();
-        return view('auctions',['item'=>$craft]);
+        $bid = BidProfile::all();
+        return view('auctions',['item'=>$craft,'price'=>$bid]);
     }
 
     /**
