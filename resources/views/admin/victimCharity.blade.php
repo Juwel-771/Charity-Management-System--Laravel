@@ -39,14 +39,14 @@
                 <div id="collapseNGO" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{url('animalCharity')}}">Animal Charity</a>
-                        <a class="collapse-item" href="#">Child Welfare Charity</a>
-                        <a class="collapse-item" href="#">Environment Charity</a>
-                        <a class="collapse-item" href="#">Education Charity</a>
-                        <a class="collapse-item" href="#">Health Charity</a>
-                        <a class="collapse-item" href="#">Human Service Charity</a>
-                        <a class="collapse-item" href="#">Refuge Charity</a>
-                        <a class="collapse-item" href="#">Social Service</a>
-                        <a class="collapse-item" href="#">Victim Welfare Charity</a>
+                        <a class="collapse-item" href="{{url('childCharity')}}">Child Welfare Charity</a>
+                        <a class="collapse-item" href="{{url('environmentCharity')}}">Environment Charity</a>
+                        <a class="collapse-item" href="{{url('educationCharity')}}">Education Charity</a>
+                        <a class="collapse-item" href="{{url('healthCharity')}}">Health Charity</a>
+                        <a class="collapse-item" href="{{url('humanCharity')}}">Human Service Charity</a>
+                        <a class="collapse-item" href="{{url('refugeCharity')}}">Refuge Charity</a>
+                        <a class="collapse-item" href="{{url('socialCharity')}}">Social Service</a>
+                        <a class="collapse-item" href="{{url('victimCharity')}}">Victim Welfare Charity</a>
                     </div>
                 </div>
             </li>
@@ -60,21 +60,21 @@
                 <div id="collapseNGOAdd" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{url('addAnimal')}}">Animal Charity</a>
-                        <a class="collapse-item" href="#">Child Welfare Charity</a>
-                        <a class="collapse-item" href="#">Environment Charity</a>
-                        <a class="collapse-item" href="#">Education Charity</a>
-                        <a class="collapse-item" href="#">Health Charity</a>
-                        <a class="collapse-item" href="#">Human Service Charity</a>
-                        <a class="collapse-item" href="#">Refuge Charity</a>
-                        <a class="collapse-item" href="#">Social Service</a>
-                        <a class="collapse-item" href="#">Victim Welfare Charity</a>
+                        <a class="collapse-item" href="{{url('addChild')}}">Child Welfare Charity</a>
+                        <a class="collapse-item" href="{{url('addEnvironment')}}">Environment Charity</a>
+                        <a class="collapse-item" href="{{url('addEducation')}}">Education Charity</a>
+                        <a class="collapse-item" href="{{url('addHealth')}}">Health Charity</a>
+                        <a class="collapse-item" href="{{url('addHuman')}}">Human Service Charity</a>
+                        <a class="collapse-item" href="{{url('addRefuge')}}">Refuge Charity</a>
+                        <a class="collapse-item" href="{{url('addSocial')}}">Social Service</a>
+                        <a class="collapse-item" href="{{url('addVictim')}}">Victim Welfare Charity</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{url('activeDonors')}}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Donors</span></a>
             </li>
@@ -170,7 +170,7 @@
 
         <div id="content-wrapper" class="d-flex flex-column">
             <div class="col-md-12">
-                <h3>Social Charities</h3>
+                <h3>Victim Charities</h3>
                 <table class="table table-hover text-center">
                     <thead class="table-dark">
                         <tr>

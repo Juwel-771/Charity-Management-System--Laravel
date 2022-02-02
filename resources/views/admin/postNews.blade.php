@@ -23,23 +23,58 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li class="nav-item">                  
+                <a class="nav-link" href="{{url('adminProfile')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-folder"></i>
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseNGO"
+                aria-expanded="true" aria-controls="collapseNGO" href="#">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>NGO's</span>
                 </a>
+                <div id="collapseNGO" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('animalCharity')}}">Animal Charity</a>
+                        <a class="collapse-item" href="{{url('childCharity')}}">Child Welfare Charity</a>
+                        <a class="collapse-item" href="{{url('environmentCharity')}}">Environment Charity</a>
+                        <a class="collapse-item" href="{{url('educationCharity')}}">Education Charity</a>
+                        <a class="collapse-item" href="{{url('healthCharity')}}">Health Charity</a>
+                        <a class="collapse-item" href="{{url('humanCharity')}}">Human Service Charity</a>
+                        <a class="collapse-item" href="{{url('refugeCharity')}}">Refuge Charity</a>
+                        <a class="collapse-item" href="{{url('socialCharity')}}">Social Service</a>
+                        <a class="collapse-item" href="{{url('victimCharity')}}">Victim Welfare Charity</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseNGOAdd"
+                aria-expanded="true" aria-controls="collapseNGOAdd" href="#">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Add NGO's</span>
+                </a>
+                <div id="collapseNGOAdd" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('addAnimal')}}">Animal Charity</a>
+                        <a class="collapse-item" href="{{url('addChild')}}">Child Welfare Charity</a>
+                        <a class="collapse-item" href="{{url('addEnvironment')}}">Environment Charity</a>
+                        <a class="collapse-item" href="{{url('addEducation')}}">Education Charity</a>
+                        <a class="collapse-item" href="{{url('addHealth')}}">Health Charity</a>
+                        <a class="collapse-item" href="{{url('addHuman')}}">Human Service Charity</a>
+                        <a class="collapse-item" href="{{url('addRefuge')}}">Refuge Charity</a>
+                        <a class="collapse-item" href="{{url('addSocial')}}">Social Service</a>
+                        <a class="collapse-item" href="{{url('addVictim')}}">Victim Welfare Charity</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{url('activeDonors')}}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Donors</span></a>
             </li>
@@ -112,6 +147,7 @@
                         <a class="collapse-item" href="{{url('medicineShow')}}">Medicine Donation</a>
                         <a class="collapse-item" href="{{url('clothShow')}}">Clothe Donation</a>
                         <a class="collapse-item" href="{{url('goodsShow')}}">Donating Goods</a>
+                        <a class="collapse-item" href="{{url('financialShow')}}">Financial Donation</a>
                     </div>
                 </div>
             </li>
@@ -134,6 +170,7 @@
 
         <div id="content-wrapper" class="d-flex flex-column ml-5">
             <div class="container">
+                <h2 style="color: black" class="text-center">Post News</h2>
                 <div class="row">
                     <div class="col-md-8">
                         <div class="row d-flex justify-content-center mt-3">

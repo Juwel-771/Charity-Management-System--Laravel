@@ -136,6 +136,7 @@
         {{-- Blog Heading --}}
 
         <div class="col-md-10">
+            <h2 style="color: black" class="text-center">Editing Blog</h2>
             <table class="table table-light table-hover text-center">
                 <thead class="table-dark">
                     <tr>

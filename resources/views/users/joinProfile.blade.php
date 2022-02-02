@@ -148,11 +148,11 @@
                             </div>
                         </form>
                     </div>
-                    <div class="alert alert-primary">
+                    {{-- <div class="alert alert-primary">
                         @if(sessioin()->has('message'))
                             {{seesion('message')}}
                         @endif
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

@@ -169,10 +169,11 @@
         <!-- Content Wrapper -->
 
         <div class="col-md-10">
+            <h2 style="color:honeydew" class="text-center my-3">Active Donors</h2>
             <table class="table table-light table-hover text-center">
                 <thead class="table-dark">
                     <tr>
-                        {{-- <th>Image</th> --}}
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>About</th>
@@ -184,12 +185,17 @@
                     <tr>
                         
                         {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+                        <td class="border-bottom-primary">
+                            <div class="card" style="width: 5rem;">
+                                <img src="/storage/donor_images/{{$item->file}}" class="card-img-top" alt="...">
+                              </div>
+                        </td>
                         <td class="border-bottom-primary">{{$item->name}}</td>
                         <td class="border-bottom-primary">{{$item->email}}</td>
-                        <td class="border-bottom-primary">{{$item->details}}</td>
+                        <td class="border-bottom-primary">{{$item->about}}</td>
                         <td class="border-bottom-primary">
-                            <a href="{{url('/editblog',$item->id)}}" class="btn btn-info btn-sm">Edit</a>
-                            <a href="{{url('/destroy', $item->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="{{url('/editDonor',$item->id)}}" class="btn btn-info btn-sm">Edit</a>
+                            <a href="{{url('/donorDestroy', $item->id)}}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
 

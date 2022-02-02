@@ -129,6 +129,9 @@ Route::get('/adminProfile',[AdminController::class,'viewProfile']);
 Route::get('/adminForm',[AdminController::class,'index']);
 Route::post('/adminForm',[AdminController::class,'store']);
 Route::get('/activeDonors',[AdminController::class,'activeDonor']);
+Route::get('/editDonor/{id}',[AdminController::class,'editDonor']);
+Route::put('/editDonor/{id}',[AdminController::class,'donorUpdate']);
+Route::get('/donorDestroy/{id}',[AdminController::class,'donorDestroy']);
 
 // Route for Dashboard-Blog
 Route::view('/blogform', 'admin.blogform');

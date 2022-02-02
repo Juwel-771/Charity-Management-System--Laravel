@@ -74,7 +74,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{url('activeDonors')}}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Donors</span></a>
             </li>
