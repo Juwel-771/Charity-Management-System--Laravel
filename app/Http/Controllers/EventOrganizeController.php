@@ -46,6 +46,12 @@ class EventOrganizeController extends Controller
         $profilengo = OrganizeEvent::find($id);
         return view('ngo.ngoProfile',['pro_eve'=>$profilengo]);
     }
+
+    public function userEvent()
+    {
+        $userEvent = OrganizeEvent::all();
+        return view('users.userEvent',['userEvent'=>$userEvent]);
+    }
     /**
      * Show the form for creating a new resource.
      *

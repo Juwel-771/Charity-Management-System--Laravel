@@ -33,7 +33,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('userProfile/id')}}">
+                <a class="nav-link" href="{{url('userProfile')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Profile</span>
                 </a>
@@ -54,38 +54,32 @@
             </li> --}}
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('helpArea')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Help Your Area</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('voluntUser')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Volunter</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="userEvent">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Campaingns</span></a>
+                    <span>Event</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('userAuction')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Auctions</span></a>
             </li>
 
             {{-- <li class="nav-item">
                 <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Search Charity</span></a>
-            </li> --}}
-
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-table"></i>  
                     <span>Feedback</span></a>
             </li>
 
@@ -101,6 +95,7 @@
                     <span>Join</span></a>
             </li>
 
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -111,51 +106,47 @@
         <!-- Content Wrapper -->
 
         <div id="content-wrapper" class="d-flex flex-column">
-            <div class="container">
-                <div class="row">
+            <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content-wrapper" class="d-flex flex-column">
                     <div class="col-md-12">
-                        <h3>Registration of Donor:</h3> <br>
-                        <form action="/joinProfile" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-8 my-2">
-                                    <label for="file" class="form-label">Upload Image: </label>
-                                    <input type="file" name="file" class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 my-2">
-                                    <label for="name" class="form-label">Name: </label>
-                                    <input type="text" name="name" class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 my-2">
-                                    <label for="email" class="form-label">E-mail: </label>
-                                    <input type="email" name="email" class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 my-2">
-                                    <label for="about" class="form-label">About: </label>
-                                    <textarea name="about" class="form-control" cols="30" rows="10"></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 my-2 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    {{-- <div class="alert alert-primary">
-                        @if(sessioin()->has('message'))
-                            {{seesion('message')}}
+                        <h3>Auction Review</h3>
+                        <table class="table table-hover text-center">
+                            <thead class="table-primary">
+                                <tr>
+                                    {{-- <th>Image</th> --}}
+                                    <th>Auction Title</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Date</th>
+                                    <th>Bid</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($auctions as $userAuction)
+                                <tr>
+                                    
+                                    <td class="border-bottom-primary">{{$userAuction->heading}}</td>
+                                    <td class="border-bottom-primary">{{$userAuction->time_one}}</td>
+                                    <td class="border-bottom-primary">{{$userAuction->time_one}}</td>
+                                    <td class="border-bottom-primary">{{$userAuction->date}}</td>
+                                    <td class="border-bottom-primary">{{$userAuction->bid}}</td>
+                                    <td class="border-bottom-primary">
+                                        <a href="{{url('auctions')}}"
+                                            class="btn btn-primary btn-sm">Bid</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{session('message')}}
+                        </div>
                         @endif
-                    </div> --}}
+                    </div>
                 </div>
             </div>
 
         </div>
-    </div>
 </x-app-layout>

@@ -25,6 +25,7 @@
         <div id="content-wrapper" class="d-flex flex-column ml-5">
             <div class="container">
                 <div class="row">
+                    <h3>Update Blog</h3>
                     <div class="col-sm-8">
                         <div class="row d-flex justify-content-center mt-3">
                             @if (session()->has('message'))

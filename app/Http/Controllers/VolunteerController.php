@@ -15,8 +15,13 @@ class VolunteerController extends Controller
      */
     public function index()
     {
-        $volunteer = ApprovVolunteer::all();
+        $volunteer = Volunteer::all();
         return view('volunteer',['volunte'=>$volunteer]);
+    }
+
+    public function voluntUser()
+    {
+        return view('users.voluntUser');
     }
 
     // public function imgShow()

@@ -40,11 +40,11 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Favourite Charity</span></a>
-            </li>
+            </li> --}}
 
             <!-- Nav Item - Tables -->
             {{-- <li class="nav-item">
@@ -54,25 +54,25 @@
             </li> --}}
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('helpArea')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Help Your Area</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('voluntUser')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Volunter</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="userEvent">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Campaingns</span></a>
+                    <span>Event</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('userAuction')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Auctions</span></a>
             </li>

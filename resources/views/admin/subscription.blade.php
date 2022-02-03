@@ -166,6 +166,7 @@
         </ul>
         <!-- End of Sidebar -->
         <div class="col-md-10">
+            <h3>Website Subscription</h3>
             <table class="table table-light table-hover text-center">
                 <thead class="table-dark">
                     <tr>

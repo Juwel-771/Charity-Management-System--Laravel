@@ -13,6 +13,7 @@ use App\Http\Controllers\EventOrganizeController;
 use App\Http\Controllers\FinancialController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\GoodsController;
+use App\Http\Controllers\HelpAreaController;
 use App\Http\Controllers\MakeDonation;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\NewsCommnetController;
@@ -356,5 +357,21 @@ Route::put('/editAuc/{id}',[AuctionController::class,'aucUpdate']);
 Route::get('/userProfile',[UserProfileController::class,'index']);
 Route::get('/joinProfile',[UserProfileController::class,'showProfile']);
 Route::post('/joinProfile',[UserProfileController::class,'store']);
+Route::get('/editUserProfile',[UserProfileController::class,'editUserProfile']);
+Route::put('/editUserProfile',[UserProfileController::class,'profileUpdate']);
+
+// ### Help Area
+Route::get('/helpArea',[HelpAreaController::class,'index']);
+Route::post('/helpArea',[HelpAreaController::class,'store']);
+
+// ### Volunteer Form
+Route::get('/voluntUser',[VolunteerController::class,'voluntUser']);
+Route::post('/voluntUser',[VolunteerController::class,'store']);
+
+// ### Event Form
+Route::get('/userEvent',[EventOrganizeController::class,'userEvent']);
+
+// ### Auction Form
+Route::get('/userAuction',[AuctionController::class,'userAuction']);
 
 require __DIR__.'/auth.php';

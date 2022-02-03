@@ -114,15 +114,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>Registration of Donor:</h3> <br>
-                        <form action="/joinProfile" method="POST" enctype="multipart/form-data">
+                        <h3>Edit Profile: </h3> <br>
+                        <form action="/editUserProfile" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="row">
-                                <div class="col-md-8 my-2">
-                                    <label for="file" class="form-label">Upload Image: </label>
-                                    <input type="file" name="file" class="form-control">
-                                </div>
-                            </div>
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-md-8 my-2">
                                     <label for="name" class="form-label">Name: </label>

@@ -21,6 +21,7 @@
         <div class="container-fluid d-flex justify-content-center bg-teal-200 my-5 p-5">
             <div class="row ">
                 <div class="col">
+                    <h3>Food Request Form</h3>
                     <form action="/foodEdit" method="POST">
                         @csrf 
                         <h2 class="fw-bold fs-4 mb-2">Please Select Your Distric To Donate</h2>

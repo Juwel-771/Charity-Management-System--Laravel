@@ -51,6 +51,12 @@ class AuctionController extends Controller
         return view('ngo.bidResult',['result'=>$bid]);
     }
 
+    public function userAuction()
+    {
+        $userAuction = Auction::all();
+        return view('users.userAuction',['auctions'=>$userAuction]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

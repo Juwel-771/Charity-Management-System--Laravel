@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DonorProfile;
-use App\Models\User;
+use App\Models\HelpArea;
 use Illuminate\Http\Request;
 
-class UserProfileController extends Controller
+class HelpAreaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +14,7 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        $user = DonorProfile::where('name','Kai Kirby')->get();
-
-        return view('users.userProfile',['user'=>$user]);
-    }
-
-    public function editUserProfile()
-    {
-        return view('users.editUserProfile');
+        return view('users.helpArea');
     }
 
     /**
@@ -32,12 +24,7 @@ class UserProfileController extends Controller
      */
     public function create()
     {
-       
-    }
-
-    public function showProfile()
-    {
-        return view('users.joinProfile');
+        //
     }
 
     /**
@@ -48,11 +35,11 @@ class UserProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $userProfile = new DonorProfile();
+        $area = new HelpArea();
 
         $this->validate($request, [
-            'name'=>'required',
-            'email'=>'required',
+            'firstName'=>'required',
+            'lastName'=>'required',
             'file'=>'image|mimes:jpg,png,jpeg'
         ]);
 
@@ -69,29 +56,25 @@ class UserProfileController extends Controller
         $fileNameToStore = $filename.'_'.time().'_'.$extension;
 
         // Upload Image
-        $path = $request->file('file')->storeAs('public/donor_images',$fileNameToStore);
+        $path = $request->file('file')->storeAs('public/volunteer_images',$fileNameToStore);
 
-        $userProfile->file=$fileNameToStore;
-        $userProfile->name=$request->name;
-        $userProfile->email=$request->email;
-        $userProfile->about=$request->about;
+        $area->file=$fileNameToStore;
+        $area->problem=$request->problem;
+        $area->firstName=$request->firstName;
+        $area->lastName=$request->lastName;
+        $area->email=$request->email;
+        $area->phone=$request->phone;
+        $area->address_one=$request->address_one;
+        $area->address_two=$request->address_two;
+        $area->city=$request->city;
+        $area->state=$request->state;
+        $area->postalCode=$request->postalCode;
+        $area->description=$request->description;
+        $area->postalOffice=$request->postalOffice;
         
-        $userProfile->save();
+        $area->save();
 
-        return redirect()->back()->with('message','Your Profile Submitted');
-    }
-
-    public function profileUpdate(Request $request)
-    {
-        $userProfile = new DonorProfile();
-
-        $userProfile->name=$request->name;
-        $userProfile->email=$request->email;
-        $userProfile->about=$request->about;
-        
-        $userProfile->save();
-
-        return redirect('/userProfile');
+        return redirect()->back()->with('message','Your Form Submitted. We will let you know through email');
     }
 
     /**
