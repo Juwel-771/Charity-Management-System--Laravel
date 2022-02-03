@@ -169,6 +169,39 @@
         <!-- Content Wrapper -->
 
         <div id="content-wrapper" class="d-flex flex-column ml-5">
-            
+            <div class="col-md-12">
+                <table class="table table-light table-hover text-center">
+                    <thead class="table-info">
+                        <tr>
+                            {{-- <th>Image</th> --}}
+                            <th>Name</th>
+                            <th>Comment</th>
+                            <th>Email</th>
+                            <th>Website</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($comm as $com)
+                        <tr>
+                            {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+                            <td class="border-bottom-info">{{$com->name}}</td>
+                            <td class="border-bottom-info">{{$com->comment}}</td>
+                            <td class="border-bottom-info">{{$com->email}}</td>
+                            <td class="border-bottom-info">{{$com->website}}</td>
+                            <td class="border-bottom-info">
+                                <a href="{{url('/edit_com',$com->id)}}" class="btn btn-info btn-sm">Remove</a>
+                            </td>
+                        </tr>     
+                        @endforeach
+                    </tbody>
+                </table>
+    
+                @if (session()->has('message'))
+                            <div class="alert alert-info">
+                                {{session('message')}}
+                            </div>
+                        @endif
+            </div> 
     </div>
 </x-app-layout>

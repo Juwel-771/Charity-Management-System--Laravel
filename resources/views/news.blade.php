@@ -197,20 +197,20 @@
                  <div class="comments-area">
                     <h4>05 Comments</h4>
                     <div class="comment-list">
-                        {{-- @foreach ($com as $comm) --}}
+                        @foreach ($com as $comm)
                        <div class="single-comment justify-content-between d-flex">
                           <div class="user justify-content-between d-flex">
                              <div class="thumb">
                                 <img src="img/comment/comment_2.png" alt="">
                              </div>
                              <div class="desc">
-                                <p class="comment">
-                                  {{-- {{$comm->comment}} --}}
+                                <p class="comment my-4">
+                                  {{$comm->comment}}
                                 </p>
                                 <div class="d-flex justify-content-between">
                                    <div class="d-flex align-items-center">
                                       <h5>
-                                         {{-- <a href="#">{{$comm->name}}</a> --}}
+                                         <a href="#">{{$comm->name}}</a>
                                       </h5>
                                       <p class="date">December 4, 2017 at 3:12 pm </p>
                                    </div>
@@ -221,28 +221,28 @@
                              </div>
                           </div>
                        </div>
-                       {{-- @endforeach --}}
+                       @endforeach
                     </div>
                  </div>
                  <div class="comment-form">
                     <h4>Leave a Reply</h4>
-                    <form action="" method="">
-                        {{-- @csrf --}}
+                    <form action="/news" method="POST">
+                        @csrf
                        <div class="row">
                           <div class="col-12">
                              <div class="form-group">
-                                <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+                                <textarea class="form-control w-100" name="comment" cols="30" rows="9"
                                    placeholder="Write Comment"></textarea>
                              </div>
                           </div>
                           <div class="col-sm-6">
                              <div class="form-group">
-                                <input class="form-control" name="name" id="name" type="text" placeholder="Name">
+                                <input class="form-control" name="name" type="text" placeholder="Name">
                              </div>
                           </div>
                           <div class="col-sm-6">
                              <div class="form-group">
-                                <input class="form-control" name="email" id="email" type="email" placeholder="Email">
+                                <input class="form-control" name="email" type="email" placeholder="Email">
                              </div>
                           </div>
                           <div class="col-12">

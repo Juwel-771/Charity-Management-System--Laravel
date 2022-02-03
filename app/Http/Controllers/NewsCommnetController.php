@@ -12,10 +12,25 @@ class NewsCommnetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexCome()
     {
-        //
+        $com = NewsCommnet::all();
+        return view('/news',['com'=>$com]);
     }
+
+    public function viewComment()
+    {
+        $view = NewsCommnet::all();
+        return view('admin.editComment',['comm'=>$view]);
+    }
+
+    public function edit_com($id)
+    {
+        $view = NewsCommnet::destroy($id);
+        
+        return redirect()->back()->with('message','Comment Delete');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -33,7 +48,7 @@ class NewsCommnetController extends Controller
 
         $comment->save();
 
-        return view('/news',['com'=>$comment]);
+        return view('/news');
     }
 
     /**

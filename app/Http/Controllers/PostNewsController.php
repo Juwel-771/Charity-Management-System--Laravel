@@ -16,8 +16,9 @@ class PostNewsController extends Controller
     public function index()
     {
         $news = NewsPage::all();
-
-        return view('/news',['docu'=>$news]);
+        $com = NewsCommnet::all();
+        
+        return view('/news',['docu'=>$news,'com'=>$com]);
     }
 
     /**

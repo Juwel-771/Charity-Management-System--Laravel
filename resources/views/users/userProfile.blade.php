@@ -117,7 +117,7 @@
                     <div class="cole">
                         <div class="ror">
                             <div class="col-md-8">
-                                {{-- <h2>{{$user->name}}</h2> --}}
+                                <h2>{{$user->name}}</h2>
                             </div>
                         </div>
                     </div>

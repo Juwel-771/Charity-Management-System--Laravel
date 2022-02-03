@@ -21,6 +21,7 @@ use App\Http\Controllers\PostNewsController;
 use App\Http\Controllers\SubscripController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\VolunteerController;
+use App\Models\NewsCommnet;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -144,12 +145,14 @@ Route::get('/destroy/{id}',[BlogController::class,'destroy']);
 //Route for News Section
 Route::get('/news',[PostNewsController::class,'index']);
 Route::post('/news',[NewsCommnetController::class,'create']);
+// Route::get('/news',[NewsCommnetController::class,'indexCome']);
 Route::view('/postNews','admin.postNews');
 Route::post('/postNews',[PostNewsController::class,'store']);
 Route::get('/viewNews',[PostNewsController::class,'show']);
 Route::get('/editNews/{id}',[PostNewsController::class,'edit']);
 Route::put('/editNews/{id}',[PostNewsController::class,'update']);
-Route::view('/editComment','admin.editComment');
+Route::get('/editComment',[NewsCommnetController::class,'viewComment']);
+Route::get('/edit_com/{id}',[NewsCommnetController::class,'edit_com']);
 
 // Route for Subscription
 Route::view('/subscription', 'admin.subscription');
